@@ -1,0 +1,10 @@
+# Material interno do facilitador — não vai pro repositório público.
+# O plano de aula tem tempos de fala e ordem de corte; o briefing é de trabalho.
+ementa.md
+CLAUDE.md
+
+# Config local do Claude Code
+.claude/
+
+# macOS
+.DS_Store
