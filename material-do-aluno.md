@@ -636,12 +636,12 @@ roda `claude`, pede *"conecta essa sessão à minha conta do GitHub"*, o Claude 
 
 ---
 
-### Bloco 2.4 — Claude Code na prática: um slide novo
+### Bloco 2.4 — Claude Code na prática: criar e entender
 
-**~10 min**
+**~25 min**
 
-Agora que o Claude Code está conectado, você vai usar ele pra uma tarefa que **ainda não existe** no
-protótipo — não pra repetir a variação de cor que você já fez na mão.
+Agora que o Claude Code está conectado, ele faz duas coisas que você vai usar o tempo todo no trabalho:
+**criar o que ainda não existe** e **explicar o que já existe**. Um exercício pra cada.
 
 #### Exercício 7 — Um slide novo, do início ao fim, pelo Claude Code (9 min)
 
@@ -669,6 +669,74 @@ lá, na mesma conta, no mesmo repositório.
 > **O que fixar:** o Claude Code usou o mesmo repositório e os mesmos mecanismos que você aprendeu na
 > mão. Só mudou quem executou o clique. E o resultado é conteúdo novo, não repetição.
 
+#### Exercício 8 — Documente o algoritmo da ArenaCash pelo Claude Code (15 min)
+
+Lembra do **Exercício 2 de ontem**? Você garimpou o `simulador.js` na mão pra descobrir por que um jovem
+arrojado recebia o produto mais conservador. Hoje você refaz aquilo em três pedidos — e sai com um
+documento pronto pra mandar pra alguém.
+
+**Entregável:** um arquivo `analise-simulador.md` commitado no **seu** repositório, explicando o
+algoritmo da ArenaCash de ponta a ponta.
+
+**Passo 1 — Peça a explicação e compare com a de ontem (4 min)**
+
+No Claude Code, dentro da pasta `meu-prototipo-arenacash` mesmo — ele consegue ler repositório público
+sem você clonar nada:
+
+> Lê o arquivo `simulador.js` do repositório público `github.com/CaueCM/ArenaCash` e me explica, em
+> português e sem jargão, como ele decide qual investimento indicar pra cada pessoa.
+
+Compare a resposta com o que **você** descobriu ontem lendo o arquivo na mão. Bateu? Ele achou algo que
+passou despercebido? Ou disse algo que você sabe que está errado?
+
+**Passo 2 — Peça o que é difícil achar sozinho (4 min)**
+
+Esta é a pergunta que dá trabalho de responder na mão — testar combinação por combinação até achar as
+que se comportam de forma estranha:
+
+> Quais regras desse arquivo podem gerar um resultado que surpreende o cliente? Pra cada uma, me dá um
+> exemplo concreto de idade, salário e perfil que cai nela, e explica por que o resultado parece
+> contraditório.
+
+Ele deve encontrar pelo menos duas: a do **aporte mínimo**, que passa por cima do perfil e da idade, e a
+do **teto de risco por idade**, que faz um arrojado de 55 anos receber o mesmo produto que um moderado
+de 35.
+
+Se ele apontar algo que você não consegue confirmar no código, **não aceite**. Peça: *"me mostra a linha
+exata do arquivo onde isso acontece"*.
+
+**Passo 3 — Peça o material detalhado (5 min)**
+
+> Cria um arquivo `analise-simulador.md` aqui no meu repositório documentando esse algoritmo, com estas
+> seções:
+>
+> 1. O que o simulador faz, em um parágrafo
+> 2. Tabela dos produtos, com rendimento, prazo e risco
+> 3. Como a pontuação é calculada, passo a passo
+> 4. As regras que têm precedência sobre a pontuação
+> 5. Casos-limite, com exemplos de idade, salário e perfil
+> 6. Perguntas que eu levaria pro time de produto sobre essas regras
+>
+> Escreve pra alguém que não sabe programar. Sem jargão.
+
+Abra o arquivo e leia antes de aceitar. É *seu* documento — se alguma seção ficou rasa, peça pra refazer
+só aquela.
+
+**Passo 4 — Commite e publique (2 min)**
+
+> Commita o `analise-simulador.md` com a mensagem "documenta o algoritmo do simulador da ArenaCash" e faz
+> push na main.
+
+Confira no GitHub Desktop, na aba **History**: o commit está lá, feito por você, sem você ter clicado em
+nada.
+
+> **O que fixar:** ontem você levou 12 minutos garimpando um arquivo pra entender duas regras. Hoje você
+> levou três pedidos — e saiu com um **documento**, não só com o entendimento.
+>
+> Mas repare no que tornou isso possível: você só consegue julgar se a resposta está certa **porque já
+> tinha feito na mão**. Quem pula a etapa de ontem recebe o mesmo documento e não tem como saber se pode
+> confiar nele.
+
 ---
 
 ### Bloco 2.5 — Branches se cruzando: merge e conflito
@@ -689,7 +757,7 @@ adivinhar qual você quer — então ele para e pergunta.
 > Conflito não é erro, não é bug, não é sinal de que você fez algo errado. É o Git sendo honesto: "duas
 > pessoas mudaram a mesma coisa, escolhe você".
 
-#### Exercício 8 — Merge tranquilo e depois um conflito de verdade (23 min)
+#### Exercício 9 — Merge tranquilo e depois um conflito de verdade (23 min)
 
 **O cenário:** enquanto o marketing testava as cores, o time de copy também testava um texto novo pro
 mesmo botão. Você vai mesclar as duas coisas e ver o que acontece.
@@ -772,7 +840,7 @@ Se quiser ajuda pra decidir, cole o trecho no claude.ai:
 Você já resolveu um conflito na mão, no slide de capa. Agora vai provocar outro — num lugar diferente do
 protótipo, o slide de depoimento que o Claude Code criou — e dessa vez é ele quem resolve.
 
-#### Exercício 9 — Um conflito novo, resolvido pelo Claude Code (11 min)
+#### Exercício 10 — Um conflito novo, resolvido pelo Claude Code (11 min)
 
 **Entregável:** um segundo conflito de merge, num trecho diferente do primeiro, identificado e resolvido
 pelo Claude Code.
@@ -819,7 +887,7 @@ GitHub.com (não no GitHub Desktop) e permite três coisas:
 
 É como mandar um Loom de aprovação, só que pra código — ou, no nosso caso, pra HTML.
 
-#### Exercício 10 — Abrindo e revisando um Pull Request (12 min)
+#### Exercício 11 — Abrindo e revisando um Pull Request (12 min)
 
 **O cenário:** você quer testar mais uma variação, mas dessa vez quer que alguém revise antes de aprovar
 — igual aconteceria numa empresa de verdade.
@@ -893,7 +961,7 @@ URL pública atualizada
 A parte boa: você configura **uma vez**. A partir daí, toda vez que algo for mesclado em `main`, o site
 publicado se atualiza sozinho.
 
-#### Exercício 11 — Publicando o protótipo (12 min)
+#### Exercício 12 — Publicando o protótipo (12 min)
 
 **Entregável:** URL pública ativa, no formato `https://<seu-usuario>.github.io/meu-prototipo-arenacash/`,
 mostrando a apresentação com os slides de capa, depoimento e benefícios.
@@ -933,7 +1001,7 @@ Se precisar de inspiração, escolha uma destas (ou traga a sua):
 - um botão de compartilhar no WhatsApp
 - uma animação ou transição entre os slides
 
-#### Exercício 12 — Uma ideia sua, publicada de ponta a ponta (15 min)
+#### Exercício 13 — Uma ideia sua, publicada de ponta a ponta (15 min)
 
 **Entregável:** uma funcionalidade nova, escolhida por você, criada, commitada, revisada via PR e
 publicada — tudo pedindo ao Claude Code, **sem abrir o GitHub Desktop**.
@@ -964,8 +1032,8 @@ No Bloco 1.2 você viu quatro razões pra usar GitHub sendo não-técnico. Onde 
 
 1. **Vibe coding direto no código da empresa** — Blocos 2.4, 2.6 e 2.9, pedindo direto ao Claude Code
 2. **Repositório de apresentações e HTML** — é o próprio pitch deck que você construiu e publicou
-3. **Análise de dados e algoritmos** — não foi praticado aqui, mas agora você reconhece a estrutura pra
-   ir atrás disso sozinho
+3. **Análise de dados e algoritmos** — Exercício 2 do Dia 1 e Exercício 8 de hoje: você leu o algoritmo
+   do simulador da ArenaCash na mão, e depois pediu ao Claude Code pra documentar o mesmo arquivo
 4. **Controle de versão** — vivido o curso inteiro: commits, branches, um conflito de verdade resolvido,
    histórico completo
 

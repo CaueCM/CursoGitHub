@@ -31,7 +31,7 @@
 <!-- HERO DO DIA -->
 <section class="day-hero">
   <div class="container">
-    <span class="pa-eyebrow pa-eyebrow--red">D I A &nbsp; 2 &nbsp; · &nbsp; ~ 2 h 3 0</span>
+    <span class="pa-eyebrow pa-eyebrow--red">D I A &nbsp; 2 &nbsp; · &nbsp; ~ 2 h 4 5</span>
     <h1>Branches, conflito e <span class="accent">o protótipo no ar.</span></h1>
     <p class="day-hero-sub">
       Ontem você usou uma linha do tempo só. Hoje você abre linhas paralelas, vê elas se cruzarem —
@@ -44,8 +44,8 @@
     </div>
     <div class="day-hero-meta">
       <div><span class="num">10</span><span class="label">blocos + bônus</span></div>
-      <div><span class="num">8</span><span class="label">exercícios</span></div>
-      <div><span class="num">~2h30</span><span class="label">duração</span></div>
+      <div><span class="num">9</span><span class="label">exercícios</span></div>
+      <div><span class="num">~2h45</span><span class="label">duração</span></div>
       <div><span class="num">1</span><span class="label">URL pública</span></div>
     </div>
   </div>
@@ -61,7 +61,7 @@
       <li><a href="#bloco-2-2"><span class="num">2.2</span> Criar branch e switch</a></li>
       <li><a href="#bonus"><span class="num">🎁</span> Bônus: terminal</a></li>
       <li><a href="#bloco-2-3"><span class="num">2.3</span> Conectar o Claude Code</a></li>
-      <li><a href="#bloco-2-4"><span class="num">2.4</span> Um slide novo</a></li>
+      <li><a href="#bloco-2-4"><span class="num">2.4</span> Criar e entender</a></li>
       <li><a href="#bloco-2-5"><span class="num">2.5</span> Merge e conflito</a></li>
       <li><a href="#bloco-2-6"><span class="num">2.6</span> Outro conflito</a></li>
       <li><a href="#bloco-2-7"><span class="num">2.7</span> Pull Request</a></li>
@@ -403,16 +403,16 @@
     <!-- ============================================================ 2.4 -->
     <section class="block" id="bloco-2-4">
       <div class="block-head">
-        <span class="block-pill">Bloco 2.4 · ~10 min</span>
+        <span class="block-pill">Bloco 2.4 · ~25 min</span>
         <span class="block-mode block-mode--claude">Via Claude Code</span>
-        <h2>Claude Code na prática: um slide novo</h2>
-        <p class="block-obj">Agora que ele está conectado, você vai usar o Claude Code pra uma tarefa que
-        <strong>ainda não existe</strong> no protótipo — não pra repetir a variação de cor que você já fez
-        na mão.</p>
+        <h2>Claude Code na prática: criar e entender</h2>
+        <p class="block-obj">Agora que ele está conectado, o Claude Code faz duas coisas que você vai usar
+        o tempo todo no trabalho: <strong>criar o que ainda não existe</strong> e <strong>explicar o que
+        já existe</strong>. Um exercício pra cada.</p>
       </div>
 
       <div class="exercises">
-        <h3>Exercício</h3>
+        <h3>Exercícios</h3>
         <details class="exercise">
           <summary>
             <span class="ex-num">07</span>
@@ -486,6 +486,119 @@
             </div>
           </div>
         </details>
+
+        <details class="exercise">
+          <summary>
+            <span class="ex-num">08</span>
+            <span class="ex-title">Documente o algoritmo da ArenaCash pelo Claude Code</span>
+            <span class="ex-time">15 min</span>
+          </summary>
+          <div class="ex-body">
+            <p class="ex-intro">Lembra do <strong>Exercício 2 de ontem</strong>? Você garimpou o
+            <code>simulador.js</code> na mão pra descobrir por que um jovem arrojado recebia o produto mais
+            conservador. Hoje você refaz aquilo em três pedidos — e sai com um documento pronto pra mandar
+            pra alguém.</p>
+
+            <p class="ex-entrega"><strong>Entregável:</strong> um arquivo <code>analise-simulador.md</code>
+            commitado no <strong>seu</strong> repositório, explicando o algoritmo da ArenaCash de ponta a
+            ponta.</p>
+
+            <div class="step-block">
+              <div class="step-block-head">
+                <span class="step-block-num">Passo 1</span>
+                <span class="step-block-time">4 min</span>
+                <h4 class="step-block-title">Peça a explicação e compare com a de ontem</h4>
+              </div>
+              <div class="step-block-body">
+                <p>No Claude Code, dentro da pasta <code>meu-prototipo-arenacash</code> mesmo — ele consegue
+                ler repositório público sem você clonar nada:</p>
+                <div class="prompt-box">
+                  <div class="prompt-box-head">Prompt 1</div>
+                  <p>Lê o arquivo <code>simulador.js</code> do repositório público
+                  <code>github.com/CaueCM/ArenaCash</code> e me explica, em português e sem jargão, como ele
+                  decide qual investimento indicar pra cada pessoa.</p>
+                </div>
+                <p class="tip">💡 Compare a resposta com o que <strong>você</strong> descobriu ontem lendo o
+                arquivo na mão. Bateu? Ele achou algo que passou despercebido? Ou disse algo que você sabe
+                que está errado?</p>
+              </div>
+            </div>
+
+            <div class="step-block">
+              <div class="step-block-head">
+                <span class="step-block-num">Passo 2</span>
+                <span class="step-block-time">4 min</span>
+                <h4 class="step-block-title">Peça o que é difícil achar sozinho</h4>
+              </div>
+              <div class="step-block-body">
+                <p>Esta é a pergunta que dá trabalho de responder na mão — testar combinação por combinação
+                até achar as que se comportam de forma estranha:</p>
+                <div class="prompt-box">
+                  <div class="prompt-box-head">Prompt 2</div>
+                  <p>Quais regras desse arquivo podem gerar um resultado que surpreende o cliente? Pra cada
+                  uma, me dá um exemplo concreto de idade, salário e perfil que cai nela, e explica por que o
+                  resultado parece contraditório.</p>
+                </div>
+                <p>Ele deve encontrar pelo menos duas: a do <strong>aporte mínimo</strong>, que passa por
+                cima do perfil e da idade, e a do <strong>teto de risco por idade</strong>, que faz um
+                arrojado de 55 anos receber o mesmo produto que um moderado de 35.</p>
+                <p class="tip">⚠️ Se ele apontar algo que você não consegue confirmar no código, <strong>não
+                aceite</strong>. Peça: <em>"me mostra a linha exata do arquivo onde isso acontece"</em>.</p>
+              </div>
+            </div>
+
+            <div class="step-block">
+              <div class="step-block-head">
+                <span class="step-block-num">Passo 3</span>
+                <span class="step-block-time">5 min</span>
+                <h4 class="step-block-title">Peça o material detalhado</h4>
+              </div>
+              <div class="step-block-body">
+                <p>Agora o pedido que transforma a conversa em entregável:</p>
+                <div class="prompt-box">
+                  <div class="prompt-box-head">Prompt 3</div>
+                  <p>Cria um arquivo <code>analise-simulador.md</code> aqui no meu repositório documentando
+                  esse algoritmo, com estas seções:</p>
+                  <p>1. O que o simulador faz, em um parágrafo<br/>
+                  2. Tabela dos produtos, com rendimento, prazo e risco<br/>
+                  3. Como a pontuação é calculada, passo a passo<br/>
+                  4. As regras que têm precedência sobre a pontuação<br/>
+                  5. Casos-limite, com exemplos de idade, salário e perfil<br/>
+                  6. Perguntas que eu levaria pro time de produto sobre essas regras</p>
+                  <p>Escreve pra alguém que não sabe programar. Sem jargão.</p>
+                </div>
+                <p>Abra o arquivo e leia antes de aceitar. É <em>seu</em> documento — se alguma seção ficou
+                rasa, peça pra refazer só aquela.</p>
+              </div>
+            </div>
+
+            <div class="step-block">
+              <div class="step-block-head">
+                <span class="step-block-num">Passo 4</span>
+                <span class="step-block-time">2 min</span>
+                <h4 class="step-block-title">Commite e publique</h4>
+              </div>
+              <div class="step-block-body">
+                <div class="prompt-box">
+                  <div class="prompt-box-head">Prompt 4</div>
+                  <p>Commita o <code>analise-simulador.md</code> com a mensagem "documenta o algoritmo do
+                  simulador da ArenaCash" e faz push na main.</p>
+                </div>
+                <p>Confira no GitHub Desktop, na aba <strong>History</strong>: o commit está lá, feito por
+                você, sem você ter clicado em nada.</p>
+              </div>
+            </div>
+
+            <div class="ex-closing">
+              <span class="pa-eyebrow">O que fixar</span>
+              <p>Ontem você levou 12 minutos garimpando um arquivo pra entender duas regras. Hoje você levou
+              três pedidos — e saiu com um <strong>documento</strong>, não só com o entendimento.</p>
+              <p>Mas repare no que tornou isso possível: você só consegue julgar se a resposta está certa
+              <strong>porque já tinha feito na mão</strong>. Quem pula a etapa de ontem recebe o mesmo
+              documento e não tem como saber se pode confiar nele.</p>
+            </div>
+          </div>
+        </details>
       </div>
     </section>
 
@@ -524,7 +637,7 @@
 
       <div class="concept">
         <h3 class="concept-sub">O que vai acontecer, passo a passo</h3>
-        <p>Este desenho acompanha o Exercício 8. Conforme você marca os passos abaixo, ele se redesenha
+        <p>Este desenho acompanha o Exercício 9. Conforme você marca os passos abaixo, ele se redesenha
         pra mostrar onde você está.</p>
 
         <figure class="branch-figure" id="diagrama-merge">
@@ -544,7 +657,7 @@
         <h3>Exercício</h3>
         <details class="exercise" id="ex-merge">
           <summary>
-            <span class="ex-num">08</span>
+            <span class="ex-num">09</span>
             <span class="ex-title">Merge tranquilo e depois um conflito de verdade</span>
             <span class="ex-time">23 min</span>
           </summary>
@@ -686,7 +799,7 @@
         <h3>Exercício</h3>
         <details class="exercise">
           <summary>
-            <span class="ex-num">09</span>
+            <span class="ex-num">10</span>
             <span class="ex-title">Um conflito novo, resolvido pelo Claude Code</span>
             <span class="ex-time">11 min</span>
           </summary>
@@ -800,7 +913,7 @@
         <h3>Exercício</h3>
         <details class="exercise">
           <summary>
-            <span class="ex-num">10</span>
+            <span class="ex-num">11</span>
             <span class="ex-title">Abrindo e revisando um Pull Request</span>
             <span class="ex-time">12 min</span>
           </summary>
@@ -913,7 +1026,7 @@
         <h3>Exercício</h3>
         <details class="exercise">
           <summary>
-            <span class="ex-num">11</span>
+            <span class="ex-num">12</span>
             <span class="ex-title">Publicando o protótipo</span>
             <span class="ex-time">12 min</span>
           </summary>
@@ -995,7 +1108,7 @@
         <h3>Exercício</h3>
         <details class="exercise">
           <summary>
-            <span class="ex-num">12</span>
+            <span class="ex-num">13</span>
             <span class="ex-title">Uma ideia sua, publicada de ponta a ponta</span>
             <span class="ex-time">15 min</span>
           </summary>
@@ -1030,7 +1143,7 @@
               <div class="step-block-body">
                 <ol>
                   <li>Peça commit, push e abertura de um Pull Request</li>
-                  <li>Revise o diff no GitHub.com — é o mesmo diff do Exercício 10, agora num PR que você não
+                  <li>Revise o diff no GitHub.com — é o mesmo diff do Exercício 11, agora num PR que você não
                   abriu com as mãos</li>
                   <li>Peça pro Claude Code mesclar</li>
                 </ol>
@@ -1084,7 +1197,8 @@
           </div>
           <div class="concept-card">
             <h4><span class="n">03</span> Análise de dados e algoritmos</h4>
-            <p>Não foi praticado aqui — mas agora você reconhece a estrutura pra ir atrás disso sozinho.</p>
+            <p>Exercício 2 do Dia 1 e Exercício 8 de hoje: você leu o algoritmo do simulador da ArenaCash na
+            mão, e depois pediu ao Claude Code pra documentar o mesmo arquivo.</p>
           </div>
           <div class="concept-card">
             <h4><span class="n">04</span> Controle de versão</h4>
