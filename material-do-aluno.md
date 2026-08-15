@@ -93,7 +93,7 @@ blocos vão responder.
 
 ### Bloco 1.2 — Por que usar GitHub sendo não-técnico
 
-**~15 min**
+**~27 min**
 
 Ninguém aqui vai virar engenheiro. Então a pergunta não é "como eu uso o GitHub do jeito que um dev
 usaria" — é **"o que isso destrava pra mim, hoje, no meu trabalho"**.
@@ -130,6 +130,63 @@ Nada se perde. Toda mudança tem autor, data e motivo registrados.
 
 Errou, testou algo que não funcionou, quer voltar pro que tinha ontem? É questão de segundos — não de
 reconstruir do zero.
+
+#### Exercício 2 — Descubra por que o algoritmo decidiu isso (12 min)
+
+O motivo **3** é o mais abstrato dos quatro. Este exercício existe pra ele virar concreto: você vai usar
+um sistema da ArenaCash, estranhar o resultado, e ir atrás da regra que causou aquilo — **sem saber
+programar**.
+
+**Entregável:** nenhum arquivo. Você sai daqui conseguindo explicar, em português, por que o simulador
+indicou o que indicou.
+
+**Passo 1 — Use o simulador e estranhe o resultado (4 min)**
+
+A ArenaCash tem um simulador que pergunta idade, salário e perfil de investidor, e indica um produto:
+<https://cauecm.github.io/ArenaCash/simulador.html>
+
+Teste estes três casos e anote o produto de cada um:
+
+| Caso | Idade | Salário | Perfil |
+|---|---|---|---|
+| A | 28 | R$ 8.000 | Arrojado |
+| B | 25 | R$ 600 | Arrojado |
+| C | 55 | R$ 9.000 | Arrojado |
+
+Olhe com atenção o **caso B**. A tela diz "pontuação de risco calculada: **6 de 6**" — a pontuação
+máxima — e mesmo assim indica o produto mais conservador de todos. Guarde esse estranhamento.
+
+**Passo 2 — Vá até o código que tomou essa decisão (5 min)**
+
+O pulo do gato: **o código está aberto**, no mesmo repositório que você explorou no bloco anterior.
+
+1. Abra o repositório da ArenaCash no GitHub
+2. Na aba **Code**, procure o arquivo `simulador.js`
+3. Clique nele — o GitHub mostra o conteúdo direto no navegador, sem baixar nada
+
+Atalho, se precisar: <https://github.com/CaueCM/ArenaCash/blob/main/simulador.js>
+
+**Não tente entender tudo.** O arquivo tem cinco partes numeradas, com títulos em português. Vá direto na
+parte **3, "A decisão"**, e leia só os comentários — os blocos que começam com `//`.
+
+**Passo 3 — Responda as três perguntas (3 min)**
+
+1. Por que o **caso B** recebeu o produto mais conservador, mesmo com pontuação máxima? *(dica: procure a
+   regra que o próprio código diz que "vem primeiro de propósito")*
+2. No **caso C**, uma pessoa de 55 anos e perfil arrojado recebe o mesmo produto que alguém de 35 anos e
+   perfil moderado. O que no código faz isso acontecer?
+3. Você **concorda** com essas duas regras? Se o produto fosse seu, mudaria alguma?
+
+A pergunta 3 é a mais importante. Ler o código não é o objetivo — o objetivo é conseguir **opinar sobre
+uma decisão de produto** que antes estava trancada num arquivo que só o time técnico abria.
+
+> **O que fixar:** você acabou de fazer, na unha, o motivo **3** — entendeu a lógica por trás de um
+> produto sem escrever uma linha de código, só lendo o que estava aberto no GitHub.
+>
+> Foi trabalhoso, e é pra ser mesmo. **No Dia 2**, com o Claude Code conectado à sua conta, você vai poder
+> pedir *"explica em português o que esse arquivo faz e quais regras podem gerar resultado estranho"* — e
+> receber em segundos o que você garimpou em 12 minutos. A diferença é que aí você **sabe conferir se a
+> resposta está certa**.
 
 ---
 
@@ -262,7 +319,7 @@ A pasta abrindo no Finder/Explorador com os arquivos dentro, o `index.html` abri
 internet**, e a mesma coisa no github.com. Esse "existe nos dois lugares" é o coração de tudo que vem
 depois.
 
-#### Exercício 2 — Clone o exemplo e compare local vs. remoto (20 min)
+#### Exercício 3 — Clone o exemplo e compare local vs. remoto (20 min)
 
 **Entregável:** GitHub Desktop logado, o repositório de exemplo clonado na sua máquina, e a apresentação
 aberta no seu navegador — rodando do seu computador, não da internet.
@@ -318,7 +375,7 @@ inteiras — editar, selecionar, commitar, publicar. No fim, existe uma URL no G
 **É o exercício mais importante do dia.** Se alguma coisa travar, peça ajuda: ninguém deve sair do Dia 1
 sem ter terminado este.
 
-#### Exercício 3 — Do repositório vazio ao primeiro slide publicado (35 min)
+#### Exercício 4 — Do repositório vazio ao primeiro slide publicado (35 min)
 
 **O cenário:** você foi chamado pra prototipar uma nova campanha da ArenaCash — *"Indique um amigo e
 ganhe R$ 50"*. Sua missão hoje é criar o repositório do protótipo e ter o slide de capa funcionando
@@ -459,7 +516,7 @@ E aqui vem a parte que costuma surpreender: **quando você troca de branch, os a
 de conteúdo na hora** — como se alguém trocasse os papéis da sua mesa enquanto você não olhava. Você vai
 ver isso acontecer daqui a pouco.
 
-#### Exercício 4 — Criando uma branch e vendo a pasta local mudar (15 min)
+#### Exercício 5 — Criando uma branch e vendo a pasta local mudar (15 min)
 
 **O cenário:** o time de marketing quer testar uma paleta de cores diferente pro slide de capa, sem
 arriscar a versão que já está no ar.
@@ -561,7 +618,7 @@ roda `claude`, pede *"conecta essa sessão à minha conta do GitHub"*, o Claude 
 
 É como logar no Notion ou no Spotify num computador novo: você autoriza uma vez, e ele lembra.
 
-#### Exercício 5 — Conectando seu Claude Code (6 min)
+#### Exercício 6 — Conectando seu Claude Code (6 min)
 
 **Entregável:** Claude Code autenticado na sua conta GitHub, confirmado por uma pergunta simples.
 
@@ -586,7 +643,7 @@ roda `claude`, pede *"conecta essa sessão à minha conta do GitHub"*, o Claude 
 Agora que o Claude Code está conectado, você vai usar ele pra uma tarefa que **ainda não existe** no
 protótipo — não pra repetir a variação de cor que você já fez na mão.
 
-#### Exercício 6 — Um slide novo, do início ao fim, pelo Claude Code (9 min)
+#### Exercício 7 — Um slide novo, do início ao fim, pelo Claude Code (9 min)
 
 **Entregável:** um slide de depoimento — que não existia antes — criado, commitado e mesclado
 inteiramente pelo Claude Code.
@@ -632,7 +689,7 @@ adivinhar qual você quer — então ele para e pergunta.
 > Conflito não é erro, não é bug, não é sinal de que você fez algo errado. É o Git sendo honesto: "duas
 > pessoas mudaram a mesma coisa, escolhe você".
 
-#### Exercício 7 — Merge tranquilo e depois um conflito de verdade (23 min)
+#### Exercício 8 — Merge tranquilo e depois um conflito de verdade (23 min)
 
 **O cenário:** enquanto o marketing testava as cores, o time de copy também testava um texto novo pro
 mesmo botão. Você vai mesclar as duas coisas e ver o que acontece.
@@ -715,7 +772,7 @@ Se quiser ajuda pra decidir, cole o trecho no claude.ai:
 Você já resolveu um conflito na mão, no slide de capa. Agora vai provocar outro — num lugar diferente do
 protótipo, o slide de depoimento que o Claude Code criou — e dessa vez é ele quem resolve.
 
-#### Exercício 8 — Um conflito novo, resolvido pelo Claude Code (11 min)
+#### Exercício 9 — Um conflito novo, resolvido pelo Claude Code (11 min)
 
 **Entregável:** um segundo conflito de merge, num trecho diferente do primeiro, identificado e resolvido
 pelo Claude Code.
@@ -762,7 +819,7 @@ GitHub.com (não no GitHub Desktop) e permite três coisas:
 
 É como mandar um Loom de aprovação, só que pra código — ou, no nosso caso, pra HTML.
 
-#### Exercício 9 — Abrindo e revisando um Pull Request (12 min)
+#### Exercício 10 — Abrindo e revisando um Pull Request (12 min)
 
 **O cenário:** você quer testar mais uma variação, mas dessa vez quer que alguém revise antes de aprovar
 — igual aconteceria numa empresa de verdade.
@@ -836,7 +893,7 @@ URL pública atualizada
 A parte boa: você configura **uma vez**. A partir daí, toda vez que algo for mesclado em `main`, o site
 publicado se atualiza sozinho.
 
-#### Exercício 10 — Publicando o protótipo (12 min)
+#### Exercício 11 — Publicando o protótipo (12 min)
 
 **Entregável:** URL pública ativa, no formato `https://<seu-usuario>.github.io/meu-prototipo-arenacash/`,
 mostrando a apresentação com os slides de capa, depoimento e benefícios.
@@ -876,7 +933,7 @@ Se precisar de inspiração, escolha uma destas (ou traga a sua):
 - um botão de compartilhar no WhatsApp
 - uma animação ou transição entre os slides
 
-#### Exercício 11 — Uma ideia sua, publicada de ponta a ponta (15 min)
+#### Exercício 12 — Uma ideia sua, publicada de ponta a ponta (15 min)
 
 **Entregável:** uma funcionalidade nova, escolhida por você, criada, commitada, revisada via PR e
 publicada — tudo pedindo ao Claude Code, **sem abrir o GitHub Desktop**.

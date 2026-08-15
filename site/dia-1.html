@@ -32,7 +32,7 @@
 <!-- HERO DO DIA -->
 <section class="day-hero">
   <div class="container">
-    <span class="pa-eyebrow pa-eyebrow--red">D I A &nbsp; 1 &nbsp; · &nbsp; ~ 2 h 2 0</span>
+    <span class="pa-eyebrow pa-eyebrow--red">D I A &nbsp; 1 &nbsp; · &nbsp; ~ 2 h 3 5</span>
     <h1>Do zero ao <span class="accent">primeiro commit.</span></h1>
     <p class="day-hero-sub">
       Hoje você sai com um repositório seu, publicado, com o primeiro slide de um protótipo dentro dele.
@@ -45,8 +45,8 @@
     </div>
     <div class="day-hero-meta">
       <div><span class="num">6</span><span class="label">blocos</span></div>
-      <div><span class="num">3</span><span class="label">exercícios</span></div>
-      <div><span class="num">~2h20</span><span class="label">duração</span></div>
+      <div><span class="num">4</span><span class="label">exercícios</span></div>
+      <div><span class="num">~2h35</span><span class="label">duração</span></div>
       <div><span class="num">1</span><span class="label">repositório publicado</span></div>
     </div>
   </div>
@@ -362,7 +362,7 @@
          ============================================================ -->
     <section class="block" id="bloco-1-2">
       <div class="block-head">
-        <span class="block-pill">Bloco 1.2 · ~15 min</span>
+        <span class="block-pill">Bloco 1.2 · ~27 min</span>
         <h2>Por que usar GitHub sendo não-técnico</h2>
         <p class="block-quote">"Ninguém aqui vai virar engenheiro. A pergunta não é 'como eu uso o GitHub do jeito
         que um dev usaria' — é 'o que isso destrava pra mim, hoje, no meu trabalho'."</p>
@@ -399,7 +399,127 @@
             de reconstruir do zero.</p>
           </div>
         </div>
+      </div>
 
+      <div class="exercises">
+        <h3>Exercício</h3>
+
+        <details class="exercise">
+          <summary>
+            <span class="ex-num">02</span>
+            <span class="ex-title">Descubra por que o algoritmo decidiu isso</span>
+            <span class="ex-time">12 min</span>
+          </summary>
+          <div class="ex-body">
+            <p class="ex-intro">O motivo <strong>03</strong> ali em cima é o mais abstrato dos quatro. Este
+            exercício existe pra ele virar concreto: você vai usar um sistema da ArenaCash, estranhar o
+            resultado, e ir atrás da regra que causou aquilo — <strong>sem saber programar</strong>.</p>
+
+            <p class="ex-entrega"><strong>Entregável:</strong> nenhum arquivo. Você sai daqui conseguindo
+            explicar, em português, por que o simulador indicou o que indicou.</p>
+
+            <div class="step-block">
+              <div class="step-block-head">
+                <span class="step-block-num">Passo 1</span>
+                <span class="step-block-time">4 min</span>
+                <h4 class="step-block-title">Use o simulador e estranhe o resultado</h4>
+              </div>
+              <div class="step-block-body">
+                <p>A ArenaCash tem um simulador que pergunta três coisas — idade, salário e perfil de
+                investidor — e indica um produto:</p>
+
+                <div class="link-cards">
+                  <a class="link-card" href="https://cauecm.github.io/ArenaCash/simulador.html" rel="noopener" target="_blank">
+                    <span class="link-card-label">Abrir o simulador</span>
+                    <span class="link-card-url">cauecm.github.io/ArenaCash/simulador.html</span>
+                    <span class="link-card-desc">Funciona de verdade — a conta acontece no seu navegador</span>
+                  </a>
+                </div>
+
+                <p>Teste estes três casos, nesta ordem, e anote o produto que aparece em cada um:</p>
+
+                <div class="table-scroll">
+                  <table class="dict-table">
+                    <thead>
+                      <tr><th>Caso</th><th>Idade</th><th>Salário</th><th>Perfil</th></tr>
+                    </thead>
+                    <tbody>
+                      <tr><td>A</td><td>28</td><td>R$ 8.000</td><td>Arrojado</td></tr>
+                      <tr><td>B</td><td>25</td><td>R$ 600</td><td>Arrojado</td></tr>
+                      <tr><td>C</td><td>55</td><td>R$ 9.000</td><td>Arrojado</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <p class="tip">💡 Olhe com atenção o <strong>caso B</strong>. A tela diz "pontuação de risco
+                calculada: <strong>6 de 6</strong>" — a pontuação máxima — e mesmo assim indica o produto
+                mais conservador de todos. Guarde esse estranhamento.</p>
+              </div>
+            </div>
+
+            <div class="step-block">
+              <div class="step-block-head">
+                <span class="step-block-num">Passo 2</span>
+                <span class="step-block-time">5 min</span>
+                <h4 class="step-block-title">Vá até o código que tomou essa decisão</h4>
+              </div>
+              <div class="step-block-body">
+                <p>Aqui está o pulo do gato: <strong>o código está aberto</strong>. Ele mora no mesmo
+                repositório que você explorou no bloco anterior.</p>
+                <ol>
+                  <li>Abra o repositório da ArenaCash no GitHub</li>
+                  <li>Na aba <strong>Code</strong>, procure o arquivo <code>simulador.js</code> na lista</li>
+                  <li>Clique nele — o GitHub mostra o conteúdo direto no navegador, sem baixar nada</li>
+                </ol>
+
+                <div class="link-cards">
+                  <a class="link-card" href="https://github.com/CaueCM/ArenaCash/blob/main/simulador.js" rel="noopener" target="_blank">
+                    <span class="link-card-label">Atalho, se precisar</span>
+                    <span class="link-card-url">github.com/CaueCM/ArenaCash/blob/main/simulador.js</span>
+                    <span class="link-card-desc">O arquivo já aberto — mas tente achar navegando primeiro</span>
+                  </a>
+                </div>
+
+                <p class="tip">💡 <strong>Não tente entender tudo.</strong> O arquivo está dividido em cinco
+                partes numeradas, com títulos em português. Vá direto na parte <strong>3, "A decisão"</strong>,
+                e leia só os comentários — os blocos de texto que começam com <code>//</code>.</p>
+              </div>
+            </div>
+
+            <div class="step-block">
+              <div class="step-block-head">
+                <span class="step-block-num">Passo 3</span>
+                <span class="step-block-time">3 min</span>
+                <h4 class="step-block-title">Responda as três perguntas</h4>
+              </div>
+              <div class="step-block-body">
+                <p>Com o arquivo aberto, tente responder — em português, sem termo técnico:</p>
+                <ol>
+                  <li>Por que o <strong>caso B</strong> recebeu o produto mais conservador, mesmo com
+                  pontuação máxima? <em>(dica: procure a regra que o próprio código diz que "vem primeiro
+                  de propósito")</em></li>
+                  <li>No <strong>caso C</strong>, uma pessoa de 55 anos e perfil arrojado recebe o mesmo
+                  produto que alguém de 35 anos e perfil moderado. O que no código faz isso acontecer?</li>
+                  <li>Você <strong>concorda</strong> com essas duas regras? Se o produto fosse seu, mudaria
+                  alguma?</li>
+                </ol>
+                <p class="tip">💡 A pergunta 3 é a mais importante. Ler o código não é o objetivo — o
+                objetivo é <strong>conseguir opinar sobre uma decisão de produto</strong> que antes estava
+                trancada num arquivo que só o time técnico abria.</p>
+              </div>
+            </div>
+
+            <div class="ex-closing">
+              <span class="pa-eyebrow">O que fixar</span>
+              <p>Você acabou de fazer, na unha, o motivo <strong>03</strong>: entendeu a lógica por trás de
+              um produto sem escrever uma linha de código, só lendo o que estava aberto no GitHub.</p>
+              <p>Foi trabalhoso, e é pra ser mesmo. <strong>No Dia 2</strong>, com o Claude Code conectado à
+              sua conta, você vai poder pedir <em>"explica em português o que esse arquivo faz e quais regras
+              podem gerar resultado estranho"</em> — e receber em segundos o que você acabou de garimpar em
+              12 minutos. A diferença é que aí você <strong>sabe conferir se a resposta está certa</strong>.</p>
+            </div>
+          </div>
+        </details>
       </div>
     </section>
 
@@ -686,7 +806,7 @@
 
         <details class="exercise">
           <summary>
-            <span class="ex-num">02</span>
+            <span class="ex-num">03</span>
             <span class="ex-title">Clone o exemplo e compare local vs. remoto</span>
             <span class="ex-time">20 min</span>
           </summary>
@@ -806,7 +926,7 @@
 
         <details class="exercise">
           <summary>
-            <span class="ex-num">03</span>
+            <span class="ex-num">04</span>
             <span class="ex-title">Do repositório vazio ao primeiro slide publicado</span>
             <span class="ex-time">35 min</span>
           </summary>
