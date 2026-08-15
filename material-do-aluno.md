@@ -131,9 +131,6 @@ Nada se perde. Toda mudança tem autor, data e motivo registrados.
 Errou, testou algo que não funcionou, quer voltar pro que tinha ontem? É questão de segundos — não de
 reconstruir do zero.
 
-> **Onde isso aparece no curso:** é por essas quatro razões que a gente passa dois dias aqui. No fim do
-> Dia 2 você vai ter usado o GitHub pra **pelo menos três das quatro** na prática.
-
 ---
 
 ### Bloco 1.3 — Como funciona o Git
