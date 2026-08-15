@@ -1,0 +1,1141 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Dia 2 — Branches, Claude Code, revisão e deploy | GitHub para Prototipação</title>
+<meta name="description" content="Dia 2 do curso GitHub para Prototipação: branches, merge, conflito, Pull Request, deploy e Claude Code."/>
+<link href="colors_and_type.css" rel="stylesheet"/>
+<link href="styles.css" rel="stylesheet"/>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="index.html">
+      <img src="assets/logo-red.png" alt="Product Arena"/>
+      <span class="brand-sep">/</span>
+      <span class="brand-word">dia 2</span>
+    </a>
+    <nav class="top-nav">
+      <a href="index.html">Início</a>
+      <a href="dia-1.html">Dia 1</a>
+      <a href="dia-1.html#dicionario">Dicionário</a>
+    </nav>
+    <a class="btn btn--primary btn--sm" href="#bloco-2-1">Começar</a>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- HERO DO DIA -->
+<section class="day-hero">
+  <div class="container">
+    <span class="pa-eyebrow pa-eyebrow--red">D I A &nbsp; 2 &nbsp; · &nbsp; ~ 2 h 3 0</span>
+    <h1>Branches, conflito e <span class="accent">o protótipo no ar.</span></h1>
+    <p class="day-hero-sub">
+      Ontem você usou uma linha do tempo só. Hoje você abre linhas paralelas, vê elas se cruzarem —
+      inclusive dando conflito — revisa mudanças antes de aprovar e termina com uma URL pública no ar.
+      No meio do dia o Claude Code entra conectado à sua conta, e passa a fazer tarefas novas junto com você.
+    </p>
+    <div class="day-nav-links">
+      <a class="btn btn--primary" href="#bloco-2-1">Ir pro Bloco 2.1 →</a>
+      <a class="btn btn--ghost" href="dia-1.html#dicionario">Abrir o dicionário</a>
+    </div>
+    <div class="day-hero-meta">
+      <div><span class="num">10</span><span class="label">blocos + bônus</span></div>
+      <div><span class="num">8</span><span class="label">exercícios</span></div>
+      <div><span class="num">~2h30</span><span class="label">duração</span></div>
+      <div><span class="num">1</span><span class="label">URL pública</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="day-layout">
+
+  <!-- SIDEBAR -->
+  <aside class="side-nav">
+    <p class="side-label">Blocos do dia</p>
+    <ul class="side-list">
+      <li><a href="#bloco-2-1"><span class="num">2.1</span> Recap do Dia 1</a></li>
+      <li><a href="#bloco-2-2"><span class="num">2.2</span> Criar branch e switch</a></li>
+      <li><a href="#bonus"><span class="num">🎁</span> Bônus: terminal</a></li>
+      <li><a href="#bloco-2-3"><span class="num">2.3</span> Conectar o Claude Code</a></li>
+      <li><a href="#bloco-2-4"><span class="num">2.4</span> Um slide novo</a></li>
+      <li><a href="#bloco-2-5"><span class="num">2.5</span> Merge e conflito</a></li>
+      <li><a href="#bloco-2-6"><span class="num">2.6</span> Outro conflito</a></li>
+      <li><a href="#bloco-2-7"><span class="num">2.7</span> Pull Request</a></li>
+      <li><a href="#bloco-2-8"><span class="num">2.8</span> Deploy</a></li>
+      <li><a href="#bloco-2-9"><span class="num">2.9</span> Desafio final</a></li>
+      <li><a href="#bloco-2-10"><span class="num">2.10</span> Fechando</a></li>
+    </ul>
+
+    <a class="side-pinned" href="dia-1.html#dicionario">
+      <span class="side-pinned-icon" aria-hidden="true">★</span>
+      <span>
+        <strong>Dicionário de termos</strong>
+        <span>travou numa palavra? volta aqui</span>
+      </span>
+    </a>
+  </aside>
+
+  <!-- BLOCOS -->
+  <div class="blocks">
+
+    <!-- ============================================================ 2.1 -->
+    <section class="block" id="bloco-2-1">
+      <div class="block-head">
+        <span class="block-pill">Bloco 2.1 · ~5 min</span>
+        <span class="block-mode block-mode--mao">Na mão · GitHub Desktop</span>
+        <h2>Recap do Dia 1</h2>
+      </div>
+
+      <div class="concept">
+        <p>Abra o GitHub Desktop no repositório <code>meu-prototipo-arenacash</code> e vá na aba
+        <strong>History</strong>.</p>
+        <p>Olhe o que está lá: quantos commits você tem? O que cada mensagem diz? Esse é o histórico que
+        você construiu ontem — e é nele que tudo de hoje vai se apoiar.</p>
+        <p>Antes de seguir, releia as duas listas do Dia 1: as <strong>4 fases</strong> e os
+        <strong>5 conceitos</strong>. Hoje as duas voltam o tempo todo.</p>
+        <div class="two-col">
+          <div class="pill-card">
+            <h4>As 4 fases</h4>
+            <p>editar → selecionar → commitar → push</p>
+          </div>
+          <div class="pill-card">
+            <h4>Os 5 conceitos</h4>
+            <p>repo · commit · local/remoto · branch · Pull Request</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================ 2.2 -->
+    <section class="block" id="bloco-2-2">
+      <div class="block-head">
+        <span class="block-pill">Bloco 2.2 · ~22 min</span>
+        <span class="block-mode block-mode--mao">Na mão · GitHub Desktop</span>
+        <h2>Branches: criar e fazer switch</h2>
+      </div>
+
+      <div class="concept">
+        <h3 class="concept-sub">Por que não trabalhar direto na main</h3>
+        <p>Tudo que você fez ontem foi direto na <code>main</code> — a linha principal. Isso é arriscado:
+        se você testa uma ideia ruim ali, ela já está "oficial".</p>
+        <p>Branch resolve isso. É como duplicar um documento do Google Docs pra rascunhar uma versão nova
+        sem tocar no original — só que, no Git, você pode ter dezenas de rascunhos ao mesmo tempo, cada um
+        isolado, e decidir depois quais voltam pro documento principal.</p>
+      </div>
+
+      <div class="concept">
+        <h3 class="concept-sub">O que é fazer <em>switch</em></h3>
+        <p>É trocar qual rascunho está aberto na sua pasta local.</p>
+        <p class="tip">💡 E aqui vem a parte que costuma surpreender: <strong>quando você troca de branch,
+        os arquivos na sua pasta mudam de conteúdo na hora</strong> — como se alguém trocasse os papéis da
+        sua mesa enquanto você não olhava. Você vai ver isso acontecer daqui a pouco.</p>
+      </div>
+
+      <div class="exercises">
+        <h3>Exercício</h3>
+        <details class="exercise">
+          <summary>
+            <span class="ex-num">04</span>
+            <span class="ex-title">Criando uma branch e vendo a pasta local mudar</span>
+            <span class="ex-time">15 min</span>
+          </summary>
+          <div class="ex-body">
+            <p class="ex-intro"><strong>O cenário:</strong> o time de marketing quer testar uma paleta de
+            cores diferente pro slide de capa, sem arriscar a versão que já está no ar.</p>
+
+            <p class="ex-entrega"><strong>Entregável:</strong> uma branch <code>variacao-cores</code> com
+            uma versão diferente do slide de capa, commitada — e a experiência de ver a pasta local mudar
+            de conteúdo ao trocar de branch.</p>
+
+            <div class="step-block">
+              <div class="step-block-head">
+                <span class="step-block-num">Passo 1</span>
+                <span class="step-block-time">3 min</span>
+                <h4 class="step-block-title">Crie a branch</h4>
+              </div>
+              <div class="step-block-body">
+                <ol>
+                  <li>No GitHub Desktop, com o <code>meu-prototipo-arenacash</code> aberto, clique no
+                  seletor <strong>Current Branch</strong> (no topo, mostra "main")</li>
+                  <li>Clique em <strong>New Branch</strong></li>
+                  <li>Nome: <code>variacao-cores</code></li>
+                  <li>Confirme — o GitHub Desktop já troca pra branch nova sozinho</li>
+                </ol>
+              </div>
+            </div>
+
+            <div class="step-block">
+              <div class="step-block-head">
+                <span class="step-block-num">Passo 2</span>
+                <span class="step-block-time">6 min</span>
+                <h4 class="step-block-title">Edite com o Claude, na branch nova</h4>
+              </div>
+              <div class="step-block-body">
+                <p>Volte ao <a href="https://claude.ai" rel="noopener" target="_blank">claude.ai</a> e mande:</p>
+                <div class="prompt-box">
+                  <div class="prompt-box-head">Prompt · copie e cole</div>
+                  <p>Aqui está meu código HTML atual [cole o conteúdo do seu index.html]. Muda a paleta de
+                  cores do slide de capa pra tons de verde e roxo, mantendo a estrutura e os textos iguais.
+                  Me devolve o código completo atualizado.</p>
+                </div>
+                <p>Copie o código, abra o <code>index.html</code> na pasta local — <strong>a mesma pasta de
+                sempre, ela não muda de lugar</strong> — e substitua o conteúdo. Salve e dê duplo clique pra
+                ver a nova versão no navegador.</p>
+              </div>
+            </div>
+
+            <div class="step-block">
+              <div class="step-block-head">
+                <span class="step-block-num">Passo 3</span>
+                <span class="step-block-time">3 min</span>
+                <h4 class="step-block-title">Commite na branch</h4>
+              </div>
+              <div class="step-block-body">
+                <ol>
+                  <li>No GitHub Desktop, veja a mudança na aba <strong>Changes</strong>. Confirme no topo que
+                  a branch atual é <code>variacao-cores</code></li>
+                  <li>Mensagem: <code>testando paleta verde e roxo</code></li>
+                  <li><strong>Commit to variacao-cores</strong></li>
+                  <li><strong>Push origin</strong> pra enviar a branch pro GitHub</li>
+                </ol>
+                <p class="tip">⚠️ Commitar na branch errada é o erro mais comum deste exercício. Antes de
+                clicar, confira o nome no topo da janela.</p>
+              </div>
+            </div>
+
+            <div class="step-block">
+              <div class="step-block-head">
+                <span class="step-block-num">Passo 4</span>
+                <span class="step-block-time">3 min</span>
+                <h4 class="step-block-title">O momento "aha"</h4>
+              </div>
+              <div class="step-block-body">
+                <ol>
+                  <li>No seletor de branch, volte pra <strong>main</strong></li>
+                  <li>Abra a mesma pasta no Finder/Explorador e dê duplo clique no <code>index.html</code> de novo</li>
+                  <li>Olhe: <strong>a cor voltou pro azul e branco</strong></li>
+                </ol>
+                <p>Você não editou nada. O arquivo na sua pasta mudou de conteúdo sozinho, só porque você
+                trocou de branch.</p>
+              </div>
+            </div>
+
+            <div class="ex-closing">
+              <span class="pa-eyebrow">O que fixar</span>
+              <p>A branch não é uma pasta separada — é a <strong>mesma pasta mudando de estado</strong>
+              conforme a linha do tempo ativa. É isso que permite ter dezenas de variações sem duplicar
+              pasta nenhuma.</p>
+            </div>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- ============================================================ BÔNUS -->
+    <section class="block block--bonus" id="bonus">
+      <div class="block-head">
+        <span class="block-pill gray">🎁 Bônus · ~12 min · opcional</span>
+        <h2>Navegando o Git pelo terminal</h2>
+        <p class="block-obj">Nada depois disso depende deste bônus. O objetivo é <strong>reconhecimento</strong>,
+        não decoreba — se o grupo estiver adiantado, vale; se não, fica como exploração pra fazer em casa.</p>
+      </div>
+
+      <div class="concept">
+        <p>Tudo que você fez clicando no GitHub Desktop tem um comando equivalente no terminal. Você não
+        precisa usar — mas reconhecer ajuda muito, porque é a língua que qualquer tutorial, post de blog e
+        o próprio Claude Code falam.</p>
+
+        <div class="table-scroll">
+          <table class="dict-table">
+            <thead>
+              <tr><th>No GitHub Desktop</th><th>No terminal</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Aba History</td><td><code>git log --oneline</code></td></tr>
+              <tr><td>Aba Changes</td><td><code>git status</code> e <code>git diff</code></td></tr>
+              <tr><td>Seletor de Current Branch</td><td><code>git branch</code></td></tr>
+              <tr><td>Botão Commit to main</td><td><code>git add .</code> + <code>git commit -m "mensagem"</code></td></tr>
+              <tr><td>Botão Push origin</td><td><code>git push</code></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="exercises">
+        <h3>Exercício</h3>
+        <details class="exercise exercise-bonus">
+          <summary>
+            <span class="ex-num">🎁</span>
+            <span class="ex-title">Reconhecendo os comandos</span>
+            <span class="ex-time">8 min</span>
+          </summary>
+          <div class="ex-body">
+            <p class="ex-intro">A ideia é ver, em texto, o mesmo estado que o GitHub Desktop já mostrava em
+            botões. Nada aqui muda o seu repositório.</p>
+
+            <p class="ex-entrega"><strong>Entregável:</strong> nenhum arquivo novo.</p>
+
+            <div class="step-block">
+              <div class="step-block-head">
+                <span class="step-block-num">Passo único</span>
+                <span class="step-block-time">8 min</span>
+                <h4 class="step-block-title">Rode os quatro comandos e compare</h4>
+              </div>
+              <div class="step-block-body">
+                <ol>
+                  <li>Abra o Terminal (Mac) ou o PowerShell (Windows)</li>
+                  <li>Navegue até a pasta do repositório com <code>cd</code> + o caminho
+                  (ex: <code>cd Documentos/meu-prototipo-arenacash</code>)</li>
+                  <li>Rode <code>git log --oneline</code> e compare com a aba <strong>History</strong></li>
+                  <li>Rode <code>git branch</code> e compare com o seletor de branch. A que tem <code>*</code>
+                  na frente é a ativa</li>
+                  <li>Rode <code>git status</code>. Sem mudanças pendentes, ele responde
+                  <code>nothing to commit, working tree clean</code></li>
+                </ol>
+                <p class="tip">💡 <strong>Dica de Mac:</strong> digite <code>cd </code> e arraste a pasta do
+                Finder pro terminal — o caminho aparece sozinho.</p>
+              </div>
+            </div>
+
+            <div class="ex-closing">
+              <span class="pa-eyebrow">O que fixar</span>
+              <p>O terminal não faz nada diferente do GitHub Desktop — é a mesma informação, em texto em vez
+              de botão. E é exatamente isso que o <strong>Claude Code</strong> vai rodar por trás dos panos
+              no próximo bloco.</p>
+            </div>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- ============================================================ 2.3 -->
+    <section class="block" id="bloco-2-3">
+      <div class="block-head">
+        <span class="block-pill">Bloco 2.3 · ~12 min</span>
+        <span class="block-mode block-mode--claude">A virada · entra o Claude Code</span>
+        <h2>Conectando o Claude Code ao GitHub</h2>
+      </div>
+
+      <div class="concept">
+        <p>Até agora, quem clicava nos botões era você. A partir de agora, quem roda os comandos também
+        pode ser o <strong>Claude Code</strong> — mas ele só consegue agir na sua conta depois de uma
+        autorização.</p>
+        <p>Claude Code é o Claude rodando no terminal. Ele entende pedidos em português e executa ações
+        reais nos seus arquivos e no Git, sem você digitar comando nenhum.</p>
+
+        <div class="concept-card">
+          <h4>O que observar na demo</h4>
+          <p>Seu facilitador vai fazer a conexão na tela primeiro. Dentro da pasta do repositório ele roda
+          <code>claude</code>, pede <em>"conecta essa sessão à minha conta do GitHub"</em>, o Claude Code
+          dispara um <code>gh auth login</code>, o navegador abre e ele autoriza — uma vez só.</p>
+          <p class="analogy">É como logar no Notion ou no Spotify num computador novo: você autoriza uma
+          vez, e ele lembra.</p>
+        </div>
+      </div>
+
+      <div class="exercises">
+        <h3>Exercício</h3>
+        <details class="exercise">
+          <summary>
+            <span class="ex-num">05</span>
+            <span class="ex-title">Conectando seu Claude Code</span>
+            <span class="ex-time">6 min</span>
+          </summary>
+          <div class="ex-body">
+            <p class="ex-intro">É uma configuração de ambiente, não uma mudança no repositório. Nenhum
+            arquivo seu muda neste exercício.</p>
+
+            <p class="ex-entrega"><strong>Entregável:</strong> Claude Code autenticado na sua conta GitHub,
+            confirmado por uma pergunta simples.</p>
+
+            <div class="step-block">
+              <div class="step-block-head">
+                <span class="step-block-num">Passo 1</span>
+                <span class="step-block-time">3 min</span>
+                <h4 class="step-block-title">Abra e conecte</h4>
+              </div>
+              <div class="step-block-body">
+                <ol>
+                  <li>Abra o Terminal e vá até a pasta <code>meu-prototipo-arenacash</code> (<code>cd</code> + caminho)</li>
+                  <li>Rode <code>claude</code> pra abrir o Claude Code</li>
+                  <li>Peça:</li>
+                </ol>
+                <div class="prompt-box">
+                  <div class="prompt-box-head">Prompt · copie e cole</div>
+                  <p>Conecta essa sessão à minha conta do GitHub.</p>
+                </div>
+                <p>Siga o fluxo que abre no navegador: <strong>GitHub.com → HTTPS → Login with a web
+                browser</strong>, e autorize.</p>
+              </div>
+            </div>
+
+            <div class="step-block">
+              <div class="step-block-head">
+                <span class="step-block-num">Passo 2</span>
+                <span class="step-block-time">3 min</span>
+                <h4 class="step-block-title">Confirme que funcionou</h4>
+              </div>
+              <div class="step-block-body">
+                <p>De volta ao Claude Code, pergunte:</p>
+                <div class="prompt-box">
+                  <div class="prompt-box-head">Prompt · copie e cole</div>
+                  <p>Qual é o status do meu repositório agora? Tem alguma mudança pendente?</p>
+                </div>
+                <p>Ele deve responder descrevendo o estado — branch atual, mudanças pendentes, últimos
+                commits. <strong>Se respondeu isso, está conectado.</strong></p>
+              </div>
+            </div>
+
+            <div class="ex-closing">
+              <span class="pa-eyebrow">O que fixar</span>
+              <p>Essa autorização é feita <strong>uma vez só</strong>. Nas próximas conversas com o Claude
+              Code neste computador, ele já lembra que está conectado à sua conta.</p>
+            </div>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- ============================================================ 2.4 -->
+    <section class="block" id="bloco-2-4">
+      <div class="block-head">
+        <span class="block-pill">Bloco 2.4 · ~10 min</span>
+        <span class="block-mode block-mode--claude">Via Claude Code</span>
+        <h2>Claude Code na prática: um slide novo</h2>
+        <p class="block-obj">Agora que ele está conectado, você vai usar o Claude Code pra uma tarefa que
+        <strong>ainda não existe</strong> no protótipo — não pra repetir a variação de cor que você já fez
+        na mão.</p>
+      </div>
+
+      <div class="exercises">
+        <h3>Exercício</h3>
+        <details class="exercise">
+          <summary>
+            <span class="ex-num">06</span>
+            <span class="ex-title">Um slide novo, do início ao fim, pelo Claude Code</span>
+            <span class="ex-time">9 min</span>
+          </summary>
+          <div class="ex-body">
+            <p class="ex-intro">Cole as mensagens <strong>uma de cada vez</strong>, esperando ele terminar
+            antes da próxima.</p>
+
+            <p class="ex-entrega"><strong>Entregável:</strong> um slide de depoimento — que não existia
+            antes — criado, commitado e mesclado inteiramente pelo Claude Code.</p>
+
+            <div class="step-block">
+              <div class="step-block-head">
+                <span class="step-block-num">Passo 1</span>
+                <span class="step-block-time">4 min</span>
+                <h4 class="step-block-title">Peça a branch e o slide</h4>
+              </div>
+              <div class="step-block-body">
+                <div class="prompt-box">
+                  <div class="prompt-box-head">Prompt 1</div>
+                  <p>Cria uma branch chamada <code>slide-depoimento</code> a partir da main.</p>
+                </div>
+                <div class="prompt-box">
+                  <div class="prompt-box-head">Prompt 2</div>
+                  <p>Nessa branch, adiciona um novo slide ao index.html com um depoimento fictício de um
+                  cliente da ArenaCash sobre a campanha "Indique um amigo e ganhe R$ 50". Inclui um nome e
+                  uma citação curta, mantendo o visual consistente com o slide de capa.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="step-block">
+              <div class="step-block-head">
+                <span class="step-block-num">Passo 2</span>
+                <span class="step-block-time">2 min</span>
+                <h4 class="step-block-title">Confira antes de aceitar</h4>
+              </div>
+              <div class="step-block-body">
+                <div class="prompt-box">
+                  <div class="prompt-box-head">Prompt 3</div>
+                  <p>Me mostra como ficou.</p>
+                </div>
+                <p>Abra o <code>index.html</code> local no navegador e olhe com seus olhos. Esse passo
+                parece burocrático, mas é o hábito que separa "pedi e aceitei" de "pedi e conferi".</p>
+              </div>
+            </div>
+
+            <div class="step-block">
+              <div class="step-block-head">
+                <span class="step-block-num">Passo 3</span>
+                <span class="step-block-time">3 min</span>
+                <h4 class="step-block-title">Commite, publique e confirme no Desktop</h4>
+              </div>
+              <div class="step-block-body">
+                <div class="prompt-box">
+                  <div class="prompt-box-head">Prompt 4</div>
+                  <p>Commita com a mensagem "adiciona slide de depoimento", faz push da branch e mescla
+                  direto na main — essa não precisa de Pull Request, é só uma prova de conceito.</p>
+                </div>
+                <p>Agora abra o GitHub Desktop — sem fazer nada, só olhar. A branch e o commit que o Claude
+                Code criou estão lá, na mesma conta, no mesmo repositório.</p>
+              </div>
+            </div>
+
+            <div class="ex-closing">
+              <span class="pa-eyebrow">O que fixar</span>
+              <p>O Claude Code usou o mesmo repositório e os mesmos mecanismos que você aprendeu na mão.
+              <strong>Só mudou quem executou o clique.</strong> E o resultado é conteúdo novo, não repetição.</p>
+            </div>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- ============================================================ 2.5 -->
+    <section class="block" id="bloco-2-5">
+      <div class="block-head">
+        <span class="block-pill">Bloco 2.5 · ~30 min</span>
+        <span class="block-mode block-mode--mao">Na mão · GitHub Desktop</span>
+        <h2>Branches se cruzando: merge e conflito</h2>
+        <p class="block-obj">É o bloco mais importante do dia. Se algo tiver que sair do roteiro por falta
+        de tempo, <strong>não é este</strong> — todo mundo precisa sair com um conflito resolvido na mão.</p>
+      </div>
+
+      <div class="concept">
+        <h3 class="concept-sub">Merge é o cruzamento</h3>
+        <p>Uma branch só tem valor se, em algum momento, ela volta pra se juntar com a principal. Isso se
+        chama <strong>merge</strong> — o momento em que duas linhas do tempo se cruzam.</p>
+
+        <div class="two-col">
+          <div class="pill-card green">
+            <h4>Quando dá certo</h4>
+            <p>As mudanças estão em partes diferentes do arquivo. O Git junta tudo sozinho, sem perguntar
+            nada.</p>
+          </div>
+          <div class="pill-card red">
+            <h4>Quando dá conflito</h4>
+            <p>Duas branches mudaram <strong>a mesma linha</strong> de formas diferentes. O Git não tem como
+            adivinhar — então ele para e pergunta.</p>
+          </div>
+        </div>
+
+        <p class="tip" style="margin-top: var(--s-4);">💡 Conflito não é erro, não é bug, não é sinal de que
+        você fez algo errado. É o Git sendo honesto: <strong>"duas pessoas mudaram a mesma coisa, escolhe
+        você"</strong>.</p>
+      </div>
+
+      <div class="concept">
+        <h3 class="concept-sub">O que vai acontecer, passo a passo</h3>
+        <p>Este desenho acompanha o Exercício 7. Conforme você marca os passos abaixo, ele se redesenha
+        pra mostrar onde você está.</p>
+
+        <figure class="branch-figure" id="diagrama-merge">
+          <div class="merge-steps" role="tablist" aria-label="Estados do exercício">
+            <button class="merge-step is-active" data-estado="0" role="tab" aria-selected="true">Início</button>
+            <button class="merge-step" data-estado="1" role="tab" aria-selected="false">Passo 1</button>
+            <button class="merge-step" data-estado="2" role="tab" aria-selected="false">Passo 2</button>
+            <button class="merge-step" data-estado="3" role="tab" aria-selected="false">Passo 3</button>
+            <button class="merge-step" data-estado="4" role="tab" aria-selected="false">Passo 4</button>
+          </div>
+          <div class="merge-canvas" aria-live="polite"></div>
+          <figcaption class="merge-legenda"></figcaption>
+        </figure>
+      </div>
+
+      <div class="exercises">
+        <h3>Exercício</h3>
+        <details class="exercise" id="ex-merge">
+          <summary>
+            <span class="ex-num">07</span>
+            <span class="ex-title">Merge tranquilo e depois um conflito de verdade</span>
+            <span class="ex-time">23 min</span>
+          </summary>
+          <div class="ex-body">
+            <p class="ex-intro"><strong>O cenário:</strong> enquanto o marketing testava as cores, o time de
+            copy também testava um texto novo pro mesmo botão. Você vai mesclar as duas coisas e ver o que
+            acontece.</p>
+
+            <p class="ex-entrega"><strong>Entregável:</strong> a branch <code>variacao-cores</code> mesclada
+            em <code>main</code> sem problema, e uma segunda branch <code>variacao-copy</code> que gera um
+            conflito real, resolvido por você.</p>
+
+            <div class="step-block">
+              <div class="step-block-head">
+                <span class="step-block-num">Passo 1</span>
+                <span class="step-block-time">6 min</span>
+                <h4 class="step-block-title">Merge tranquilo: variacao-cores → main</h4>
+              </div>
+              <div class="step-block-body">
+                <ol>
+                  <li>No GitHub Desktop, troque pra branch <strong>main</strong></li>
+                  <li>Menu <strong>Branch → Merge into current branch</strong></li>
+                  <li>Selecione <code>variacao-cores</code> e confirme</li>
+                  <li>Repare: sem erro, sem aviso. O Git juntou sozinho porque não havia conflito</li>
+                  <li><strong>Push origin</strong> pra atualizar o GitHub.com</li>
+                </ol>
+                <p>Esse foi o caminho feliz. Agora você vai forçar o caminho difícil de propósito.</p>
+              </div>
+            </div>
+
+            <div class="step-block">
+              <div class="step-block-head">
+                <span class="step-block-num">Passo 2</span>
+                <span class="step-block-time">5 min</span>
+                <h4 class="step-block-title">Crie a branch que vai gerar o conflito</h4>
+              </div>
+              <div class="step-block-body">
+                <ol>
+                  <li>Com <code>main</code> já atualizada (agora com verde e roxo), crie a branch
+                  <code>variacao-copy</code></li>
+                  <li>No claude.ai, mande o prompt abaixo</li>
+                  <li>Cole no <code>index.html</code>, salve, commite na <code>variacao-copy</code> com a
+                  mensagem <code>testando copy mais urgente no botão</code> e faça push</li>
+                </ol>
+                <div class="prompt-box">
+                  <div class="prompt-box-head">Prompt · copie e cole</div>
+                  <p>Aqui está meu código HTML atual [cole o conteúdo atualizado]. Troca o texto do botão de
+                  "Saiba mais" para "Quero indicar agora" e o subtítulo pra algo mais urgente sobre o prazo
+                  da promoção. Mantém o resto igual. Me devolve o código completo.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="step-block">
+              <div class="step-block-head">
+                <span class="step-block-num">Passo 3</span>
+                <span class="step-block-time">5 min</span>
+                <h4 class="step-block-title">Volte na main e mude a MESMA linha de outro jeito</h4>
+              </div>
+              <div class="step-block-body">
+                <ol>
+                  <li>Troque de volta pra <code>main</code></li>
+                  <li>No claude.ai, peça outra variação — diferente da anterior — pro mesmo botão</li>
+                  <li>Cole, salve, commite direto na <code>main</code> com a mensagem
+                  <code>ajuste de copy focado no valor do bônus</code> e faça push</li>
+                </ol>
+                <div class="prompt-box">
+                  <div class="prompt-box-head">Prompt · copie e cole</div>
+                  <p>No mesmo código [cole o index.html da main], troca o texto do botão pra "Ganhar R$ 50
+                  agora" e ajusta o subtítulo pra reforçar o valor do bônus. Me devolve o código completo.</p>
+                </div>
+                <p class="tip">⚠️ Agora <code>main</code> e <code>variacao-copy</code> mudaram a mesma linha
+                de formas diferentes. É exatamente isso que provoca o conflito — e é de propósito.</p>
+              </div>
+            </div>
+
+            <div class="step-block">
+              <div class="step-block-head">
+                <span class="step-block-num">Passo 4</span>
+                <span class="step-block-time">9 min</span>
+                <h4 class="step-block-title">Tente o merge e resolva o conflito</h4>
+              </div>
+              <div class="step-block-body">
+                <ol>
+                  <li>Com <code>main</code> ativa, vá em <strong>Branch → Merge into current branch</strong> e
+                  selecione <code>variacao-copy</code></li>
+                  <li>O GitHub Desktop avisa: <strong>"There are conflicts on this branch"</strong></li>
+                  <li>Clique em <strong>Open in [seu editor]</strong>, ou abra o <code>index.html</code> na mão</li>
+                </ol>
+                <p>Você vai ver isto no arquivo:</p>
+                <pre class="code-block">&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+&lt;button&gt;Ganhar R$ 50 agora&lt;/button&gt;
+=======
+&lt;button&gt;Quero indicar agora&lt;/button&gt;
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; variacao-copy</pre>
+                <p>Traduzindo: entre <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</code> e <code>=======</code>
+                está a versão da <code>main</code>; entre <code>=======</code> e
+                <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt; variacao-copy</code> está a versão da outra branch.
+                Escolha uma, ou combine as duas.</p>
+                <p>Se quiser ajuda pra decidir, cole o trecho no claude.ai:</p>
+                <div class="prompt-box">
+                  <div class="prompt-box-head">Prompt · se travar</div>
+                  <p>Este é um conflito de merge do Git. Aqui está o trecho com os marcadores: [cole]. Me
+                  explica as duas versões e sugere qual ficaria melhor pro botão de uma campanha de
+                  indicação, ou uma terceira opção que combine as duas.</p>
+                </div>
+                <ol start="4">
+                  <li>Edite o arquivo apagando os marcadores (<code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code>,
+                  <code>=======</code>, <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code>) e deixando só o texto final</li>
+                  <li>Salve</li>
+                  <li>Volte ao GitHub Desktop — ele detecta que acabou e libera o botão <strong>Commit merge</strong></li>
+                  <li><strong>Commit merge</strong>, depois <strong>Push origin</strong></li>
+                </ol>
+              </div>
+            </div>
+
+            <div class="ex-closing">
+              <span class="pa-eyebrow">O que fixar</span>
+              <p>Resolver conflito não tem mistério — é abrir o arquivo, decidir qual trecho fica, apagar as
+              marcações e commitar. <strong>O Git só precisa que uma pessoa decida.</strong></p>
+            </div>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- ============================================================ 2.6 -->
+    <section class="block" id="bloco-2-6">
+      <div class="block-head">
+        <span class="block-pill">Bloco 2.6 · ~12 min</span>
+        <span class="block-mode block-mode--claude">Via Claude Code</span>
+        <h2>Claude Code na prática: outro conflito</h2>
+        <p class="block-obj">Você já resolveu um conflito na mão, no slide de capa. Agora vai provocar outro
+        — num lugar diferente do protótipo, o slide de depoimento que o Claude Code criou — e dessa vez é
+        ele quem resolve.</p>
+      </div>
+
+      <div class="exercises">
+        <h3>Exercício</h3>
+        <details class="exercise">
+          <summary>
+            <span class="ex-num">08</span>
+            <span class="ex-title">Um conflito novo, resolvido pelo Claude Code</span>
+            <span class="ex-time">11 min</span>
+          </summary>
+          <div class="ex-body">
+            <p class="ex-intro">Mesmo mecanismo do exercício anterior, outro trecho do arquivo — e outro
+            executor.</p>
+
+            <p class="ex-entrega"><strong>Entregável:</strong> um segundo conflito de merge, num trecho
+            diferente do primeiro, identificado e resolvido pelo Claude Code.</p>
+
+            <div class="step-block">
+              <div class="step-block-head">
+                <span class="step-block-num">Passo 1</span>
+                <span class="step-block-time">4 min</span>
+                <h4 class="step-block-title">Provoque as duas versões</h4>
+              </div>
+              <div class="step-block-body">
+                <div class="prompt-box">
+                  <div class="prompt-box-head">Prompt 1</div>
+                  <p>Cria uma branch chamada <code>depoimento-v2</code> a partir da main. Nela, muda a
+                  citação do slide de depoimento pra destacar a rapidez do processo de indicação. Commita e
+                  faz push.</p>
+                </div>
+                <div class="prompt-box">
+                  <div class="prompt-box-head">Prompt 2</div>
+                  <p>Agora, direto na branch main, muda essa mesma citação do depoimento pra destacar a
+                  economia de R$ 50 em vez da rapidez. Commita e faz push direto na main.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="step-block">
+              <div class="step-block-head">
+                <span class="step-block-num">Passo 2</span>
+                <span class="step-block-time">4 min</span>
+                <h4 class="step-block-title">Peça o merge e ouça o diagnóstico</h4>
+              </div>
+              <div class="step-block-body">
+                <div class="prompt-box">
+                  <div class="prompt-box-head">Prompt 3</div>
+                  <p>Tenta mesclar a branch <code>depoimento-v2</code> na main. Se der conflito, me explica o
+                  que está em conflito e sugere uma versão da citação que combine as duas ideias — rapidez e
+                  economia.</p>
+                </div>
+                <p>Ele deve identificar o conflito, mostrar as duas versões e propor uma combinação.</p>
+                <p class="tip">⚠️ <strong>Leia a sugestão antes de aceitar.</strong> Esse é o ponto do
+                exercício: a máquina propõe, você decide.</p>
+              </div>
+            </div>
+
+            <div class="step-block">
+              <div class="step-block-head">
+                <span class="step-block-num">Passo 3</span>
+                <span class="step-block-time">3 min</span>
+                <h4 class="step-block-title">Aprove e confirme no histórico</h4>
+              </div>
+              <div class="step-block-body">
+                <div class="prompt-box">
+                  <div class="prompt-box-head">Prompt 4 · se você topar a sugestão</div>
+                  <p>Aplica essa sugestão, resolve o conflito e finaliza o merge.</p>
+                </div>
+                <p>Confirme no GitHub Desktop que o merge aparece no histórico, com as duas branches
+                convergindo — sem que você tenha clicado em nada.</p>
+              </div>
+            </div>
+
+            <div class="ex-closing">
+              <span class="pa-eyebrow">O que fixar</span>
+              <p>O mecanismo do conflito é sempre o mesmo, em qualquer slide — duas versões da mesma linha
+              disputando espaço. Na mão, você escolheu qual ficava. Aqui, o Claude Code sugere uma combinação
+              nova — mas <strong>a decisão final continua sendo sua</strong>.</p>
+            </div>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- ============================================================ 2.7 -->
+    <section class="block" id="bloco-2-7">
+      <div class="block-head">
+        <span class="block-pill">Bloco 2.7 · ~18 min</span>
+        <span class="block-mode block-mode--mao">Na mão · GitHub.com</span>
+        <h2>Pull Request: comentar antes de ir pro ar</h2>
+      </div>
+
+      <div class="concept">
+        <p>No exercício anterior você mesclou direto, sem revisão. Isso funciona quando você trabalha
+        sozinho. Quando tem mais gente envolvida — ou quando você quer uma segunda opinião antes de algo ir
+        pro ar — existe o <strong>Pull Request</strong>.</p>
+        <p>Um PR é um pedido formal de "quero juntar minha branch na main, alguém pode olhar antes?". Ele
+        vive no <strong>GitHub.com</strong>, não no GitHub Desktop, e permite três coisas:</p>
+        <div class="grid-3" style="margin-top: var(--s-4);">
+          <div class="pill-card">
+            <h4>Ver o diff</h4>
+            <p>O que exatamente mudou, linha por linha.</p>
+          </div>
+          <div class="pill-card">
+            <h4>Comentar</h4>
+            <p>Em linhas específicas, não só no geral.</p>
+          </div>
+          <div class="pill-card">
+            <h4>Aprovar</h4>
+            <p>Ou pedir mudanças antes de aceitar.</p>
+          </div>
+        </div>
+        <p class="tip" style="margin-top: var(--s-4);">💡 É como mandar um Loom de aprovação, só que pra
+        código — ou, no nosso caso, pra HTML.</p>
+      </div>
+
+      <div class="exercises">
+        <h3>Exercício</h3>
+        <details class="exercise">
+          <summary>
+            <span class="ex-num">09</span>
+            <span class="ex-title">Abrindo e revisando um Pull Request</span>
+            <span class="ex-time">12 min</span>
+          </summary>
+          <div class="ex-body">
+            <p class="ex-intro"><strong>O cenário:</strong> você quer testar mais uma variação, mas dessa vez
+            quer que alguém revise antes de aprovar — igual aconteceria numa empresa de verdade.</p>
+
+            <p class="ex-entrega"><strong>Entregável:</strong> um Pull Request aberto, com pelo menos 1
+            comentário e uma aprovação, mesclado em <code>main</code>.</p>
+
+            <div class="step-block">
+              <div class="step-block-head">
+                <span class="step-block-num">Passo 1</span>
+                <span class="step-block-time">4 min</span>
+                <h4 class="step-block-title">Crie a branch e o slide novo</h4>
+              </div>
+              <div class="step-block-body">
+                <ol>
+                  <li>Crie a branch <code>slide-beneficios</code> a partir da <code>main</code></li>
+                  <li>Mande o prompt abaixo no claude.ai</li>
+                  <li>Cole no <code>index.html</code>, salve, confira no navegador, commite com
+                  <code>adiciona slide de beneficios</code> e faça push</li>
+                </ol>
+                <div class="prompt-box">
+                  <div class="prompt-box-head">Prompt · copie e cole</div>
+                  <p>Aqui está meu código HTML atual [cole]. Adiciona mais um slide (a apresentação deve
+                  funcionar como slides navegáveis com um botão "próximo") listando 3 benefícios da campanha
+                  de indicação: R$ 50 pro indicado, R$ 50 pra quem indicou, sem limite de indicações. Mantém
+                  o visual consistente com os outros slides. Me devolve o código completo.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="step-block">
+              <div class="step-block-head">
+                <span class="step-block-num">Passo 2</span>
+                <span class="step-block-time">4 min</span>
+                <h4 class="step-block-title">Abra o Pull Request</h4>
+              </div>
+              <div class="step-block-body">
+                <ol>
+                  <li>No GitHub Desktop, com a <code>slide-beneficios</code> ativa, clique em
+                  <strong>Create Pull Request</strong> — ele abre o navegador direto na página certa</li>
+                  <li>Confirme o título (ex: "Adiciona slide de benefícios") e escreva uma descrição curta</li>
+                  <li><strong>Create Pull Request</strong></li>
+                </ol>
+              </div>
+            </div>
+
+            <div class="step-block">
+              <div class="step-block-head">
+                <span class="step-block-num">Passo 3</span>
+                <span class="step-block-time">4 min</span>
+                <h4 class="step-block-title">Revisem em dupla</h4>
+              </div>
+              <div class="step-block-body">
+                <p>Formem duplas. Cada um abre o PR do colega — o link está na aba <strong>Pull requests</strong>
+                do repositório dele.</p>
+                <ol>
+                  <li>Clique na aba <strong>Files changed</strong> e veja o diff, com o que foi adicionado em verde</li>
+                  <li>Passe o mouse numa linha e clique no <strong>+</strong> que aparece. Deixe um comentário
+                  (ex: "esse texto podia ser mais direto")</li>
+                  <li><strong>Autor:</strong> leia o comentário, responda ou ajuste o código e faça um commit
+                  novo na mesma branch — o PR atualiza sozinho</li>
+                  <li><strong>Revisor:</strong> Review changes → Approve</li>
+                  <li><strong>Autor:</strong> Merge pull request → Confirm merge</li>
+                </ol>
+              </div>
+            </div>
+
+            <div class="ex-closing">
+              <span class="pa-eyebrow">O que fixar</span>
+              <p>O PR não é etapa técnica chata — é o momento onde a conversa acontece <strong>antes</strong>
+              de a mudança virar oficial. Em produto real, quem revisa costuma ser o tech lead ou o par de
+              design. O mecanismo é exatamente esse.</p>
+            </div>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- ============================================================ 2.8 -->
+    <section class="block" id="bloco-2-8">
+      <div class="block-head">
+        <span class="block-pill">Bloco 2.8 · ~18 min</span>
+        <span class="block-mode block-mode--mao">Na mão · GitHub.com</span>
+        <h2>Deploy: colocando no ar</h2>
+      </div>
+
+      <div class="concept">
+        <p>Você tem um protótipo funcionando na pasta local e no GitHub. Falta a última peça: uma URL
+        pública que qualquer pessoa acessa, sem precisar clonar nada.</p>
+        <p><strong>GitHub Pages</strong> é a forma mais simples: gratuito, sem cartão de crédito, publica
+        direto a partir do próprio repositório.</p>
+
+        <h3 class="concept-sub">O fluxo completo, de ponta a ponta</h3>
+        <ol class="fluxo">
+          <li><strong>Editar</strong><span>na mão ou via Claude Code</span></li>
+          <li><strong>Commit</strong><span>a foto é tirada</span></li>
+          <li><strong>Branch + Pull Request</strong><span>a revisão acontece aqui</span></li>
+          <li><strong>Merge em main</strong><span>a mudança vira oficial</span></li>
+          <li><strong>GitHub Pages publica</strong><span>automaticamente, a partir da main</span></li>
+          <li><strong>URL pública atualizada</strong><span>sem você tocar em nada</span></li>
+        </ol>
+        <p class="tip">💡 A parte boa: você configura <strong>uma vez</strong>. A partir daí, toda vez que
+        algo for mesclado em <code>main</code>, o site publicado se atualiza sozinho.</p>
+      </div>
+
+      <div class="exercises">
+        <h3>Exercício</h3>
+        <details class="exercise">
+          <summary>
+            <span class="ex-num">10</span>
+            <span class="ex-title">Publicando o protótipo</span>
+            <span class="ex-time">12 min</span>
+          </summary>
+          <div class="ex-body">
+            <p class="ex-intro">No fim deste exercício você tem um link pra mandar pra qualquer pessoa — que
+            abre no celular dela, sem instalar nada.</p>
+
+            <p class="ex-entrega"><strong>Entregável:</strong> URL pública ativa, no formato
+            <code>https://&lt;seu-usuario&gt;.github.io/meu-prototipo-arenacash/</code>, mostrando a
+            apresentação com os slides de capa, depoimento e benefícios.</p>
+
+            <div class="step-block">
+              <div class="step-block-head">
+                <span class="step-block-num">Passo 1</span>
+                <span class="step-block-time">8 min</span>
+                <h4 class="step-block-title">Ative o GitHub Pages</h4>
+              </div>
+              <div class="step-block-body">
+                <ol>
+                  <li>Acesse <code>github.com/&lt;seu-usuario&gt;/meu-prototipo-arenacash</code></li>
+                  <li>Clique em <strong>Settings</strong></li>
+                  <li>No menu lateral, clique em <strong>Pages</strong></li>
+                  <li>Em <strong>Source</strong>, selecione a branch <strong>main</strong> e a pasta
+                  <strong>/ (root)</strong></li>
+                  <li>Clique em <strong>Save</strong></li>
+                  <li>Espere cerca de 1 minuto e atualize a página — a URL pública aparece no topo</li>
+                </ol>
+              </div>
+            </div>
+
+            <div class="step-block">
+              <div class="step-block-head">
+                <span class="step-block-num">Passo 2</span>
+                <span class="step-block-time">4 min</span>
+                <h4 class="step-block-title">Valide a URL</h4>
+              </div>
+              <div class="step-block-body">
+                <ol>
+                  <li>Abra a URL numa <strong>aba anônima/privada</strong>, pra garantir que não é cache local</li>
+                  <li>Confirme que a apresentação abre e os slides navegam</li>
+                  <li>Copie o link, mande pra alguém do grupo e peça pra abrir no celular</li>
+                </ol>
+              </div>
+            </div>
+
+            <div class="ex-closing">
+              <span class="pa-eyebrow">O que fixar</span>
+              <p>Você acabou de operacionalizar o fluxo completo, testado de duas formas ao longo do dia — na
+              mão e via Claude Code. É o <strong>mesmo fluxo usado em produtos reais</strong>, só que sem
+              depender de ninguém do time técnico.</p>
+            </div>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- ============================================================ 2.9 -->
+    <section class="block" id="bloco-2-9">
+      <div class="block-head">
+        <span class="block-pill">Bloco 2.9 · ~15 min</span>
+        <span class="block-mode block-mode--claude">Via Claude Code</span>
+        <h2>Desafio final: crie algo seu</h2>
+        <p class="block-obj">Chegou a vez de você escolher. Nada de repetir o que já foi feito na mão ou nos
+        exemplos do Claude Code — pense em algo que <strong>ainda não existe</strong> no seu protótipo.</p>
+      </div>
+
+      <div class="concept">
+        <h3 class="concept-sub">Se precisar de inspiração</h3>
+        <p>Escolha uma destas, ou traga a sua:</p>
+        <div class="grid-2" style="margin-top: var(--s-4);">
+          <div class="pill-card"><h4>FAQ</h4><p>Um slide com 2 ou 3 perguntas frequentes sobre a campanha.</p></div>
+          <div class="pill-card"><h4>Números</h4><p>Uma seção de prova social — "10.000 indicações já feitas".</p></div>
+          <div class="pill-card"><h4>Compartilhar</h4><p>Um botão de compartilhar no WhatsApp.</p></div>
+          <div class="pill-card"><h4>Movimento</h4><p>Uma animação ou transição entre os slides.</p></div>
+        </div>
+      </div>
+
+      <div class="exercises">
+        <h3>Exercício</h3>
+        <details class="exercise">
+          <summary>
+            <span class="ex-num">11</span>
+            <span class="ex-title">Uma ideia sua, publicada de ponta a ponta</span>
+            <span class="ex-time">15 min</span>
+          </summary>
+          <div class="ex-body">
+            <p class="ex-intro">Tudo pedindo ao Claude Code, em português, <strong>sem abrir o GitHub
+            Desktop</strong>. Você já sabe o que cada pedido faz por trás — é essa a diferença.</p>
+
+            <p class="ex-entrega"><strong>Entregável:</strong> uma funcionalidade nova, escolhida por você,
+            criada, commitada, revisada via PR e publicada.</p>
+
+            <div class="step-block">
+              <div class="step-block-head">
+                <span class="step-block-num">Passo 1</span>
+                <span class="step-block-time">6 min</span>
+                <h4 class="step-block-title">Branch, ideia e conferência</h4>
+              </div>
+              <div class="step-block-body">
+                <ol>
+                  <li>Peça pra criar uma branch com um nome que descreva sua ideia</li>
+                  <li>Descreva a funcionalidade que você quer adicionar ao <code>index.html</code></li>
+                  <li>Peça pra ele te mostrar o resultado <strong>antes</strong> de continuar</li>
+                </ol>
+              </div>
+            </div>
+
+            <div class="step-block">
+              <div class="step-block-head">
+                <span class="step-block-num">Passo 2</span>
+                <span class="step-block-time">5 min</span>
+                <h4 class="step-block-title">Commit, push e Pull Request</h4>
+              </div>
+              <div class="step-block-body">
+                <ol>
+                  <li>Peça commit, push e abertura de um Pull Request</li>
+                  <li>Revise o diff no GitHub.com — é o mesmo diff do Exercício 9, agora num PR que você não
+                  abriu com as mãos</li>
+                  <li>Peça pro Claude Code mesclar</li>
+                </ol>
+              </div>
+            </div>
+
+            <div class="step-block">
+              <div class="step-block-head">
+                <span class="step-block-num">Passo 3</span>
+                <span class="step-block-time">4 min</span>
+                <h4 class="step-block-title">Confirme no ar e compartilhe</h4>
+              </div>
+              <div class="step-block-body">
+                <div class="prompt-box">
+                  <div class="prompt-box-head">Prompt · copie e cole</div>
+                  <p>Confirma que o GitHub Pages já está servindo a versão nova e me devolve a URL pública.</p>
+                </div>
+                <p>Quem terminar primeiro compartilha o link e conta pro grupo o que escolheu criar.</p>
+              </div>
+            </div>
+
+            <div class="ex-closing">
+              <span class="pa-eyebrow">O que fixar</span>
+              <p>O valor de entender o mecanismo não é nunca mais usar o Claude Code sozinho — é
+              <strong>confiar no resultado</strong>, porque você sabe exatamente o que está acontecendo por
+              trás de cada pedido.</p>
+            </div>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- ============================================================ 2.10 -->
+    <section class="block" id="bloco-2-10">
+      <div class="block-head">
+        <span class="block-pill">Bloco 2.10 · ~8 min</span>
+        <h2>Fechando os dois dias</h2>
+      </div>
+
+      <div class="concept">
+        <h3 class="concept-sub">Os 4 motivos, revisitados</h3>
+        <p>No Bloco 1.2 você viu quatro razões pra usar GitHub sendo não-técnico. Onde cada uma apareceu:</p>
+        <div class="grid-2" style="margin-top: var(--s-4);">
+          <div class="concept-card">
+            <h4><span class="n">01</span> Vibe coding no código da empresa</h4>
+            <p>Blocos 2.4, 2.6 e 2.9 — pedindo direto ao Claude Code, em português.</p>
+          </div>
+          <div class="concept-card">
+            <h4><span class="n">02</span> Repositório de apresentações</h4>
+            <p>É o próprio pitch deck que você construiu, versionou e publicou.</p>
+          </div>
+          <div class="concept-card">
+            <h4><span class="n">03</span> Análise de dados e algoritmos</h4>
+            <p>Não foi praticado aqui — mas agora você reconhece a estrutura pra ir atrás disso sozinho.</p>
+          </div>
+          <div class="concept-card">
+            <h4><span class="n">04</span> Controle de versão</h4>
+            <p>Vivido o curso inteiro: commits, branches, um conflito de verdade resolvido, histórico completo.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="concept">
+        <h3 class="concept-sub">O que você sai sabendo fazer</h3>
+        <ul class="recap-list">
+          <li>Criar um repositório do zero e publicar na nuvem</li>
+          <li>Criar branches pra testar variações sem arriscar a versão oficial</li>
+          <li>Mesclar branches e resolver um conflito sem entrar em pânico</li>
+          <li>Abrir um Pull Request, revisar um diff e comentar antes de aprovar</li>
+          <li>Colocar um protótipo no ar numa URL pública</li>
+          <li>Pedir tudo isso ao Claude Code — e saber conferir se ele fez certo</li>
+        </ul>
+      </div>
+
+      <div class="concept">
+        <h3 class="concept-sub">Duas perguntas pra fechar</h3>
+        <p class="ex-intro">Branch e merge ainda te assustam?</p>
+        <p>E, na hora de fazer: você preferiu clicar no GitHub Desktop ou pedir pro Claude Code?</p>
+        <p>Não existe resposta certa — mas repare que agora você tem as duas na mão, e sabe o que está
+        acontecendo nos dois casos.</p>
+
+        <div class="next-day">
+          <span class="pa-eyebrow">Onde tudo começou</span>
+          <h3>Dois dias, um protótipo no ar</h3>
+          <p>Se quiser revisitar o modelo mental — repo, commit, local/remoto, branch, PR — ele está todo
+          no Dia 1, junto com o dicionário de termos.</p>
+          <a class="btn btn--primary" href="dia-1.html#dicionario">Abrir o dicionário →</a>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <span>GitHub para Prototipação · Product Arena</span>
+    <span>Tecla <code>E</code> abre/fecha todos os exercícios</span>
+  </div>
+</footer>
+
+<button class="scroll-top" id="scroll-top" aria-label="Voltar ao topo">↑</button>
+
+<script src="app.js"></script>
+</body>
+</html>
