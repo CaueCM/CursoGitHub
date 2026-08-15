@@ -1041,6 +1041,8 @@ p, li, td, th, a, h1, h2, h3, h4 { overflow-wrap: break-word; }
    --------------------------------------------------------- */
 
 .link-cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--s-4); }
+.link-cards--tres { grid-template-columns: repeat(3, 1fr); }
+@media (max-width: 900px) { .link-cards--tres { grid-template-columns: 1fr; } }
 @media (max-width: 720px) { .link-cards { grid-template-columns: 1fr; } }
 
 .link-card {
