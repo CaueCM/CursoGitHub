@@ -239,9 +239,6 @@ Deixa essa lista à mão. Sempre que travar num termo nos próximos dois dias, �
 | **GitHub Pages** | O serviço gratuito do GitHub pra publicar sites estáticos direto de um repositório |
 | **GitHub Desktop** | O aplicativo visual (sem terminal) que a gente usa pra fazer tudo isso no curso |
 
-> **O que fixar:** ninguém decora essa lista de uma vez, e não é pra decorar. A ideia é você **reconhecer
-> o termo quando ele aparecer de novo** — e ele vai aparecer, muitas vezes.
-
 ---
 
 ### Bloco 1.4 — Setup e uso da ferramenta
