@@ -588,6 +588,35 @@ code { overflow-wrap: anywhere; }
 }
 
 /* ---------------------------------------------------------
+   DIAGRAMA DE BRANCHES
+   --------------------------------------------------------- */
+
+.branch-figure {
+  margin: var(--s-6) 0 0;
+  padding: var(--s-6);
+  background: var(--pa-black);
+  border-radius: var(--radius-lg);
+}
+.branch-diagram { display: block; width: 100%; height: auto; }
+.branch-figure figcaption {
+  margin-top: var(--s-5);
+  padding-top: var(--s-5);
+  border-top: 1px solid var(--pa-gray-800);
+  color: var(--pa-gray-400);
+  font-size: var(--text-sm);
+  line-height: var(--leading-relaxed);
+}
+.branch-figure figcaption strong { color: var(--pa-white); }
+
+/* Abaixo de ~560px o SVG fica pequeno demais pra ler os rótulos —
+   deixa ele rolar na largura original em vez de encolher */
+@media (max-width: 560px) {
+  .branch-figure { overflow-x: auto; }
+  .branch-diagram { width: 620px; max-width: none; }
+  .branch-figure figcaption { width: 620px; }
+}
+
+/* ---------------------------------------------------------
    AS 4 FASES
    --------------------------------------------------------- */
 

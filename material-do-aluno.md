@@ -189,6 +189,22 @@ depois decide se ela "entra" na principal.*
 **5. Pull Request (PR)** — o pedido de "posso juntar minha branch na principal?", com espaço pra alguém
 revisar e comentar antes de aceitar.
 
+#### Uma branch, desenhada
+
+Esse é o conceito mais difícil de imaginar só com palavras. Então olha ele como linha do tempo — cada
+bolinha é um commit, cada faixa é uma linha do tempo diferente.
+
+> **Na página este trecho é um diagrama** (SVG inline em `site/dia-1.html`), com três faixas: `main` em
+> vermelho, `slide-novo` em amarelo e `cor-do-botao` em verde-limão. As duas branches saem da main; a
+> amarela recebe dois commits e volta pra main num merge, a verde recebe dois commits e continua aberta.
+
+As duas branches saíram da **main** e seguiram sozinhas. A amarela terminou e **voltou** — daí em diante
+o trabalho dela faz parte da main. A verde ainda está aberta: o trabalho existe, mas não chegou na versão
+oficial. **Nada do que acontece numa branch afeta as outras até alguém juntar.**
+
+Você vai fazer exatamente esse desenho acontecer amanhã, no Dia 2 — criando as branches, mesclando uma e
+resolvendo um conflito de verdade no meio do caminho.
+
 #### As 4 fases de uma mudança
 
 Esta sequência vai aparecer o dia todo. Você não precisa decorar — vai ver as quatro acontecendo na tela
