@@ -742,6 +742,128 @@ p, li, td, th, a, h1, h2, h3, h4 { overflow-wrap: break-word; }
 .fluxo li span { display: block; font-size: var(--text-sm); color: var(--fg-subtle); margin-top: 2px; }
 
 /* ---------------------------------------------------------
+   AS TRÊS INSTÂNCIAS — local / remoto / no ar
+   --------------------------------------------------------- */
+
+.instancias-figura {
+  margin: var(--s-6) 0 0;
+  padding: var(--s-6);
+  background: var(--pa-black);
+  border-radius: var(--radius-lg);
+}
+
+/* Vertical de propósito: a figura vive dentro de um passo de exercício, onde
+   três colunas espremeriam o texto a uma palavra por linha. Empilhado também
+   lê melhor a ideia de "o projeto desce da sua máquina até o ar". */
+.instancias { display: flex; flex-direction: column; }
+
+.instancia {
+  background: var(--pa-gray-900);
+  border: 1px solid var(--pa-gray-800);
+  border-left: 3px solid var(--pa-red);
+  border-radius: var(--radius-md);
+  padding: var(--s-5);
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: var(--s-2) var(--s-5);
+  align-items: baseline;
+}
+.instancia--ar { border-left-color: var(--pa-yellow); opacity: 0.75; }
+
+@media (max-width: 620px) {
+  .instancia { grid-template-columns: 1fr; gap: var(--s-2); }
+}
+
+/* A figura vive aninhada em bloco > exercício > passo; em telas muito estreitas
+   a soma dos paddings não deixa largura útil pro texto */
+@media (max-width: 480px) {
+  .instancias-figura { padding: var(--s-4); }
+  .instancia { padding: var(--s-4); }
+  .instancia, .instancia p, .instancia strong { min-width: 0; overflow-wrap: anywhere; }
+}
+
+.instancia-tag {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--pa-red);
+  margin-bottom: var(--s-2);
+}
+.instancia--ar .instancia-tag { color: var(--pa-yellow); }
+
+.instancia-tag { grid-column: 1; }
+.instancia strong {
+  grid-column: 1;
+  grid-row: 2;
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  color: var(--pa-white);
+  letter-spacing: var(--tracking-tight);
+}
+.instancia p {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  font-size: var(--text-sm);
+  color: var(--pa-gray-400);
+  margin: 0;
+  align-self: start;
+}
+.instancia code { background: var(--pa-gray-800); border-color: var(--pa-gray-700); color: var(--pa-red); }
+
+.instancia-quem {
+  grid-column: 2;
+  grid-row: 3;
+  font-size: var(--text-xs);
+  color: var(--pa-gray-300);
+  border-top: 1px solid var(--pa-gray-800);
+  padding-top: var(--s-3);
+  margin-top: var(--s-2);
+}
+
+@media (max-width: 620px) {
+  .instancia-tag, .instancia strong, .instancia p, .instancia-quem {
+    grid-column: 1;
+    grid-row: auto;
+  }
+}
+
+/* Conector entre uma instância e a próxima */
+.instancia-seta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--s-2) var(--s-3);
+  padding: var(--s-3) 0 var(--s-3) var(--s-6);
+}
+@media (max-width: 460px) { .instancia-seta { padding-left: var(--s-3); } }
+.seta-linha {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: var(--fw-semibold);
+  color: var(--pa-gray-200);
+  background: var(--pa-gray-800);
+  border-radius: var(--radius-pill);
+  padding: 5px 10px;
+  text-align: center;
+  white-space: nowrap;
+}
+.seta-linha .seta-kw { color: var(--pa-red); }
+.seta-linha--fraca { background: transparent; color: var(--pa-gray-500); font-style: italic; }
+
+.instancias-figura figcaption {
+  margin-top: var(--s-5);
+  padding-top: var(--s-5);
+  border-top: 1px solid var(--pa-gray-800);
+  color: var(--pa-gray-400);
+  font-size: var(--text-sm);
+  line-height: var(--leading-relaxed);
+}
+.instancias-figura figcaption strong { color: var(--pa-white); }
+
+
+/* ---------------------------------------------------------
    AS 4 FASES
    --------------------------------------------------------- */
 
@@ -1344,6 +1466,8 @@ p, li, td, th, a, h1, h2, h3, h4 { overflow-wrap: break-word; }
   line-height: var(--leading-relaxed);
   padding: var(--s-3) 0;
   border-bottom: 1px solid var(--border);
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 .recap-list li:last-child { border-bottom: 0; }
 .recap-list li::before {

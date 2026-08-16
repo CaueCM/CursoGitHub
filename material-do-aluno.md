@@ -19,9 +19,9 @@
 
 ## Dia 1 — Do zero ao primeiro commit
 
-Hoje você sai com um repositório seu, publicado, com o primeiro slide de um protótipo dentro dele.
-O caminho até lá passa por entender o que é o GitHub, por que ele importa pra quem não é técnico, e
-qual é o mecanismo por trás de tudo — antes de qualquer clique.
+**Tudo pelo navegador.** Você explora um repositório de verdade, entende o mecanismo do Git, cria o seu
+próprio repositório e commita o primeiro slide — sem instalar nada. No último bloco o Claude Code entra,
+conecta na sua conta e traz o projeto pra sua máquina.
 
 ---
 
@@ -87,7 +87,7 @@ te explicou nada de propósito. As dúvidas que aparecerem aqui são exatamente 
 blocos vão responder.
 
 > **O que fixar:** o repositório que você acabou de espiar é o mesmo tipo de estrutura que **você** vai
-> criar do zero daqui a pouco, no Bloco 1.5.
+> criar do zero daqui a pouco, no Bloco 1.4.
 
 ---
 
@@ -198,7 +198,8 @@ uma decisão de produto** que antes estava trancada num arquivo que só o time t
 
 Essa é a primeira confusão que vale desfazer:
 
-- **Git** é o sistema que guarda o histórico. Ele mora **no seu computador**.
+- **Git** é o sistema que guarda o histórico. Ele roda **onde o projeto está** — na sua máquina ou nos
+  servidores do GitHub.
 - **GitHub** é o lugar na nuvem onde esse histórico fica visível e compartilhável.
 
 Dá pra usar Git sem GitHub (ninguém veria seu histórico) e o GitHub existe pra dar um endereço, uma tela
@@ -294,111 +295,42 @@ Deixa essa lista à mão. Sempre que travar num termo nos próximos dois dias, �
 | **Fork** | Uma cópia própria de um repositório de outra pessoa, na sua conta |
 | **Deploy** | Publicar o projeto numa URL que qualquer pessoa acessa pela internet |
 | **GitHub Pages** | O serviço gratuito do GitHub pra publicar sites estáticos direto de um repositório |
-| **GitHub Desktop** | O aplicativo visual (sem terminal) que a gente usa pra fazer tudo isso no curso |
+| **Claude Code** | O Claude rodando no terminal, capaz de agir nos seus arquivos e no Git |
 
 ---
 
-### Bloco 1.4 — Setup e uso da ferramenta
 
-**~30 min**
+### Bloco 1.4 — Seu repositório e seu primeiro commit
 
-A partir daqui você para de olhar o GitHub pelo navegador e passa a usar o **GitHub Desktop** — o app
-visual, sem terminal, que vai ser sua ferramenta principal nos dois dias.
-
-A primeira operação que você vai fazer nele é **clonar**: baixar uma cópia completa de um repositório,
-com histórico e tudo, pro seu computador. É assim que um projeto que estava só na nuvem passa a existir
-também como uma pasta de verdade na sua máquina.
-
-#### Antes: a demo
-
-Seu facilitador vai clonar o repositório da ArenaCash (<https://github.com/CaueCM/ArenaCash>) na tela,
-uma vez, antes de você fazer.
-
-Enquanto assiste, o que interessa observar é **uma coisa só**: o mesmo projeto aparecendo em dois lugares.
-A pasta abrindo no Finder/Explorador com os arquivos dentro, o `index.html` abrindo no navegador **sem
-internet**, e a mesma coisa no github.com. Esse "existe nos dois lugares" é o coração de tudo que vem
-depois.
-
-#### Exercício 3 — Clone o exemplo e compare local vs. remoto (20 min)
-
-**Entregável:** GitHub Desktop logado, o repositório de exemplo clonado na sua máquina, e a apresentação
-aberta no seu navegador — rodando do seu computador, não da internet.
-
-**Passo 1 — Confirme seu setup (5 min)**
-
-1. Abra o **GitHub Desktop** e confirme que você está logado: seu nome de usuário aparece no canto da tela
-2. Se ainda não instalou, resolva isso agora — sem o GitHub Desktop funcionando não dá pra seguir o resto
-   do curso
-
-**Passo 2 — Clone o repositório (10 min)**
-
-1. No GitHub Desktop, vá em **File → Clone Repository → URL**
-2. Cole o endereço do repositório da ArenaCash:
-
-   ```
-   https://github.com/CaueCM/ArenaCash
-   ```
-
-3. Escolha uma pasta fácil de achar depois (`Documentos/GitHub`, por exemplo) e confirme
-4. Clique em **Show in Finder** (Mac) ou **Show in Explorer** (Windows) — a pasta local abre
-5. Dê duplo clique em `index.html` — ele abre no navegador e mostra o site da ArenaCash
-
-**Passo 3 — Compare os três endereços (5 min)**
-
-O mesmo projeto existe agora em três lugares. Abra os três e compare:
-
-| Onde | Endereço | O que é |
-|---|---|---|
-| Sua máquina | a pasta que você acabou de clonar | funciona sem internet |
-| O código na nuvem | <https://github.com/CaueCM/ArenaCash> | qualquer pessoa lê e vê o histórico |
-| O site publicado | <https://cauecm.github.io/ArenaCash/> | qualquer pessoa acessa, sem ver código |
-
-O conteúdo é o mesmo nos três. O que muda é quem alcança e como.
-
-Um detalhe pra reparar: desligue o wi-fi e recarregue o arquivo local. Ele continua funcionando — mas os
-outros dois endereços caem. Isso é a diferença entre um arquivo no seu computador e um site na internet.
-
-> **O que fixar:** clonar é "baixar uma cópia completa, com histórico". Daqui pra frente, toda pasta com
-> Git que você olhar tem uma **versão gêmea no GitHub** — e as duas só se atualizam quando você manda.
-
----
-
-### Bloco 1.5 — Seu repositório e seu primeiro commit
-
-**~40 min**
+**~35 min**
 
 Até agora você só explorou coisa que já existia. Agora você cria a sua.
 
-Neste bloco você monta um repositório do zero, usa o Claude pra gerar o conteúdo, e faz as quatro fases
-inteiras — editar, selecionar, commitar, publicar. No fim, existe uma URL no GitHub com o seu trabalho.
+**É o exercício mais importante do dia.** Tudo acontece no navegador: você cria o repositório, pede o HTML
+ao Claude e commita — sem instalar nada, sem terminal.
 
-**É o exercício mais importante do dia.** Se alguma coisa travar, peça ajuda: ninguém deve sair do Dia 1
-sem ter terminado este.
+#### Exercício 3 — Do repositório vazio ao primeiro slide commitado (35 min)
 
-#### Exercício 4 — Do repositório vazio ao primeiro slide publicado (35 min)
+**O cenário:** você foi chamado pra prototipar uma nova campanha da ArenaCash — *"Indique um amigo e ganhe
+R$ 50"*. Sua missão hoje é criar o repositório do protótipo e ter o slide de capa versionado.
 
-**O cenário:** você foi chamado pra prototipar uma nova campanha da ArenaCash — *"Indique um amigo e
-ganhe R$ 50"*. Sua missão hoje é criar o repositório do protótipo e ter o slide de capa funcionando
-e versionado.
+**Entregável:** um repositório novo e público no GitHub, com um `index.html` de capa gerado pelo Claude e
+commitado, visível na aba **Commits**.
 
-**Entregável:** um repositório novo e público no GitHub, com um `index.html` de capa gerado pelo Claude,
-commitado e enviado — visível tanto na sua pasta local quanto em github.com.
+**Passo 1 — Crie o repositório no github.com (6 min)**
 
-**Passo 1 — Crie o repositório do zero (5 min)**
+1. Logado no github.com, clique no **+** no canto superior direito → **New repository**
+2. Repository name: `meu-prototipo-arenacash`
+3. Escolha **Public** — precisa ser público pra publicar de graça no Dia 2
+4. Marque **Add a README file**
+5. Clique em **Create repository**
 
-1. Abra o GitHub Desktop
-2. Vá em **File → New Repository**
-3. Nome: `meu-prototipo-arenacash`
-4. Local path: escolha uma pasta fácil de achar
-5. Marque **Initialize this repository with a README**
-6. Clique em **Create Repository**
+Repare: o repositório já nasceu **com um commit**. Vá na aba **Commits** e veja — "Initial commit". A
+criação do README já foi uma foto.
 
-Repare no que acabou de acontecer: o repositório existe **só no seu computador**. Ele ainda não subiu
-pra nuvem, e isso é de propósito — você vai ver essa diferença virar concreta no Passo 3.
+**Passo 2 — Peça o primeiro slide ao Claude (12 min)**
 
-**Passo 2 — Peça o primeiro slide ao Claude (10 min)**
-
-Abra o [claude.ai](https://claude.ai) em outra aba e mande este prompt:
+Abra o [claude.ai](https://claude.ai) em outra aba e mande:
 
 > Cria um arquivo HTML de uma apresentação de slides simples, com CSS embutido no mesmo arquivo (sem
 > arquivos separados). O primeiro slide deve ser uma capa para a campanha "Indique um amigo e ganhe R$ 50"
@@ -406,37 +338,115 @@ Abra o [claude.ai](https://claude.ai) em outra aba e mande este prompt:
 > botão "Saiba mais". Não precisa de JavaScript ainda, só um slide por enquanto. Me devolve o código
 > completo do arquivo.
 
-Copie o código que o Claude devolveu. Depois, no Finder/Explorador, vá até a pasta
-`meu-prototipo-arenacash` que você criou no Passo 1 e:
+O Claude mostra o slide **renderizado ali mesmo**, ao lado do código. Olhe se ficou bom antes de seguir —
+se quiser mudar cor, texto ou tamanho, peça agora, no chat. É muito mais rápido do que corrigir depois de
+commitar.
 
-- crie um arquivo chamado `index.html`
-- cole o código do Claude e salve
-- dê duplo clique no arquivo — ele abre no navegador e mostra o slide
+Quando estiver satisfeito, **copie o código completo**.
 
-Esta foi a **fase 1** das quatro: você editou um arquivo na pasta local. O GitHub ainda não sabe de nada.
+**Passo 3 — Crie o arquivo e commite, tudo no navegador (12 min)**
 
-**Passo 3 — Commite e publique (15 min)**
-
-1. Volte ao **GitHub Desktop**. Ele já detectou o arquivo novo sozinho e mostra na aba **Changes**, com o
-   conteúdo em verde — verde quer dizer "isso é novo"
-2. No campo de mensagem de commit (canto inferior esquerdo), escreva:
+1. Volte pro seu repositório no github.com
+2. Clique em **Add file → Create new file**
+3. No campo do nome, digite `index.html`
+4. Cole o código do Claude na área grande abaixo
+5. Role até o fim e escreva a mensagem de commit:
    `primeiro slide da capa da campanha indique um amigo`
-3. Clique em **Commit to main** — é a foto sendo tirada. Ainda só no seu computador
-4. Clique em **Publish repository**, no canto superior. Escolha **público**, pra você conseguir acessar
-   depois pelo link
-5. Confirme. O botão vira **Fetch origin** — esse é o sinal de que seu repositório está sincronizado com
-   a nuvem
-6. Abra `github.com/<seu-usuario>/meu-prototipo-arenacash` no navegador. O `index.html` está lá, e a aba
-   **Commits** mostra sua mensagem
+6. Clique em **Commit changes**
 
-**O que você tem agora:** o repositório `meu-prototipo-arenacash`, público, com `index.html` e `README.md`.
+Pronto: seu `index.html` está no GitHub. Vá na aba **Commits** e confirme que sua mensagem aparece lá.
 
-> **O que fixar:** você acabou de fazer **as quatro fases inteiras** — editou (pediu ao Claude e salvou),
-> selecionou (a aba Changes fez isso por você), commitou (a foto) e publicou (o push, que na primeira vez
-> fica escondido dentro do botão "Publish repository").
+> **Por que o GitHub não mostra o slide bonito?** Porque ele exibe o *código* do arquivo, não o resultado.
+> Pra ver o slide funcionando você precisa de uma cópia local (Bloco 1.5) ou de publicar na internet
+> (Dia 2). Por enquanto, quem te mostrou o resultado foi o Claude.
+
+**Passo 4 — Faça uma segunda mudança e veja o histórico crescer (5 min)**
+
+1. Abra o `index.html` no github.com e clique no **lápis** (Edit this file)
+2. Mude alguma coisa pequena e visível — o texto do botão, por exemplo
+3. Commite com a mensagem: `ajusta o texto do botao`
+4. Vá na aba **Commits** e clique no commit que você acabou de fazer
+
+O GitHub mostra o **diff**: a linha antiga em vermelho, a nova em verde. É essa tela que vai aparecer de
+novo no Dia 2, quando você revisar um Pull Request.
+
+> **O que fixar:** você versionou um projeto sem instalar nada. Isso já é útil por si só — dá pra manter
+> apresentação, protótipo e documento com histórico completo **usando só o navegador**.
 >
-> Da próxima vez vai ser mais curto: toda mudança nova usa **Commit** + **Push origin**. Publicar é só uma
-> vez, no começo da vida do repositório.
+> O que falta é o outro lado do mapa: a cópia na sua máquina. É ela que destrava trabalhar offline, ver o
+> resultado renderizado e, principalmente, deixar o **Claude Code** agir no projeto.
+
+---
+
+### Bloco 1.5 — Conectando o Claude Code
+
+**~25 min**
+
+Até agora, quem clicava era você, no navegador. A partir daqui quem executa também pode ser o **Claude
+Code** — e é ele que vai trazer o projeto pra sua máquina.
+
+Claude Code é o Claude rodando no terminal. Ele entende pedidos em português e executa ações reais nos
+seus arquivos e no Git, sem você digitar comando nenhum. Mas só consegue agir na sua conta do GitHub
+depois de uma autorização — feita **uma vez só**.
+
+Seu facilitador vai fazer a conexão na tela primeiro. Ele roda `claude`, pede *"conecta essa sessão à
+minha conta do GitHub"*, o Claude Code dispara um `gh auth login`, o navegador abre e ele autoriza. É como
+logar no Notion ou no Spotify num computador novo.
+
+#### Exercício 4 — Conecte o Claude Code e traga o projeto pra sua máquina (20 min)
+
+**Entregável:** Claude Code autenticado na sua conta e o repositório clonado numa pasta do seu computador.
+
+**Passo 1 — Abra o Claude Code e conecte (7 min)**
+
+1. Abra o Terminal (Mac) ou o PowerShell (Windows)
+2. Vá pra uma pasta fácil de achar — `cd Documentos`, por exemplo
+3. Rode `claude`
+4. Peça: *"Conecta essa sessão à minha conta do GitHub."*
+
+Siga o fluxo que abre no navegador: **GitHub.com → HTTPS → Login with a web browser**, e autorize.
+
+**Passo 2 — Peça pra ele clonar o seu repositório (6 min)**
+
+> Clona o meu repositório `meu-prototipo-arenacash` aqui nesta pasta e me diz o que tem dentro dele.
+
+Ele deve clonar e listar: `index.html` e `README.md`. Se conseguiu, a conexão funcionou.
+
+Agora abra essa pasta no Finder/Explorador e dê **duplo clique no `index.html`**.
+
+> **Este é o momento do dia.** O slide abre no navegador, renderizado — e continua funcionando se você
+> desligar o wi-fi. Não é um site: é um arquivo no seu computador. O mesmo arquivo que também está no
+> GitHub.
+
+**Passo 3 — Os três lugares onde um projeto vive (7 min)**
+
+Agora que existe uma cópia local, dá pra ver o mapa inteiro. Um projeto publicado vive em até três
+instâncias — e elas **não são cópias automáticas uma da outra**:
+
+| # | Instância | O que é | Quem alcança |
+|---|---|---|---|
+| 1 | **Local** — sua máquina | A pasta que o Claude Code clonou. Funciona sem internet | só você |
+| 2 | **Remoto** — github.com | O repositório na nuvem, com histórico, branches e PRs | qualquer pessoa lê o código |
+| 3 | **No ar** — GitHub Pages | O site publicado, gerado a partir da `main` | qualquer pessoa acessa, sem ver código |
+
+> **Na página este trecho é um diagrama** (`.instancias-figura`, em `site/dia-1.html`), com as três
+> instâncias empilhadas e os conectores entre elas: `push`/`pull` entre local e remoto, `deploy` do remoto
+> pro ar — este último **só de ida**.
+
+**Hoje você tem as duas primeiras.** A terceira nasce amanhã, no Dia 2. Repare na direção das setas: entre
+local e remoto o trânsito é nos dois sentidos; do remoto pro ar é só de ida — **ninguém edita o site
+publicado, edita-se o repositório**.
+
+Pra fechar, compare os três na ArenaCash, que já tem os três prontos:
+
+| Instância | Endereço | Some se cair a internet? |
+|---|---|---|
+| Local | a pasta clonada na sua máquina | Não — continua funcionando |
+| Remoto | <https://github.com/CaueCM/ArenaCash> | Sim |
+| No ar | <https://cauecm.github.io/ArenaCash/> | Sim |
+
+> **O que fixar:** essa autorização é feita **uma vez só**. E agora você tem as duas pontas do mapa do
+> Bloco 1.3 — a pasta local e o repositório remoto. É com essas duas que o Dia 2 inteiro acontece.
 
 ---
 
@@ -447,37 +457,33 @@ Esta foi a **fase 1** das quatro: você editou um arquivo na pasta local. O GitH
 #### O que você fez hoje
 
 - Explorou um repositório de verdade antes mesmo de saber o nome das coisas
-- Entendeu por que o GitHub importa pra quem não é técnico
-- Montou o modelo mental do Git — repo, commit, local/remoto, branch, PR — e tem um dicionário pra consultar
-- Configurou o GitHub Desktop, clonou um repositório e viu local e nuvem lado a lado
-- Criou um repositório do zero, gerou conteúdo com o Claude, commitou e publicou
+- Leu um algoritmo de produto e opinou sobre as regras dele, sem saber programar
+- Montou o modelo mental do Git e tem um dicionário pra consultar
+- Criou um repositório do zero e commitou duas vezes, **usando só o navegador**
+- Conectou o Claude Code à sua conta e trouxe o projeto pra sua máquina
 
 #### Uma pergunta pra levar
 
-Volte nos quatro motivos do Bloco 1.2 — vibe coding, repositório de apresentações, análise de dados,
-controle de versão.
+Volte nos quatro motivos do Bloco 1.2. **Já dá pra imaginar usando isso pra alguma dessas quatro coisas no
+seu trabalho, essa semana?**
 
-**Já dá pra imaginar usando isso pra alguma dessas quatro coisas no seu trabalho, essa semana?**
 Não precisa responder agora. Mas é a pergunta que faz o Dia 2 valer a pena.
 
 #### O que vem amanhã
 
-Hoje você só usou a branch `main` — uma linha do tempo só, reta.
+Hoje você só usou a branch `main` — uma linha do tempo só, reta. E fez tudo clicando.
 
-Amanhã você vai criar variações paralelas do protótipo, ver elas se cruzando (inclusive um conflito de
-verdade, que você vai resolver na mão), revisar mudanças antes de aprovar, e publicar a versão final numa
-URL pública que qualquer pessoa acessa.
+Amanhã o Claude Code assume a execução: você vai criar variações paralelas do protótipo, ver elas se
+cruzando (inclusive um conflito de verdade, que **você** decide como resolver), revisar mudanças antes de
+aprovar e publicar a versão final numa URL pública.
 
 ---
 
-## Dia 2 — Branches, Claude Code, revisão e deploy
+## Dia 2 — Branches, conflitos e Pull Requests
 
-Ontem você usou uma linha do tempo só: a `main`. Hoje você abre linhas paralelas, vê elas se cruzarem
-— inclusive dando conflito — revisa mudanças antes de aprovar e termina com uma URL pública no ar.
-
-E tem uma virada no meio do dia. A partir do Bloco 2.3, o **Claude Code** entra conectado à sua conta do
-GitHub. Daí em diante, cada conceito que você aprendeu na mão ganha um segundo exemplo feito por ele —
-sempre com uma tarefa **nova**, nunca repetindo o que você já fez clicando.
+Ontem você usou uma linha do tempo só, e fez tudo clicando. Hoje quem executa é o **Claude Code**: você
+abre linhas paralelas, vê elas se cruzarem — inclusive dando conflito, que **você** decide como resolver —
+revisa antes de aprovar e termina com uma URL pública no ar.
 
 ---
 
@@ -485,227 +491,331 @@ sempre com uma tarefa **nova**, nunca repetindo o que você já fez clicando.
 
 **~5 min**
 
-Abra o GitHub Desktop no repositório `meu-prototipo-arenacash` e vá na aba **History**.
+Abra o terminal, entre na pasta `meu-prototipo-arenacash` que o Claude Code clonou ontem e rode `claude`.
+Depois peça:
 
-Olhe o que está lá: quantos commits você tem? O que cada mensagem diz? Esse é o histórico que você
-construiu ontem — e é nele que tudo de hoje vai se apoiar.
+> Me mostra o histórico deste repositório: quantos commits tem, o que cada mensagem diz, em qual branch eu
+> estou e se tem alguma mudança pendente.
 
-Antes de seguir, releia as duas listas do Dia 1: as **4 fases** (editar → selecionar → commitar → push)
-e os **5 conceitos** (repo, commit, local/remoto, branch, PR). Hoje as duas voltam o tempo todo.
+Ele responde com o mesmo que você viu na aba **Commits** do github.com ontem — e é esse histórico que tudo
+de hoje vai usar como ponto de partida.
+
+Antes de seguir, releia as duas listas do Dia 1: as **4 fases** (editar → selecionar → commitar → push) e
+os **5 conceitos** (repo, commit, local/remoto, branch, PR).
+
+> Repare numa coisa: você está pedindo em português, mas o que ele faz por trás são os mesmos comandos que
+> existiriam de qualquer jeito. O bônus deste dia mostra exatamente quais.
 
 ---
 
-### Bloco 2.2 — Branches: criar e fazer switch
+### Bloco 2.2 — Branches: criar e trocar
 
-**~22 min**
+**~25 min**
 
 #### Por que não trabalhar direto na main
 
-Tudo que você fez ontem foi direto na `main` — a linha principal. Isso é arriscado: se você testa uma
-ideia ruim ali, ela já está "oficial".
+Tudo que você fez ontem foi direto na `main`. Isso é arriscado: se você testa uma ideia ruim ali, ela já
+está "oficial".
 
 Branch resolve isso. É como duplicar um documento do Google Docs pra rascunhar uma versão nova sem tocar
-no original — só que, no Git, você pode ter dezenas de rascunhos ao mesmo tempo, cada um isolado, e
-decidir depois quais voltam pro documento principal.
+no original — só que, no Git, você pode ter dezenas de rascunhos ao mesmo tempo, cada um isolado.
 
 #### O que é fazer *switch*
 
 É trocar qual rascunho está aberto na sua pasta local.
 
 E aqui vem a parte que costuma surpreender: **quando você troca de branch, os arquivos na sua pasta mudam
-de conteúdo na hora** — como se alguém trocasse os papéis da sua mesa enquanto você não olhava. Você vai
-ver isso acontecer daqui a pouco.
+de conteúdo na hora**. Ontem isso seria impossível de ver, porque você não tinha pasta local. Hoje tem.
 
-#### Exercício 5 — Criando uma branch e vendo a pasta local mudar (15 min)
+#### Exercício 5 — Criando uma branch e vendo a pasta local mudar (20 min)
 
 **O cenário:** o time de marketing quer testar uma paleta de cores diferente pro slide de capa, sem
 arriscar a versão que já está no ar.
 
-**Entregável:** uma branch `variacao-cores` com uma versão diferente do slide de capa, commitada — e a
-experiência de ver a pasta local mudar de conteúdo ao trocar de branch.
+**Entregável:** uma branch `variacao-cores` com uma versão diferente do slide de capa, commitada e
+publicada — e a experiência de ver a pasta local mudar de conteúdo ao trocar de branch.
 
 **Passo 1 — Crie a branch (3 min)**
 
-1. No GitHub Desktop, com o `meu-prototipo-arenacash` aberto, clique no seletor **Current Branch** (no
-   topo, mostra "main")
-2. Clique em **New Branch**
-3. Nome: `variacao-cores`
-4. Confirme — o GitHub Desktop já troca pra branch nova sozinho
+> Cria uma branch chamada `variacao-cores` a partir da main e muda pra ela. Depois me confirma em qual
+> branch eu estou.
 
-**Passo 2 — Edite com o Claude, na branch nova (6 min)**
+**Passo 2 — Peça a mudança de cor, na branch nova (7 min)**
 
-Volte ao claude.ai e mande:
+> Nessa branch, muda a paleta de cores do slide de capa do `index.html` pra tons de verde e roxo, mantendo
+> a estrutura e os textos iguais.
 
-> Aqui está meu código HTML atual [cole o conteúdo do seu index.html]. Muda a paleta de cores do slide de
-> capa pra tons de verde e roxo, mantendo a estrutura e os textos iguais. Me devolve o código completo
-> atualizado.
+Abra o `index.html` da pasta no navegador e confirme que a cor mudou. Se não gostou, peça um ajuste antes
+de commitar — está tudo isolado nesta branch.
 
-Copie o código, abra o `index.html` na pasta local — **a mesma pasta de sempre, ela não muda de lugar** —
-e substitua o conteúdo. Salve e dê duplo clique pra ver a nova versão no navegador.
+**Passo 3 — Commite e publique a branch (4 min)**
 
-**Passo 3 — Commite na branch (3 min)**
+> Commita com a mensagem "testando paleta verde e roxo" e faz push desta branch.
 
-1. No GitHub Desktop, veja a mudança na aba **Changes**. Confirme no topo que a branch atual é
-   `variacao-cores` — commitar na branch errada é o erro mais comum aqui
-2. Mensagem: `testando paleta verde e roxo`
-3. **Commit to variacao-cores**
-4. Clique em **Push origin** pra enviar a branch pro GitHub
+Vá no github.com, na aba **Branches** do seu repositório: agora existem duas.
 
-**Passo 4 — O momento "aha" (3 min)**
+**Passo 4 — O momento "aha" (6 min)**
 
-1. No seletor de branch, volte pra **main**
-2. Abra a mesma pasta no Finder/Explorador e dê duplo clique no `index.html` de novo
-3. Olhe: **a cor voltou pro azul e branco**
+**Antes de pedir**, deixe o `index.html` aberto no navegador, numa aba visível. Depois:
 
-Você não editou nada. O arquivo na sua pasta mudou de conteúdo sozinho, só porque você trocou de branch.
+> Volta pra branch main.
 
-> **O que fixar:** a branch não é uma pasta separada — é a mesma pasta mudando de estado conforme a linha
-> do tempo ativa. É isso que permite ter dezenas de variações sem duplicar pasta nenhuma.
+Agora recarregue aquela aba. **A cor voltou pro azul e branco.**
+
+Você não editou nada, e o Claude Code não reescreveu o arquivo. O arquivo na sua pasta mudou de conteúdo
+*sozinho*, só porque a branch ativa mudou. Peça *"volta pra variacao-cores"* e recarregue de novo — vai e
+volta quantas vezes quiser.
+
+> **O que fixar:** a branch não é uma pasta separada — é a **mesma pasta mudando de estado** conforme a
+> linha do tempo ativa.
 
 ---
 
-### 🎁 Bônus — Navegando o Git pelo terminal
+### 🎁 Bônus — O que o Claude Code roda por trás
 
 **~12 min · opcional**
 
-Nada depois disso depende deste bônus. Se o grupo estiver adiantado, vale; se não, fica como exploração
-pra fazer em casa. O objetivo é **reconhecimento**, não decoreba.
+Cada pedido em português vira um comando de Git. Você não precisa digitá-los — mas reconhecer ajuda muito,
+porque é a língua que qualquer tutorial e mensagem de erro falam.
 
-Tudo que você fez clicando no GitHub Desktop tem um comando equivalente no terminal. Você não precisa
-usar — mas reconhecer ajuda muito, porque é a língua que qualquer tutorial, post de blog e o próprio
-Claude Code falam.
-
-| No GitHub Desktop | No terminal |
+| O que você pediu | O que ele rodou |
 |---|---|
-| Aba **History** | `git log --oneline` |
-| Aba **Changes** | `git status` e `git diff` |
-| Seletor de **Current Branch** | `git branch` |
-| Botão **Commit to main** | `git add .` + `git commit -m "mensagem"` |
-| Botão **Push origin** | `git push` |
+| "me mostra o histórico" | `git log --oneline` |
+| "tem mudança pendente?" | `git status` e `git diff` |
+| "cria uma branch e muda pra ela" | `git checkout -b variacao-cores` |
+| "volta pra main" | `git checkout main` |
+| "commita com a mensagem X" | `git add .` + `git commit -m "X"` |
+| "faz push desta branch" | `git push -u origin variacao-cores` |
 
-#### Exercício Bônus — Reconhecendo os comandos (8 min)
+#### Exercício Bônus — Confira na unha o que ele fez (8 min)
 
-**Entregável:** nenhum arquivo novo. A ideia é ver, em texto, o mesmo estado que o GitHub Desktop já
-mostrava em botões.
+**Entregável:** nenhum arquivo.
 
-1. Abra o Terminal (Mac) ou o PowerShell (Windows)
-2. Navegue até a pasta do repositório com `cd` + o caminho
-   (ex: `cd Documentos/meu-prototipo-arenacash`).
-   **Dica de Mac:** digite `cd ` e arraste a pasta do Finder pro terminal — o caminho aparece sozinho
-3. Rode `git log --oneline` e compare com a aba **History**
-4. Rode `git branch` e compare com o seletor de branch. A que tem `*` na frente é a ativa
-5. Rode `git status`. Sem mudanças pendentes, ele responde
-   `nothing to commit, working tree clean`
+1. Saia do Claude Code (`Ctrl + C` ou `/exit`) — você volta pro terminal comum, na mesma pasta
+2. Rode `git log --oneline` e compare com o histórico que ele te descreveu
+3. Rode `git branch`. As duas branches aparecem, e a que tem `*` na frente é a ativa
+4. Rode `git status`. Sem mudanças pendentes, responde `nothing to commit, working tree clean`
+5. Rode `claude` de novo pra voltar
 
-> **O que fixar:** o terminal não faz nada diferente do GitHub Desktop — é a mesma informação, em texto
-> em vez de botão. E é exatamente isso que o Claude Code vai rodar por trás dos panos no próximo bloco.
+> **O que fixar:** o Claude Code não faz nada de mágico nem de invisível. Ele roda os mesmos comandos que
+> estariam ali de qualquer jeito — e **deixa rastro**, do mesmo jeito que você deixaria. Você acabou de
+> auditar o trabalho dele.
 
 ---
 
-### Bloco 2.3 — Conectando o Claude Code ao GitHub
+### Bloco 2.3 — Branches se cruzando: merge e conflito
 
-**~12 min**
+**~35 min**
 
-Até agora, quem clicava nos botões era você. A partir de agora, quem roda os comandos também pode ser o
-**Claude Code** — mas ele só consegue agir na sua conta depois de uma autorização.
+É o bloco mais importante do dia. Se algo tiver que sair do roteiro por falta de tempo, **não é este**.
 
-Claude Code é o Claude rodando no terminal. Ele entende pedidos em português e executa ações reais nos
-seus arquivos e no Git, sem você digitar comando nenhum.
+#### Merge é o cruzamento
 
-Seu facilitador vai fazer a conexão na tela primeiro. O que acontece: dentro da pasta do repositório ele
-roda `claude`, pede *"conecta essa sessão à minha conta do GitHub"*, o Claude Code dispara um
-`gh auth login`, o navegador abre e ele autoriza — uma vez só.
+Uma branch só tem valor se, em algum momento, ela volta pra se juntar com a principal. Isso se chama
+**merge**.
 
-É como logar no Notion ou no Spotify num computador novo: você autoriza uma vez, e ele lembra.
+**Quando dá certo:** as mudanças estão em partes diferentes do arquivo. O Git junta sozinho.
 
-#### Exercício 6 — Conectando seu Claude Code (6 min)
+**Quando dá conflito:** duas branches mudaram **a mesma linha** de formas diferentes. O Git não tem como
+adivinhar — então para e pergunta.
 
-**Entregável:** Claude Code autenticado na sua conta GitHub, confirmado por uma pergunta simples.
+> Conflito não é erro, não é bug, não é sinal de que você fez algo errado. É o Git sendo honesto: "duas
+> pessoas mudaram a mesma coisa, escolhe você". E note: **quem escolhe é você, não o Claude Code.**
 
-1. Abra o Terminal e vá até a pasta `meu-prototipo-arenacash` (`cd` + caminho)
-2. Rode `claude` pra abrir o Claude Code
-3. Peça: *"Conecta essa sessão à minha conta do GitHub."*
-4. Siga o fluxo que abre no navegador: **GitHub.com → HTTPS → Login with a web browser**, e autorize
-5. De volta ao Claude Code, confirme que funcionou perguntando:
-   *"Qual é o status do meu repositório agora? Tem alguma mudança pendente?"*
-6. Ele deve responder descrevendo o estado — branch atual, mudanças pendentes, últimos commits.
-   Se respondeu isso, está conectado
+#### Exercício 6 — Merge tranquilo e depois um conflito de verdade (28 min)
 
-> **O que fixar:** essa autorização é feita **uma vez só**. Nas próximas conversas com o Claude Code
-> neste computador, ele já lembra que está conectado à sua conta.
+**O cenário:** enquanto o marketing testava as cores, o time de copy também testava um texto novo pro
+mesmo botão.
+
+**Entregável:** a branch `variacao-cores` mesclada em `main` sem problema, e uma segunda branch
+`variacao-copy` que gera um conflito real, resolvido por decisão sua.
+
+**Passo 1 — Merge tranquilo (6 min)**
+
+> Vai pra main e mescla a branch `variacao-cores` nela. Depois faz push e me diz se teve algum conflito.
+
+Ele deve responder que correu tudo bem. Recarregue o `index.html`: a `main` está verde e roxa. Esse foi o
+caminho feliz.
+
+**Passo 2 — Crie a branch que vai gerar o conflito (6 min)**
+
+> Cria a branch `variacao-copy` a partir da main. Nela, troca o texto do botão de "Saiba mais" para "Quero
+> indicar agora" e deixa o subtítulo mais urgente, falando do prazo da promoção. Commita com a mensagem
+> "testando copy mais urgente no botão" e faz push.
+
+**Passo 3 — Volte na main e mude a MESMA linha de outro jeito (6 min)**
+
+> Agora volta pra main e, direto nela, troca o texto do **mesmo botão** pra "Ganhar R$ 50 agora" e ajusta o
+> subtítulo pra reforçar o valor do bônus. Commita com a mensagem "ajuste de copy focado no valor do bônus"
+> e faz push.
+
+Agora `main` e `variacao-copy` mudaram a mesma linha de formas diferentes. É de propósito.
+
+**Passo 4 — Provoque o merge e decida você (10 min)**
+
+> Tenta mesclar a `variacao-copy` na main. Se der conflito, **não resolve sozinho**: me mostra exatamente o
+> trecho em conflito, com os marcadores, e me explica o que cada lado quer.
+
+Ele vai mostrar algo assim:
+
+```html
+<<<<<<< HEAD
+<button>Ganhar R$ 50 agora</button>
+=======
+<button>Quero indicar agora</button>
+>>>>>>> variacao-copy
+```
+
+Entre `<<<<<<< HEAD` e `=======` está a versão da `main`; entre `=======` e `>>>>>>> variacao-copy` está a
+da outra branch.
+
+**A decisão é sua.** Escolha uma das duas, ou invente uma terceira. Se quiser ajuda pra pensar — não pra
+decidir:
+
+> Sem aplicar nada ainda: qual das duas versões funciona melhor pro botão de uma campanha de indicação, e
+> por quê? Me sugere também uma terceira opção que junte as duas.
+
+Com a decisão tomada:
+
+> Resolve o conflito deixando o texto do botão como *[o texto que você escolheu]*, apaga os marcadores,
+> finaliza o merge e faz push.
+
+> **O que fixar:** resolver conflito não tem mistério — é olhar as duas versões, decidir qual fica e
+> seguir. **O Git só precisa que uma pessoa decida.** E repare no desenho: o Claude Code *executou*, você
+> segurou a *decisão*.
 
 ---
 
-### Bloco 2.4 — Claude Code na prática: criar e entender
+### Bloco 2.4 — Pull Request: comentar antes de ir pro ar
 
-**~25 min**
+**~20 min**
 
-Agora que o Claude Code está conectado, ele faz duas coisas que você vai usar o tempo todo no trabalho:
-**criar o que ainda não existe** e **explicar o que já existe**. Um exercício pra cada.
+No exercício anterior você mesclou direto, sem revisão. Isso funciona quando você trabalha sozinho. Quando
+tem mais gente — ou quando você quer uma segunda opinião — existe o **Pull Request**.
 
-#### Exercício 7 — Um slide novo, do início ao fim, pelo Claude Code (9 min)
+Um PR é um pedido formal de "quero juntar minha branch na main, alguém pode olhar antes?". Ele vive no
+github.com e permite ver o **diff**, deixar **comentários** em linhas específicas e **aprovar** ou pedir
+mudanças.
 
-**Entregável:** um slide de depoimento — que não existia antes — criado, commitado e mesclado
-inteiramente pelo Claude Code.
+#### Exercício 7 — Abrindo e revisando um Pull Request (15 min)
 
-Cole estas mensagens no Claude Code, **uma de cada vez**, esperando ele terminar antes da próxima:
+**Entregável:** um PR aberto, com pelo menos 1 comentário e uma aprovação, mesclado em `main`.
 
-> Cria uma branch chamada `slide-depoimento` a partir da main.
+**Passo 1 — Crie a branch, o slide novo e o PR (6 min)**
 
-> Nessa branch, adiciona um novo slide ao index.html com um depoimento fictício de um cliente da
-> ArenaCash sobre a campanha "Indique um amigo e ganhe R$ 50". Inclui um nome e uma citação curta,
-> mantendo o visual consistente com o slide de capa.
+> Cria a branch `slide-beneficios` a partir da main. Nela, adiciona ao `index.html` mais um slide listando
+> 3 benefícios da campanha de indicação: R$ 50 pro indicado, R$ 50 pra quem indicou, sem limite de
+> indicações. A apresentação deve funcionar como slides navegáveis, com um botão "próximo". Mantém o visual
+> consistente com os outros slides.
 
-> Me mostra como ficou.
+Confira no navegador. Quando estiver bom:
 
-Confira no navegador, abrindo o `index.html` local. Se estiver bom:
+> Commita com "adiciona slide de beneficios", faz push e abre um Pull Request pra main com um título claro
+> e uma descrição curta. Me devolve o link do PR.
 
-> Commita com a mensagem "adiciona slide de depoimento", faz push da branch e mescla direto na main —
-> essa não precisa de Pull Request, é só uma prova de conceito.
+**Passo 2 — Revisem em dupla, no navegador (5 min)**
 
-Agora abra o GitHub Desktop — sem fazer nada, só olhar. A branch e o commit que o Claude Code criou estão
-lá, na mesma conta, no mesmo repositório.
+Formem duplas e troquem os links. **Esta parte é no github.com mesmo** — revisão é conversa entre pessoas,
+não tarefa pra automatizar.
 
-> **O que fixar:** o Claude Code usou o mesmo repositório e os mesmos mecanismos que você aprendeu na
-> mão. Só mudou quem executou o clique. E o resultado é conteúdo novo, não repetição.
+1. Abra o PR do colega e clique na aba **Files changed**
+2. Veja o diff, com o que foi adicionado em verde
+3. Passe o mouse numa linha e clique no **+**. Deixe um comentário
+4. **Revisor:** Review changes → Approve
 
-#### Exercício 8 — Documente o algoritmo da ArenaCash pelo Claude Code (15 min)
+**Passo 3 — Responda e mescle (4 min)**
 
-Lembra do **Exercício 2 de ontem**? Você garimpou o `simulador.js` na mão pra descobrir por que um jovem
-arrojado recebia o produto mais conservador. Hoje você refaz aquilo em três pedidos — e sai com um
-documento pronto pra mandar pra alguém.
+Leia o comentário que você recebeu. Se fizer sentido, ajuste:
 
-**Entregável:** um arquivo `analise-simulador.md` commitado no **seu** repositório, explicando o
-algoritmo da ArenaCash de ponta a ponta.
+> Na branch `slide-beneficios`, [descreva o ajuste pedido]. Commita e faz push — o PR deve atualizar
+> sozinho.
+
+Volte no PR: o commit novo aparece lá. Depois clique em **Merge pull request → Confirm merge**.
+
+> **O que fixar:** o PR não é etapa técnica chata — é o momento onde a conversa acontece **antes** de a
+> mudança virar oficial.
+
+---
+
+### Bloco 2.5 — Deploy: a terceira instância
+
+**~18 min**
+
+Ontem, no Bloco 1.5, você viu o mapa das três instâncias e ficou com duas. **A terceira nasce agora.**
+
+**GitHub Pages** é a forma mais simples: gratuito, sem cartão de crédito, publica direto a partir do
+próprio repositório.
+
+O fluxo completo:
+
+```
+Pedir ao Claude Code → Commit → Branch + Pull Request → Merge em main
+     → GitHub Pages publica → URL pública atualizada
+```
+
+A parte boa: você configura **uma vez**. A partir daí, toda vez que algo for mesclado em `main`, o site
+publicado se atualiza sozinho.
+
+#### Exercício 8 — Publicando o protótipo (12 min)
+
+**Entregável:** URL pública ativa, no formato `https://<seu-usuario>.github.io/meu-prototipo-arenacash/`.
+
+**Passo 1 — Ative o GitHub Pages (8 min)**
+
+Esta parte é no navegador: é configuração de conta, não mudança no código.
+
+1. Acesse `github.com/<seu-usuario>/meu-prototipo-arenacash`
+2. **Settings** → no menu lateral, **Pages**
+3. Em **Source**, selecione a branch **main** e a pasta **/ (root)**
+4. **Save**
+5. Espere cerca de 1 minuto e atualize — a URL pública aparece no topo
+
+**Passo 2 — Valide as três instâncias, agora completas (4 min)**
+
+1. Abra a URL numa **aba anônima/privada**
+2. Confirme que a apresentação abre e os slides navegam
+3. Copie o link, mande pra alguém do grupo e peça pra abrir no celular
+
+> **Agora você tem as três.** A pasta na sua máquina, o repositório no github.com e o site no ar —
+> exatamente o desenho do Bloco 1.5, agora com o seu nome nos três endereços.
+
+---
+
+### Bloco 2.6 — Claude Code lendo código: documentar o algoritmo
+
+**~15 min**
+
+Até aqui você usou o Claude Code pra **criar** e **mexer**. Ele também **lê e explica** — e é isso que
+fecha o gancho que ficou aberto no Dia 1.
+
+#### Exercício 9 — Documente o algoritmo da ArenaCash pelo Claude Code (15 min)
+
+Lembra do **Exercício 2 do Dia 1**? Você garimpou o `simulador.js` na mão. Agora refaz aquilo em três
+pedidos — e sai com um documento pronto pra mandar pra alguém.
+
+**Entregável:** um `analise-simulador.md` commitado no **seu** repositório.
 
 **Passo 1 — Peça a explicação e compare com a de ontem (4 min)**
-
-No Claude Code, dentro da pasta `meu-prototipo-arenacash` mesmo — ele consegue ler repositório público
-sem você clonar nada:
 
 > Lê o arquivo `simulador.js` do repositório público `github.com/CaueCM/ArenaCash` e me explica, em
 > português e sem jargão, como ele decide qual investimento indicar pra cada pessoa.
 
-Compare a resposta com o que **você** descobriu ontem lendo o arquivo na mão. Bateu? Ele achou algo que
-passou despercebido? Ou disse algo que você sabe que está errado?
+Compare com o que **você** descobriu ontem. Bateu? Ele achou algo que passou despercebido? Ou disse algo
+que você sabe que está errado?
 
 **Passo 2 — Peça o que é difícil achar sozinho (4 min)**
-
-Esta é a pergunta que dá trabalho de responder na mão — testar combinação por combinação até achar as
-que se comportam de forma estranha:
 
 > Quais regras desse arquivo podem gerar um resultado que surpreende o cliente? Pra cada uma, me dá um
 > exemplo concreto de idade, salário e perfil que cai nela, e explica por que o resultado parece
 > contraditório.
 
-Ele deve encontrar pelo menos duas: a do **aporte mínimo**, que passa por cima do perfil e da idade, e a
-do **teto de risco por idade**, que faz um arrojado de 55 anos receber o mesmo produto que um moderado
-de 35.
+Ele deve encontrar pelo menos duas: a do **aporte mínimo**, que passa por cima do perfil e da idade, e a do
+**teto de risco por idade**.
 
 Se ele apontar algo que você não consegue confirmar no código, **não aceite**. Peça: *"me mostra a linha
 exata do arquivo onde isso acontece"*.
 
-**Passo 3 — Peça o material detalhado (5 min)**
+**Passo 3 — Peça o material detalhado e commite (7 min)**
 
 > Cria um arquivo `analise-simulador.md` aqui no meu repositório documentando esse algoritmo, com estas
 > seções:
@@ -719,336 +829,73 @@ exata do arquivo onde isso acontece"*.
 >
 > Escreve pra alguém que não sabe programar. Sem jargão.
 
-Abra o arquivo e leia antes de aceitar. É *seu* documento — se alguma seção ficou rasa, peça pra refazer
-só aquela.
-
-**Passo 4 — Commite e publique (2 min)**
+Leia antes de aceitar. É *seu* documento. Quando estiver bom:
 
 > Commita o `analise-simulador.md` com a mensagem "documenta o algoritmo do simulador da ArenaCash" e faz
 > push na main.
 
-Confira no GitHub Desktop, na aba **History**: o commit está lá, feito por você, sem você ter clicado em
-nada.
-
-> **O que fixar:** ontem você levou 12 minutos garimpando um arquivo pra entender duas regras. Hoje você
-> levou três pedidos — e saiu com um **documento**, não só com o entendimento.
->
-> Mas repare no que tornou isso possível: você só consegue julgar se a resposta está certa **porque já
-> tinha feito na mão**. Quem pula a etapa de ontem recebe o mesmo documento e não tem como saber se pode
-> confiar nele.
+> **O que fixar:** ontem você levou 12 minutos garimpando pra entender duas regras. Hoje levou três pedidos
+> — e saiu com um **documento**. Mas você só consegue julgar se a resposta está certa **porque já tinha
+> feito na mão**.
 
 ---
 
-### Bloco 2.5 — Branches se cruzando: merge e conflito
-
-**~30 min**
-
-#### Merge é o cruzamento
-
-Uma branch só tem valor se, em algum momento, ela volta pra se juntar com a principal. Isso se chama
-**merge** — o momento em que duas linhas do tempo se cruzam.
-
-**Quando dá certo:** as mudanças estão em partes diferentes do arquivo. O Git junta tudo sozinho, sem
-perguntar nada.
-
-**Quando dá conflito:** duas branches mudaram **a mesma linha** de formas diferentes. O Git não tem como
-adivinhar qual você quer — então ele para e pergunta.
-
-> Conflito não é erro, não é bug, não é sinal de que você fez algo errado. É o Git sendo honesto: "duas
-> pessoas mudaram a mesma coisa, escolhe você".
-
-#### Exercício 9 — Merge tranquilo e depois um conflito de verdade (23 min)
-
-**O cenário:** enquanto o marketing testava as cores, o time de copy também testava um texto novo pro
-mesmo botão. Você vai mesclar as duas coisas e ver o que acontece.
-
-**Entregável:** a branch `variacao-cores` mesclada em `main` sem problema, e uma segunda branch
-`variacao-copy` que gera um conflito real, resolvido por você.
-
-**Passo 1 — Merge tranquilo: `variacao-cores` → `main` (6 min)**
-
-1. No GitHub Desktop, troque pra branch **main**
-2. Menu **Branch → Merge into current branch**
-3. Selecione `variacao-cores` e confirme
-4. Repare: sem erro, sem aviso. O Git juntou sozinho porque não havia conflito com o que estava em `main`
-5. **Push origin** pra atualizar o GitHub.com
-
-Esse foi o caminho feliz. Agora você vai forçar o caminho difícil de propósito.
-
-**Passo 2 — Crie a branch que vai gerar o conflito (5 min)**
-
-1. Com `main` já atualizada (agora com verde e roxo), crie a branch `variacao-copy`
-2. No claude.ai:
-
-> Aqui está meu código HTML atual [cole o conteúdo atualizado]. Troca o texto do botão de "Saiba mais"
-> para "Quero indicar agora" e o subtítulo pra algo mais urgente sobre o prazo da promoção. Mantém o
-> resto igual. Me devolve o código completo.
-
-3. Cole no `index.html`, salve, commite na `variacao-copy` com a mensagem
-   `testando copy mais urgente no botão` e faça push
-
-**Passo 3 — Volte na main e mude a MESMA linha de outro jeito (5 min)**
-
-1. Troque de volta pra `main`
-2. No claude.ai, peça outra variação — diferente da anterior — pro mesmo botão:
-
-> No mesmo código [cole o index.html da main], troca o texto do botão pra "Ganhar R$ 50 agora" e ajusta
-> o subtítulo pra reforçar o valor do bônus. Me devolve o código completo.
-
-3. Cole, salve, commite direto na `main` com a mensagem `ajuste de copy focado no valor do bônus` e
-   faça push
-
-Agora `main` e `variacao-copy` mudaram a mesma linha de formas diferentes. É hora do conflito.
-
-**Passo 4 — Tente o merge e resolva o conflito (9 min)**
-
-1. Com `main` ativa, vá em **Branch → Merge into current branch** e selecione `variacao-copy`
-2. O GitHub Desktop avisa: **"There are conflicts on this branch"**
-3. Clique em **Open in [seu editor]**, ou abra o `index.html` na mão. Você vai ver isto:
-
-```html
-<<<<<<< HEAD
-<button>Ganhar R$ 50 agora</button>
-=======
-<button>Quero indicar agora</button>
->>>>>>> variacao-copy
-```
-
-Traduzindo: entre `<<<<<<< HEAD` e `=======` está a versão da `main`; entre `=======` e
-`>>>>>>> variacao-copy` está a versão da outra branch. Escolha uma, ou combine as duas.
-
-Se quiser ajuda pra decidir, cole o trecho no claude.ai:
-
-> Este é um conflito de merge do Git. Aqui está o trecho com os marcadores: [cole]. Me explica as duas
-> versões e sugere qual ficaria melhor pro botão de uma campanha de indicação, ou uma terceira opção que
-> combine as duas.
-
-4. Edite o arquivo apagando os marcadores (`<<<<<<<`, `=======`, `>>>>>>>`) e deixando só o texto final
-5. Salve
-6. Volte ao GitHub Desktop — ele detecta que acabou e libera o botão **Commit merge**
-7. **Commit merge**, depois **Push origin**
-
-> **O que fixar:** resolver conflito não tem mistério — é abrir o arquivo, decidir qual trecho fica,
-> apagar as marcações e commitar. O Git só precisa que **uma pessoa decida**.
-
----
-
-### Bloco 2.6 — Claude Code na prática: outro conflito
-
-**~12 min**
-
-Você já resolveu um conflito na mão, no slide de capa. Agora vai provocar outro — num lugar diferente do
-protótipo, o slide de depoimento que o Claude Code criou — e dessa vez é ele quem resolve.
-
-#### Exercício 10 — Um conflito novo, resolvido pelo Claude Code (11 min)
-
-**Entregável:** um segundo conflito de merge, num trecho diferente do primeiro, identificado e resolvido
-pelo Claude Code.
-
-Cole estas mensagens no Claude Code, uma de cada vez:
-
-> Cria uma branch chamada `depoimento-v2` a partir da main. Nela, muda a citação do slide de depoimento
-> pra destacar a rapidez do processo de indicação. Commita e faz push.
-
-> Agora, direto na branch main, muda essa mesma citação do depoimento pra destacar a economia de R$ 50 em
-> vez da rapidez. Commita e faz push direto na main.
-
-> Tenta mesclar a branch `depoimento-v2` na main. Se der conflito, me explica o que está em conflito e
-> sugere uma versão da citação que combine as duas ideias — rapidez e economia.
-
-Ele deve identificar o conflito, mostrar as duas versões e propor uma combinação. **Leia a sugestão antes
-de aceitar** — se topar:
-
-> Aplica essa sugestão, resolve o conflito e finaliza o merge.
-
-Confirme no GitHub Desktop que o merge aparece no histórico, com as duas branches convergindo — sem que
-você tenha clicado em nada.
-
-> **O que fixar:** o mecanismo do conflito é sempre o mesmo, em qualquer slide — duas versões da mesma
-> linha disputando espaço. Na mão, você escolheu qual ficava. Aqui, o Claude Code sugere uma combinação
-> nova — mas **a decisão final continua sendo sua**.
-
----
-
-### Bloco 2.7 — Pull Request: comentar antes de ir pro ar
-
-**~18 min**
-
-No exercício anterior você mesclou direto, sem revisão. Isso funciona quando você trabalha sozinho.
-Quando tem mais gente envolvida — ou quando você quer uma segunda opinião antes de algo ir pro ar —
-existe o **Pull Request**.
-
-Um PR é um pedido formal de "quero juntar minha branch na main, alguém pode olhar antes?". Ele vive no
-GitHub.com (não no GitHub Desktop) e permite três coisas:
-
-- ver o **diff** — o que exatamente mudou, linha por linha
-- deixar **comentários** em linhas específicas
-- **aprovar** ou pedir mudanças antes de aceitar
-
-É como mandar um Loom de aprovação, só que pra código — ou, no nosso caso, pra HTML.
-
-#### Exercício 11 — Abrindo e revisando um Pull Request (12 min)
-
-**O cenário:** você quer testar mais uma variação, mas dessa vez quer que alguém revise antes de aprovar
-— igual aconteceria numa empresa de verdade.
-
-**Entregável:** um Pull Request aberto, com pelo menos 1 comentário e uma aprovação, mesclado em `main`.
-
-**Passo 1 — Crie a branch e o slide novo (4 min)**
-
-1. Crie a branch `slide-beneficios` a partir da `main`
-2. No claude.ai:
-
-> Aqui está meu código HTML atual [cole]. Adiciona mais um slide (a apresentação deve funcionar como
-> slides navegáveis com um botão "próximo") listando 3 benefícios da campanha de indicação: R$ 50 pro
-> indicado, R$ 50 pra quem indicou, sem limite de indicações. Mantém o visual consistente com os outros
-> slides. Me devolve o código completo.
-
-3. Cole no `index.html`, salve, confira no navegador, commite com `adiciona slide de beneficios` e
-   faça push
-
-**Passo 2 — Abra o Pull Request (4 min)**
-
-1. No GitHub Desktop, com a `slide-beneficios` ativa, clique em **Create Pull Request** — ele abre o
-   navegador direto na página certa
-2. Confirme o título (ex: "Adiciona slide de benefícios") e escreva uma descrição curta
-3. **Create Pull Request**
-
-**Passo 3 — Revisem em dupla (4 min)**
-
-Formem duplas. Cada um abre o PR do colega — o link está na aba **Pull requests** do repositório dele.
-
-1. Clique na aba **Files changed** e veja o diff, com o que foi adicionado em verde
-2. Passe o mouse numa linha e clique no **+** que aparece. Deixe um comentário
-   (ex: "esse texto podia ser mais direto")
-3. Autor: leia o comentário, responda ou ajuste o código e faça um commit novo na mesma branch — o PR
-   atualiza sozinho
-4. Revisor: **Review changes → Approve**
-5. Autor: **Merge pull request → Confirm merge**
-
-> **O que fixar:** o PR não é etapa técnica chata — é o momento onde a conversa acontece **antes** de a
-> mudança virar oficial. Em produto real, quem revisa costuma ser o tech lead ou o par de design. O
-> mecanismo é exatamente esse.
-
----
-
-### Bloco 2.8 — Deploy: colocando no ar
-
-**~18 min**
-
-Você tem um protótipo funcionando na pasta local e no GitHub. Falta a última peça: uma URL pública que
-qualquer pessoa acessa, sem precisar clonar nada.
-
-**GitHub Pages** é a forma mais simples: gratuito, sem cartão de crédito, publica direto a partir do
-próprio repositório.
-
-O fluxo completo, de ponta a ponta:
-
-```
-Editar (na mão ou via Claude Code)
-     ↓
-Commit
-     ↓
-Branch + Pull Request (revisão)
-     ↓
-Merge em main
-     ↓
-GitHub Pages publica automaticamente a partir de main
-     ↓
-URL pública atualizada
-```
-
-A parte boa: você configura **uma vez**. A partir daí, toda vez que algo for mesclado em `main`, o site
-publicado se atualiza sozinho.
-
-#### Exercício 12 — Publicando o protótipo (12 min)
-
-**Entregável:** URL pública ativa, no formato `https://<seu-usuario>.github.io/meu-prototipo-arenacash/`,
-mostrando a apresentação com os slides de capa, depoimento e benefícios.
-
-**Passo 1 — Ative o GitHub Pages (8 min)**
-
-1. Acesse `github.com/<seu-usuario>/meu-prototipo-arenacash`
-2. **Settings**
-3. No menu lateral, **Pages**
-4. Em **Source**, selecione a branch **main** e a pasta **/ (root)**
-5. **Save**
-6. Espere cerca de 1 minuto e atualize a página — a URL pública aparece no topo
-
-**Passo 2 — Valide a URL (4 min)**
-
-1. Abra a URL numa aba anônima/privada, pra garantir que não é cache local
-2. Confirme que a apresentação abre e os slides navegam
-3. Copie o link, mande pra alguém do grupo e peça pra abrir no celular
-
-> **O que fixar:** você acabou de operacionalizar o fluxo completo, testado de duas formas ao longo do
-> dia — na mão e via Claude Code. É o mesmo fluxo usado em produtos reais, só que sem depender de
-> ninguém do time técnico.
-
----
-
-### Bloco 2.9 — Desafio final: crie algo seu
+### Bloco 2.7 — Desafio final: crie algo seu
 
 **~15 min**
 
-Chegou a vez de você escolher. Nada de repetir o que já foi feito na mão ou nos exemplos do Claude Code —
-pense em algo que ainda **não existe** no seu protótipo.
+Chegou a vez de você escolher. Nada de repetir o que já foi feito — pense em algo que **ainda não existe**
+no seu protótipo.
 
-Se precisar de inspiração, escolha uma destas (ou traga a sua):
+Se precisar de inspiração: um slide de FAQ, uma seção de números ("10.000 indicações já feitas"), um botão
+de compartilhar no WhatsApp, ou uma animação entre os slides.
 
-- um slide de FAQ com 2 ou 3 perguntas frequentes sobre a campanha
-- uma seção de números (ex: "10.000 indicações já feitas")
-- um botão de compartilhar no WhatsApp
-- uma animação ou transição entre os slides
+#### Exercício 10 — Uma ideia sua, publicada de ponta a ponta (15 min)
 
-#### Exercício 13 — Uma ideia sua, publicada de ponta a ponta (15 min)
-
-**Entregável:** uma funcionalidade nova, escolhida por você, criada, commitada, revisada via PR e
-publicada — tudo pedindo ao Claude Code, **sem abrir o GitHub Desktop**.
-
-O roteiro, em português, pro Claude Code:
+**Entregável:** uma funcionalidade nova, escolhida por você, criada, commitada, revisada via PR e no ar.
 
 1. Peça pra criar uma branch com um nome que descreva sua ideia
 2. Descreva a funcionalidade que você quer adicionar ao `index.html`
-3. Peça pra ele te mostrar o resultado **antes** de continuar
+3. Abra o arquivo local no navegador e confira **antes** de continuar
 4. Peça commit, push e abertura de um Pull Request
-5. Revise o diff no GitHub.com e peça pro Claude Code mesclar
-6. Peça pra confirmar que o GitHub Pages já está servindo a versão nova, e pra te devolver a URL pública
+5. Revise o diff no github.com e peça pro Claude Code mesclar
+6. Peça: *"confirma que o GitHub Pages já está servindo a versão nova e me devolve a URL pública"*
 
 Quem terminar primeiro compartilha o link e conta pro grupo o que escolheu criar.
 
 > **O que fixar:** o valor de entender o mecanismo não é nunca mais usar o Claude Code sozinho — é
-> **confiar no resultado**, porque você sabe exatamente o que está acontecendo por trás de cada pedido.
+> **confiar no resultado**, porque você sabe o que está acontecendo por trás de cada pedido.
 
 ---
 
-### Bloco 2.10 — Fechando os dois dias
+### Bloco 2.8 — Fechando os dois dias
 
 **~8 min**
 
 #### Os 4 motivos, revisitados
 
-No Bloco 1.2 você viu quatro razões pra usar GitHub sendo não-técnico. Onde cada uma apareceu:
-
-1. **Vibe coding direto no código da empresa** — Blocos 2.4, 2.6 e 2.9, pedindo direto ao Claude Code
+1. **Vibe coding no código da empresa** — o Dia 2 inteiro: cada mudança saiu de um pedido em português
 2. **Repositório de apresentações e HTML** — é o próprio pitch deck que você construiu e publicou
-3. **Análise de dados e algoritmos** — Exercício 2 do Dia 1 e Exercício 8 de hoje: você leu o algoritmo
-   do simulador da ArenaCash na mão, e depois pediu ao Claude Code pra documentar o mesmo arquivo
-4. **Controle de versão** — vivido o curso inteiro: commits, branches, um conflito de verdade resolvido,
-   histórico completo
+3. **Análise de dados e algoritmos** — Exercício 2 do Dia 1 e Exercício 9 de hoje
+4. **Controle de versão** — commits, branches, um conflito resolvido, histórico completo
 
 #### O que você sai sabendo fazer
 
-- Criar um repositório do zero e publicar na nuvem
+- Criar um repositório e commitar **só pelo navegador**, sem instalar nada
+- Ler um algoritmo de produto e opinar sobre as regras dele
+- Conectar o Claude Code à sua conta e trazer um projeto pra sua máquina
 - Criar branches pra testar variações sem arriscar a versão oficial
-- Mesclar branches e **resolver um conflito** sem entrar em pânico
+- Resolver um conflito de merge decidindo você, com o Claude Code executando
 - Abrir um Pull Request, revisar um diff e comentar antes de aprovar
 - Colocar um protótipo no ar numa URL pública
-- Pedir tudo isso ao Claude Code — e saber conferir se ele fez certo
+- Auditar o que o Claude Code fez, pelos comandos que ele rodou
 
 #### Duas perguntas pra fechar
 
 Branch e merge ainda te assustam?
 
-E, na hora de fazer: você preferiu clicar no GitHub Desktop ou pedir pro Claude Code? Não existe resposta
-certa — mas repare que agora você tem as duas na mão, e sabe o que está acontecendo nos dois casos.
+E a segunda, que é a que importa: em que momento de hoje você **discordou** do Claude Code — ou conferiu
+algo que ele disse?
+
+Se isso aconteceu pelo menos uma vez, o curso funcionou. O objetivo nunca foi aprender a pedir; foi
+conseguir **saber se a resposta está certa**.

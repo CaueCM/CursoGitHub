@@ -4,7 +4,7 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Dia 1 — Do zero ao primeiro commit | GitHub para Prototipação</title>
-<meta name="description" content="Dia 1 do curso GitHub para Prototipação: do 'o que é o GitHub' até o seu primeiro commit publicado."/>
+<meta name="description" content="Dia 1 do curso GitHub para Prototipação: tudo pelo navegador, do 'o que é o GitHub' até conectar o Claude Code."/>
 <link href="colors_and_type.css" rel="stylesheet"/>
 <link href="styles.css" rel="stylesheet"/>
 </head>
@@ -32,12 +32,12 @@
 <!-- HERO DO DIA -->
 <section class="day-hero">
   <div class="container">
-    <span class="pa-eyebrow pa-eyebrow--red">D I A &nbsp; 1 &nbsp; · &nbsp; ~ 2 h 3 5</span>
+    <span class="pa-eyebrow pa-eyebrow--red">D I A &nbsp; 1 &nbsp; · &nbsp; ~ 2 h 2 0</span>
     <h1>Do zero ao <span class="accent">primeiro commit.</span></h1>
     <p class="day-hero-sub">
-      Hoje você sai com um repositório seu, publicado, com o primeiro slide de um protótipo dentro dele.
-      O caminho até lá passa por entender o que é o GitHub, por que ele importa pra quem não é técnico,
-      e qual é o mecanismo por trás de tudo — antes de qualquer clique.
+      Hoje é tudo pelo navegador. Você explora um repositório de verdade, entende o mecanismo do Git, cria
+      o seu próprio repositório e commita o primeiro slide — sem instalar nada. No último bloco o Claude
+      Code entra, conecta na sua conta e traz o projeto pra sua máquina.
     </p>
     <div class="day-nav-links">
       <a class="btn btn--primary" href="#bloco-1-1">Ir pro Bloco 1.1 →</a>
@@ -46,8 +46,8 @@
     <div class="day-hero-meta">
       <div><span class="num">6</span><span class="label">blocos</span></div>
       <div><span class="num">4</span><span class="label">exercícios</span></div>
-      <div><span class="num">~2h35</span><span class="label">duração</span></div>
-      <div><span class="num">1</span><span class="label">repositório publicado</span></div>
+      <div><span class="num">~2h20</span><span class="label">duração</span></div>
+      <div><span class="num">0</span><span class="label">apps pra abrir hoje</span></div>
     </div>
   </div>
 </section>
@@ -62,8 +62,8 @@
       <li><a href="#bloco-1-1"><span class="num">1.1</span> O que é o GitHub</a></li>
       <li><a href="#bloco-1-2"><span class="num">1.2</span> Por que usar</a></li>
       <li><a href="#bloco-1-3"><span class="num">1.3</span> Como funciona o Git</a></li>
-      <li><a href="#bloco-1-4"><span class="num">1.4</span> Setup e clone</a></li>
-      <li><a href="#bloco-1-5"><span class="num">1.5</span> Primeiro commit</a></li>
+      <li><a href="#bloco-1-4"><span class="num">1.4</span> Seu primeiro commit</a></li>
+      <li><a href="#bloco-1-5"><span class="num">1.5</span> Conectando o Claude Code</a></li>
       <li><a href="#bloco-1-6"><span class="num">1.6</span> Fechando o dia</a></li>
     </ul>
 
@@ -79,16 +79,15 @@
   <!-- BLOCOS -->
   <div class="blocks">
 
-    <!-- ============================================================
-         PRÉ-REQUISITOS
-         ============================================================ -->
+    <!-- ============================================================ PRÉ-REQUISITOS -->
     <section class="block" id="pre-requisitos">
       <div class="block-head">
         <span class="block-pill gray">Antes de começar</span>
         <h2>Pré-requisitos</h2>
-        <p class="block-obj">Faça isso <strong>antes do dia do curso</strong> — reserve uns 20 minutos. Se algo
-        não funcionar, avise o facilitador antes: não deixe pra resolver no dia, porque cada item aqui é
-        pré-condição de alguma parte da aula.</p>
+        <p class="block-obj">O Dia 1 inteiro acontece <strong>no navegador</strong> — os itens 1 a 3 bastam
+        pra acompanhar quase tudo. Os itens 4 a 6 são instalações no computador, e você só usa no último
+        bloco do dia. Reserve uns 20 minutos e faça <strong>antes</strong>: instalar ao vivo consome tempo
+        de aula.</p>
       </div>
 
       <div class="prereq-list">
@@ -112,19 +111,14 @@
           <summary>
             <span class="step-num">2</span>
             <div class="step-title">
-              <strong>GitHub Desktop instalado</strong>
-              <span>é a ferramenta principal do curso</span>
+              <strong>Navegador atualizado</strong>
+              <span>é a ferramenta principal do Dia 1</span>
             </div>
             <span class="step-status required">Obrigatório</span>
           </summary>
           <div class="step-body">
-            <p>É o app visual que você vai usar pra todas as ações de Git. Sem terminal, sem comando decorado.</p>
-            <ol>
-              <li>Baixe em <a href="https://desktop.github.com" rel="noopener" target="_blank">desktop.github.com</a> (Mac e Windows)</li>
-              <li>Instale normalmente</li>
-              <li>Abra o app e faça login com a conta do passo 1 (<strong>File → Options/Preferences → Accounts → Sign in</strong>)</li>
-              <li>Confirme: seu nome de usuário deve aparecer no canto da tela</li>
-            </ol>
+            <p>Chrome, Edge, Safari ou Firefox — qualquer um recente serve. Tudo que você faz hoje até o
+            Bloco 1.5 acontece dentro dele: explorar repositório, ler código, criar arquivo e commitar.</p>
           </div>
         </details>
 
@@ -138,9 +132,10 @@
             <span class="step-status required">Obrigatório</span>
           </summary>
           <div class="step-body">
-            <p>Você vai usar o <strong>Claude.ai</strong> (o chat normal, gratuito ou pago) pra pedir a criação e a
-            edição dos slides em HTML. Não precisa de plano pago pra este curso — o gratuito atende. Se você já
-            tiver Pro ou Max, melhor: evita esbarrar em limite de mensagens no meio de um exercício.</p>
+            <p>Você vai usar o <strong>Claude.ai</strong> (o chat normal, gratuito ou pago) pra pedir a
+            criação e a edição dos slides em HTML. Não precisa de plano pago pra este curso — o gratuito
+            atende. Se você já tiver Pro ou Max, melhor: evita esbarrar em limite de mensagens no meio de
+            um exercício.</p>
             <p>Se não tem conta: <a href="https://claude.ai" rel="noopener" target="_blank">claude.ai</a>.</p>
           </div>
         </details>
@@ -149,14 +144,19 @@
           <summary>
             <span class="step-num">4</span>
             <div class="step-title">
-              <strong>Navegador atualizado</strong>
-              <span>Chrome, Edge, Safari ou Firefox</span>
+              <strong>Node.js 18 ou mais recente</strong>
+              <span>é o motor que roda o Claude Code</span>
             </div>
             <span class="step-status required">Obrigatório</span>
           </summary>
           <div class="step-body">
-            <p>Qualquer um recente serve. Você vai usar pra abrir arquivos HTML direto do seu computador, navegar
-            no GitHub.com e ver o protótipo publicado.</p>
+            <ol>
+              <li>Abra o Terminal (Mac: <code>Cmd + Espaço</code> → "Terminal") ou o PowerShell (Windows: tecla Windows → "PowerShell")</li>
+              <li>Digite <code>node --version</code> e pressione Enter</li>
+              <li>Se aparecer <code>v18</code> ou mais recente, está pronto. Se não aparecer nada, baixe a
+              versão <strong>LTS</strong> em <a href="https://nodejs.org/en/download" rel="noopener" target="_blank">nodejs.org/en/download</a>
+              e instale com as opções padrão</li>
+            </ol>
           </div>
         </details>
 
@@ -164,42 +164,14 @@
           <summary>
             <span class="step-num">5</span>
             <div class="step-title">
-              <strong>Editor de texto</strong>
-              <span>só pra espiar o código, se você quiser</span>
-            </div>
-            <span class="step-status optional">Opcional</span>
-          </summary>
-          <div class="step-body">
-            <p>Não é obrigatório. Mas se você quiser <strong>abrir e olhar</strong> o código HTML sem editar na
-            mão, um editor como <a href="https://code.visualstudio.com" rel="noopener" target="_blank">VS Code</a>
-            ajuda a visualizar. Você não vai escrever código nele — no máximo espiar.</p>
-          </div>
-        </details>
-
-        <details class="setup-step">
-          <summary>
-            <span class="step-num">6</span>
-            <div class="step-title">
               <strong>Claude Code instalado</strong>
-              <span>você só usa no Dia 2 — mas instale antes</span>
+              <span>usado no Bloco 1.5, no fim do dia</span>
             </div>
             <span class="step-status required">Obrigatório</span>
           </summary>
           <div class="step-body">
-            <p>Claude Code é a versão do Claude que roda no terminal e consegue agir direto nos seus arquivos e no
-            Git. Você não vai usar até o Bloco 2.3, mas precisa estar instalado antes — instalar ao vivo consome
-            tempo de aula.</p>
-
-            <p><strong>6a. Node.js (versão 18 ou mais recente)</strong> — é o motor que roda o Claude Code.</p>
-            <ol>
-              <li>Abra o Terminal (Mac: <code>Cmd + Espaço</code> → "Terminal") ou o PowerShell (Windows: tecla Windows → "PowerShell")</li>
-              <li>Digite <code>node --version</code> e pressione Enter</li>
-              <li>Se aparecer <code>v18</code> ou mais recente, siga pro 6b. Se não aparecer nada, baixe a versão
-              <strong>LTS</strong> em <a href="https://nodejs.org/en/download" rel="noopener" target="_blank">nodejs.org/en/download</a>
-              e instale com as opções padrão</li>
-            </ol>
-
-            <p><strong>6b. Claude Code</strong> — com o Node instalado, no mesmo terminal:</p>
+            <p>Claude Code é a versão do Claude que roda no terminal e consegue agir direto nos seus
+            arquivos e no Git. Com o Node instalado, no mesmo terminal:</p>
             <pre class="code-block">npm install -g @anthropic-ai/claude-code</pre>
             <p>Confirme com <code>claude --version</code>. Se aparecer um número de versão, está instalado.</p>
           </div>
@@ -207,7 +179,7 @@
 
         <details class="setup-step">
           <summary>
-            <span class="step-num">7</span>
+            <span class="step-num">6</span>
             <div class="step-title">
               <strong>GitHub CLI (<code>gh</code>) instalado</strong>
               <span>sem autenticar ainda</span>
@@ -215,15 +187,16 @@
             <span class="step-status required">Obrigatório</span>
           </summary>
           <div class="step-body">
-            <p>O Claude Code usa a CLI do GitHub pra agir na sua conta — clonar, commitar, abrir PR — sem você
-            precisar abrir o navegador o tempo todo.</p>
+            <p>O Claude Code usa a CLI do GitHub pra agir na sua conta — clonar, commitar, dar push, abrir
+            PR — sem você precisar abrir o navegador o tempo todo.</p>
             <ol>
               <li>Instale seguindo <a href="https://cli.github.com" rel="noopener" target="_blank">cli.github.com</a>
               (Mac: <code>brew install gh</code>; Windows: instalador do site)</li>
               <li>Confirme com <code>gh --version</code></li>
             </ol>
-            <p class="tip">⚠️ <strong>Não rode <code>gh auth login</code> ainda.</strong> A autenticação acontece
-            ao vivo, no Bloco 2.3 — é um dos momentos mais importantes do curso e faz mais sentido guiada.</p>
+            <p class="tip">⚠️ <strong>Não rode <code>gh auth login</code> ainda.</strong> A autenticação
+            acontece ao vivo, no Bloco 1.5 — é um dos momentos mais importantes do curso e faz mais sentido
+            guiada.</p>
           </div>
         </details>
 
@@ -232,53 +205,52 @@
       <h3 class="concept-sub">Confira antes de vir</h3>
       <ul class="check-list">
         <li>Consigo entrar em github.com com meu usuário e senha</li>
-        <li>O GitHub Desktop abre e mostra meu nome de usuário logado</li>
         <li>Consigo abrir o claude.ai e mandar uma mensagem</li>
-        <li>Meu navegador abre arquivos <code>.html</code> sem perguntar nada estranho</li>
         <li><code>node --version</code> responde v18 ou mais recente</li>
         <li><code>claude --version</code> responde com um número de versão</li>
         <li><code>gh --version</code> responde com um número de versão (sem autenticar ainda)</li>
       </ul>
     </section>
 
-    <!-- ============================================================
-         BLOCO 1.1
-         ============================================================ -->
+    <!-- ============================================================ 1.1 -->
     <section class="block" id="bloco-1-1">
       <div class="block-head">
         <span class="block-pill">Bloco 1.1 · ~15 min</span>
+        <span class="block-mode block-mode--mao">No navegador · github.com</span>
         <h2>O que é o GitHub</h2>
-        <p class="block-quote">"GitHub é um lugar na internet que guarda projetos inteiros — com todo o histórico
-        de mudanças, sempre."</p>
+        <p class="block-quote">"GitHub é um lugar na internet que guarda projetos inteiros — com todo o
+        histórico de mudanças, sempre."</p>
       </div>
 
       <div class="concept">
         <h3 class="concept-sub">O que é</h3>
-        <p>Pensa num Google Drive em que cada versão salva fica pra sempre, e dá pra ver exatamente o que cada
-        pessoa mudou, quando e por quê. É isso.</p>
-        <p>Um projeto guardado desse jeito tem um nome: <strong>repositório</strong>. É a palavra que você mais
-        vai ouvir nos próximos dois dias, então vale se acostumar com ela desde já — repositório é a pasta do
-        projeto, só que <strong>com memória</strong>.</p>
+        <p>Pensa num Google Drive em que cada versão salva fica pra sempre, e dá pra ver exatamente o que
+        cada pessoa mudou, quando e por quê. É isso.</p>
+        <p>Um projeto guardado desse jeito tem um nome: <strong>repositório</strong>. É a palavra que você
+        mais vai ouvir nos próximos dois dias, então vale se acostumar com ela desde já — repositório é a
+        pasta do projeto, só que <strong>com memória</strong>.</p>
       </div>
 
       <div class="concept">
         <h3 class="concept-sub">As quatro abas que todo repositório tem</h3>
         <p>Quando você abre um repositório no github.com, sempre encontra as mesmas abas no topo:</p>
 
-        <table class="dict-table">
-          <thead>
-            <tr><th>Aba</th><th>O que tem lá dentro</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>Code</td><td>Os arquivos do projeto, como numa pasta comum</td></tr>
-            <tr><td>Commits</td><td>O histórico: o que mudou, quando e por quem</td></tr>
-            <tr><td>Branches</td><td>As linhas do tempo paralelas que existem hoje no projeto</td></tr>
-            <tr><td>Pull requests</td><td>Os pedidos de "posso juntar minha mudança na versão principal?"</td></tr>
-          </tbody>
-        </table>
+        <div class="table-scroll">
+          <table class="dict-table">
+            <thead>
+              <tr><th>Aba</th><th>O que tem lá dentro</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Code</td><td>Os arquivos do projeto, como numa pasta comum</td></tr>
+              <tr><td>Commits</td><td>O histórico: o que mudou, quando e por quem</td></tr>
+              <tr><td>Branches</td><td>As linhas do tempo paralelas que existem hoje no projeto</td></tr>
+              <tr><td>Pull requests</td><td>Os pedidos de "posso juntar minha mudança na versão principal?"</td></tr>
+            </tbody>
+          </table>
+        </div>
 
-        <p class="tip" style="margin-top: var(--s-4);">💡 Você não precisa entender cada uma delas agora. Precisa
-        só saber que existem — a gente volta em todas as quatro ao longo dos dois dias, uma de cada vez.</p>
+        <p class="tip">💡 Você não precisa entender cada uma delas agora. Precisa só saber que existem — a
+        gente volta em todas as quatro ao longo dos dois dias, uma de cada vez.</p>
       </div>
 
       <div class="exercises">
@@ -291,9 +263,9 @@
             <span class="ex-time">8 min</span>
           </summary>
           <div class="ex-body">
-            <p class="ex-intro">Este é o repositório da ArenaCash — a fintech fictícia que serve de cenário pros
-            exercícios. É um repositório com história de verdade: vários commits, duas branches abertas e
-            Pull Requests.</p>
+            <p class="ex-intro">Este é o repositório da ArenaCash — a fintech fictícia que serve de cenário
+            pros exercícios. É um repositório com história de verdade: vários commits, duas branches abertas
+            e Pull Requests.</p>
 
             <div class="link-cards">
               <a class="link-card" href="https://github.com/CaueCM/ArenaCash" rel="noopener" target="_blank">
@@ -309,7 +281,7 @@
             </div>
 
             <p>Abra os dois em abas separadas. Um é o código; o outro é o mesmo código publicado. No fim do
-            Dia 1 você vai ter esse mesmo par — repositório e página no ar — com o seu nome.</p>
+            Dia 2 você vai ter esse mesmo par — repositório e página no ar — com o seu nome.</p>
 
             <p class="ex-entrega"><strong>Não tem entregável neste exercício.</strong> O objetivo é você criar
             familiaridade antes da gente nomear as peças. Não tem resposta certa e não tem como errar.</p>
@@ -350,19 +322,18 @@
             <div class="ex-closing">
               <span class="pa-eyebrow">O que fixar</span>
               <p>O repositório que você acabou de espiar é o mesmo tipo de estrutura que <strong>você</strong> vai
-              criar do zero daqui a pouco, no Bloco 1.5.</p>
+              criar do zero daqui a pouco, no Bloco 1.4.</p>
             </div>
           </div>
         </details>
       </div>
     </section>
 
-    <!-- ============================================================
-         BLOCO 1.2
-         ============================================================ -->
+    <!-- ============================================================ 1.2 -->
     <section class="block" id="bloco-1-2">
       <div class="block-head">
         <span class="block-pill">Bloco 1.2 · ~27 min</span>
+        <span class="block-mode block-mode--mao">No navegador · github.com</span>
         <h2>Por que usar GitHub sendo não-técnico</h2>
         <p class="block-quote">"Ninguém aqui vai virar engenheiro. A pergunta não é 'como eu uso o GitHub do jeito
         que um dev usaria' — é 'o que isso destrava pra mim, hoje, no meu trabalho'."</p>
@@ -475,7 +446,7 @@
                 <div class="link-cards">
                   <a class="link-card" href="https://github.com/CaueCM/ArenaCash/blob/main/simulador.js" rel="noopener" target="_blank">
                     <span class="link-card-label">Atalho, se precisar</span>
-                    <span class="link-card-url">github.com/CaueCM/ArenaCash/blob/main/simulador.js</span>
+                    <span class="link-card-url">github.com/CaueCM/ArenaCash/<wbr>blob/main/simulador.js</span>
                     <span class="link-card-desc">O arquivo já aberto — mas tente achar navegando primeiro</span>
                   </a>
                 </div>
@@ -523,9 +494,7 @@
       </div>
     </section>
 
-    <!-- ============================================================
-         BLOCO 1.3
-         ============================================================ -->
+    <!-- ============================================================ 1.3 -->
     <section class="block" id="bloco-1-3">
       <div class="block-head">
         <span class="block-pill">Bloco 1.3 · ~30 min</span>
@@ -540,7 +509,8 @@
         <div class="two-col">
           <div class="pill-card">
             <h4>Git</h4>
-            <p>O sistema que guarda o histórico. Ele mora <strong>no seu computador</strong>.</p>
+            <p>O sistema que guarda o histórico. Ele roda <strong>onde o projeto está</strong> — na sua
+            máquina ou nos servidores do GitHub.</p>
           </div>
           <div class="pill-card">
             <h4>GitHub</h4>
@@ -558,7 +528,7 @@
           <div class="repo-diagram-row">
             <div class="repo-node">
               <span class="repo-node-label">Local</span>
-              <strong>Seu computador</strong>
+              <strong>Sua máquina</strong>
               <span>a pasta do projeto, com Git ligado</span>
             </div>
             <div class="repo-arrows">
@@ -581,10 +551,13 @@
           </div>
         </div>
 
-        <p>O projeto existe <strong>nos dois lugares ao mesmo tempo</strong>. E — isso é o que pega todo mundo no
-        começo — os dois <strong>não se atualizam sozinhos</strong>.</p>
-        <p>Você editou um arquivo no seu computador? O GitHub não sabe de nada até você mandar (<code>push</code>).
-        Alguém mudou algo no GitHub? Sua pasta não muda até você buscar (<code>pull</code>).</p>
+        <p>O projeto pode existir <strong>nos dois lugares ao mesmo tempo</strong>. E — isso é o que pega todo
+        mundo no começo — os dois <strong>não se atualizam sozinhos</strong>.</p>
+        <p>Alguém editou um arquivo na máquina? O GitHub não sabe de nada até esse alguém mandar
+        (<code>push</code>). Mudou algo no GitHub? A pasta local não muda até alguém buscar (<code>pull</code>).</p>
+        <p class="tip">💡 Hoje você começa <strong>só pelo lado direito</strong>: cria e edita tudo direto no
+        github.com, sem cópia local nenhuma. O lado esquerdo nasce no Bloco 1.5, quando o Claude Code clonar o
+        projeto pra sua máquina.</p>
       </div>
 
       <div class="concept">
@@ -603,8 +576,8 @@
           </div>
           <div class="concept-card">
             <h4><span class="n">03</span> Local vs. remoto</h4>
-            <p>A mesma pasta existe no seu computador (local) e no GitHub.com (remoto). Elas só ficam iguais quando
-            você manda (<code>push</code>) ou busca (<code>pull</code>).</p>
+            <p>A mesma pasta pode existir na sua máquina (local) e no GitHub.com (remoto). Elas só ficam iguais
+            quando alguém manda (<code>push</code>) ou busca (<code>pull</code>).</p>
           </div>
           <div class="concept-card">
             <h4><span class="n">04</span> Branch</h4>
@@ -632,7 +605,6 @@
             que recebe dois commits e depois volta pra main num merge; e cor-do-botao, que recebe dois commits e
             continua aberta, sem ter voltado.</desc>
 
-            <!-- ===== Etiquetas das faixas ===== -->
             <g font-family="var(--font-display, Archivo, sans-serif)" font-size="12" font-weight="700"
                letter-spacing="1.2" text-anchor="middle">
               <rect x="16" y="65" width="150" height="30" rx="15" fill="var(--pa-red, #FF494C)"/>
@@ -645,26 +617,16 @@
               <text x="91" y="275" fill="var(--pa-black, #0A0A0A)">COR-DO-BOTAO</text>
             </g>
 
-            <!-- ===== Linhas ===== -->
             <g fill="none" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
-              <!-- main: reta, do começo ao fim -->
               <path d="M 196 80 H 770" stroke="var(--pa-red, #FF494C)"/>
-
-              <!-- slide-novo: sai da main, anda, e volta (merge) -->
               <path d="M 210 80 V 156 Q 210 180 234 180 H 616 Q 640 180 640 156 V 80"
                     stroke="var(--pa-yellow, #FFD233)"/>
-
-              <!-- "ponte": abre um vão na faixa amarela onde a verde cruza -->
               <path d="M 350 168 V 192" stroke="var(--pa-black, #0A0A0A)" stroke-width="12"/>
-
-              <!-- cor-do-botao: sai da main e continua aberta -->
               <path d="M 350 80 V 246 Q 350 270 374 270 H 700" stroke="var(--pa-lime, #C6F04A)"/>
               <path d="M 712 270 H 758" stroke="var(--pa-lime, #C6F04A)" stroke-dasharray="1 14"/>
             </g>
 
-            <!-- ===== Commits ===== -->
             <g stroke-width="4">
-              <!-- main -->
               <circle cx="210" cy="80" r="13" fill="var(--pa-black, #0A0A0A)" stroke="var(--pa-red, #FF494C)"/>
               <circle cx="210" cy="80" r="6" fill="var(--pa-red, #FF494C)" stroke="none"/>
               <circle cx="350" cy="80" r="13" fill="var(--pa-black, #0A0A0A)" stroke="var(--pa-red, #FF494C)"/>
@@ -674,20 +636,17 @@
               <circle cx="750" cy="80" r="13" fill="var(--pa-black, #0A0A0A)" stroke="var(--pa-red, #FF494C)"/>
               <circle cx="750" cy="80" r="6" fill="var(--pa-red, #FF494C)" stroke="none"/>
 
-              <!-- slide-novo -->
               <circle cx="400" cy="180" r="13" fill="var(--pa-black, #0A0A0A)" stroke="var(--pa-yellow, #FFD233)"/>
               <circle cx="400" cy="180" r="6" fill="var(--pa-yellow, #FFD233)" stroke="none"/>
               <circle cx="510" cy="180" r="13" fill="var(--pa-black, #0A0A0A)" stroke="var(--pa-yellow, #FFD233)"/>
               <circle cx="510" cy="180" r="6" fill="var(--pa-yellow, #FFD233)" stroke="none"/>
 
-              <!-- cor-do-botao -->
               <circle cx="480" cy="270" r="13" fill="var(--pa-black, #0A0A0A)" stroke="var(--pa-lime, #C6F04A)"/>
               <circle cx="480" cy="270" r="6" fill="var(--pa-lime, #C6F04A)" stroke="none"/>
               <circle cx="600" cy="270" r="13" fill="var(--pa-black, #0A0A0A)" stroke="var(--pa-lime, #C6F04A)"/>
               <circle cx="600" cy="270" r="6" fill="var(--pa-lime, #C6F04A)" stroke="none"/>
             </g>
 
-            <!-- ===== Anotações ===== -->
             <g font-family="var(--font-mono, JetBrains Mono, monospace)" font-size="12"
                fill="var(--pa-gray-400, #A3A3A3)">
               <text x="640" y="44" text-anchor="middle">merge — a ideia entra na main</text>
@@ -715,28 +674,29 @@
         <div class="phases">
           <div class="phase">
             <span class="n">1</span>
-            <strong>Você edita um arquivo na pasta local</strong>
+            <strong>Alguém edita um arquivo</strong>
             <span>mudança "solta"</span>
           </div>
           <div class="phase">
             <span class="n">2</span>
-            <strong>Você seleciona o que quer guardar</strong>
+            <strong>Seleciona o que quer guardar</strong>
             <span>staging</span>
           </div>
           <div class="phase">
             <span class="n">3</span>
-            <strong>Você commita — a foto é tirada</strong>
-            <span>commit local</span>
+            <strong>Commita — a foto é tirada</strong>
+            <span>commit</span>
           </div>
           <div class="phase">
             <span class="n">4</span>
-            <strong>Você faz push — a foto sobe pro GitHub</strong>
+            <strong>Faz push — a foto sobe pro GitHub</strong>
             <span>remoto atualizado</span>
           </div>
         </div>
-        <p class="tip" style="margin-top: var(--s-4);">💡 <strong>Repare onde está a fronteira:</strong> as fases
-        1, 2 e 3 acontecem só na sua máquina. Só a fase 4 toca a nuvem. É por isso que dá pra trabalhar sem
-        internet e mandar tudo depois.</p>
+        <p class="tip">💡 <strong>Um atalho que você vai usar hoje:</strong> quando você edita direto no
+        github.com, as quatro fases acontecem de uma vez só, no clique de "Commit changes" — porque você já
+        está trabalhando dentro do remoto. A separação entre as fases só fica visível quando existe uma cópia
+        local, e é isso que você vai ver a partir do Bloco 1.5.</p>
       </div>
 
       <div class="concept" id="dicionario">
@@ -753,7 +713,7 @@
             <tr><td>Branch</td><td>Uma linha do tempo paralela pra testar algo sem mexer na versão principal</td></tr>
             <tr><td>Main</td><td>O nome padrão da branch principal — a versão "oficial" do projeto</td></tr>
             <tr><td>Clone</td><td>Baixar uma cópia completa de um repositório (com histórico) pro seu computador</td></tr>
-            <tr><td>Push</td><td>Mandar seus commits do computador (local) pro GitHub (remoto)</td></tr>
+            <tr><td>Push</td><td>Mandar commits do computador (local) pro GitHub (remoto)</td></tr>
             <tr><td>Pull</td><td>Buscar as mudanças mais recentes do GitHub pro seu computador</td></tr>
             <tr><td>Merge</td><td>Juntar as mudanças de uma branch em outra (geralmente em <code>main</code>)</td></tr>
             <tr><td>Conflito (merge conflict)</td><td>Quando duas branches mudaram a mesma linha de formas diferentes, e alguém precisa decidir qual fica</td></tr>
@@ -761,44 +721,22 @@
             <tr><td>Fork</td><td>Uma cópia própria de um repositório de outra pessoa, na sua conta</td></tr>
             <tr><td>Deploy</td><td>Publicar o projeto numa URL que qualquer pessoa acessa pela internet</td></tr>
             <tr><td>GitHub Pages</td><td>O serviço gratuito do GitHub pra publicar sites estáticos direto de um repositório</td></tr>
-            <tr><td>GitHub Desktop</td><td>O aplicativo visual (sem terminal) que a gente usa pra fazer tudo isso no curso</td></tr>
+            <tr><td>Claude Code</td><td>O Claude rodando no terminal, capaz de agir nos seus arquivos e no Git</td></tr>
           </tbody>
         </table>
       </div>
     </section>
 
-    <!-- ============================================================
-         BLOCO 1.4
-         ============================================================ -->
+    <!-- ============================================================ 1.4 -->
     <section class="block" id="bloco-1-4">
       <div class="block-head">
-        <span class="block-pill">Bloco 1.4 · ~30 min</span>
-        <h2>Setup e uso da ferramenta</h2>
-        <p class="block-obj">A partir daqui você para de olhar o GitHub pelo navegador e passa a usar o
-        <strong>GitHub Desktop</strong> — o app visual, sem terminal, que vai ser sua ferramenta principal nos
-        dois dias.</p>
-      </div>
-
-      <div class="concept">
-        <h3 class="concept-sub">Clonar: o projeto sai da nuvem e vira pasta</h3>
-        <p>A primeira operação que você vai fazer no GitHub Desktop é <strong>clonar</strong>: baixar uma cópia
-        completa de um repositório, com histórico e tudo, pro seu computador.</p>
-        <p>É assim que um projeto que estava só na nuvem passa a existir também como uma pasta de verdade na sua
-        máquina — a mesma dualidade local/remoto do bloco anterior, agora acontecendo com você.</p>
-      </div>
-
-      <div class="concept">
-        <h3 class="concept-sub">Antes de você fazer: a demo</h3>
-        <div class="concept-card">
-          <h4>O que observar</h4>
-          <p>Seu facilitador vai clonar o repositório da ArenaCash
-          (<a href="https://github.com/CaueCM/ArenaCash" rel="noopener" target="_blank">github.com/CaueCM/ArenaCash</a>)
-          na tela, uma vez, antes de você fazer.</p>
-          <p>Enquanto assiste, o que interessa observar é <strong>uma coisa só</strong>: o mesmo projeto aparecendo
-          em dois lugares. A pasta abrindo no Finder/Explorador com os arquivos dentro, o <code>index.html</code>
-          abrindo no navegador <strong>sem internet</strong>, e a mesma coisa no github.com.</p>
-          <p class="analogy">Esse "existe nos dois lugares" é o coração de tudo que vem depois — hoje e amanhã.</p>
-        </div>
+        <span class="block-pill">Bloco 1.4 · ~35 min</span>
+        <span class="block-mode block-mode--mao">No navegador · github.com</span>
+        <h2>Seu repositório e seu primeiro commit</h2>
+        <p class="block-quote">"Até agora você só explorou coisa que já existia. Agora você cria a sua."</p>
+        <p class="block-obj"><strong>É o exercício mais importante do dia.</strong> Tudo acontece no navegador:
+        você cria o repositório, pede o HTML ao Claude e commita — sem instalar nada, sem terminal. Se alguma
+        coisa travar, peça ajuda; ninguém deve sair do Dia 1 sem ter terminado este.</p>
       </div>
 
       <div class="exercises">
@@ -807,163 +745,42 @@
         <details class="exercise">
           <summary>
             <span class="ex-num">03</span>
-            <span class="ex-title">Clone o exemplo e compare local vs. remoto</span>
-            <span class="ex-time">20 min</span>
-          </summary>
-          <div class="ex-body">
-            <p class="ex-intro">Agora é você quem clona. No fim, o mesmo projeto vai estar aberto em
-            <strong>três lugares</strong>: a pasta na sua máquina, o código no GitHub.com e o site publicado.</p>
-
-            <p class="ex-entrega"><strong>Entregável:</strong> GitHub Desktop logado, o repositório de exemplo
-            clonado na sua máquina, e a apresentação aberta no seu navegador — rodando do seu computador, não da
-            internet.</p>
-
-            <div class="step-block">
-              <div class="step-block-head">
-                <span class="step-block-num">Passo 1</span>
-                <span class="step-block-time">5 min</span>
-                <h4 class="step-block-title">Confirme seu setup</h4>
-              </div>
-              <div class="step-block-body">
-                <ol>
-                  <li>Abra o <strong>GitHub Desktop</strong> e confirme que você está logado: seu nome de usuário
-                  aparece no canto da tela</li>
-                  <li>Se ainda não instalou, resolva isso agora — sem o GitHub Desktop funcionando não dá pra
-                  seguir o resto do curso</li>
-                </ol>
-              </div>
-            </div>
-
-            <div class="step-block">
-              <div class="step-block-head">
-                <span class="step-block-num">Passo 2</span>
-                <span class="step-block-time">10 min</span>
-                <h4 class="step-block-title">Clone o repositório</h4>
-              </div>
-              <div class="step-block-body">
-                <ol>
-                  <li>No GitHub Desktop, vá em <strong>File → Clone Repository → URL</strong></li>
-                  <li>Cole o endereço do repositório da ArenaCash:
-                  <pre class="code-block">https://github.com/CaueCM/ArenaCash</pre></li>
-                  <li>Escolha uma pasta fácil de achar depois (<code>Documentos/GitHub</code>, por exemplo) e confirme</li>
-                  <li>Clique em <strong>Show in Finder</strong> (Mac) ou <strong>Show in Explorer</strong>
-                  (Windows) — a pasta local abre</li>
-                  <li>Dê duplo clique em <code>index.html</code> — ele abre no navegador e mostra o site da
-                  ArenaCash</li>
-                </ol>
-                <div class="two-col">
-                  <div class="pill-card"><h4>🍎 Mac</h4><p>Show in Finder</p></div>
-                  <div class="pill-card"><h4>🪟 Windows</h4><p>Show in Explorer</p></div>
-                </div>
-              </div>
-            </div>
-
-            <div class="step-block">
-              <div class="step-block-head">
-                <span class="step-block-num">Passo 3</span>
-                <span class="step-block-time">5 min</span>
-                <h4 class="step-block-title">Compare os três endereços</h4>
-              </div>
-              <div class="step-block-body">
-                <p>O mesmo projeto existe agora em três lugares. Abra os três e compare:</p>
-                <div class="table-scroll">
-                <table class="dict-table">
-                  <thead>
-                    <tr><th>Onde</th><th>Endereço</th><th>O que é</th></tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>Sua máquina</td>
-                      <td>a pasta que você clonou</td>
-                      <td>funciona sem internet</td>
-                    </tr>
-                    <tr>
-                      <td>O código na nuvem</td>
-                      <td><a href="https://github.com/CaueCM/ArenaCash" rel="noopener" target="_blank">github.com/CaueCM/ArenaCash</a></td>
-                      <td>qualquer pessoa lê e vê o histórico</td>
-                    </tr>
-                    <tr>
-                      <td>O site publicado</td>
-                      <td><a href="https://cauecm.github.io/ArenaCash/" rel="noopener" target="_blank">cauecm.github.io/ArenaCash</a></td>
-                      <td>qualquer pessoa acessa, sem ver código</td>
-                    </tr>
-                  </tbody>
-                </table>
-                </div>
-                <p>O conteúdo é o mesmo nos três. O que muda é <strong>quem alcança e como</strong>.</p>
-                <p class="tip">💡 <strong>Teste rápido:</strong> desligue o wi-fi e recarregue o arquivo local.
-                Ele continua funcionando — mas os outros dois endereços caem. Isso é a diferença entre um arquivo
-                no seu computador e um site na internet.</p>
-              </div>
-            </div>
-
-            <div class="ex-closing">
-              <span class="pa-eyebrow">O que fixar</span>
-              <p>Clonar é "baixar uma cópia completa, com histórico". Daqui pra frente, toda pasta com Git que você
-              olhar tem uma <strong>versão gêmea no GitHub</strong> — e as duas só se atualizam quando você manda.</p>
-            </div>
-          </div>
-        </details>
-      </div>
-    </section>
-
-    <!-- ============================================================
-         BLOCO 1.5
-         ============================================================ -->
-    <section class="block" id="bloco-1-5">
-      <div class="block-head">
-        <span class="block-pill">Bloco 1.5 · ~40 min</span>
-        <h2>Seu repositório e seu primeiro commit</h2>
-        <p class="block-quote">"Até agora você só explorou coisa que já existia. Agora você cria a sua."</p>
-        <p class="block-obj">Neste bloco você monta um repositório do zero, usa o Claude pra gerar o conteúdo, e
-        faz as quatro fases inteiras — editar, selecionar, commitar, publicar. No fim, existe uma URL no GitHub
-        com o seu trabalho. <strong>É o exercício mais importante do dia:</strong> se alguma coisa travar, peça
-        ajuda — ninguém deve sair do Dia 1 sem ter terminado este.</p>
-      </div>
-
-      <div class="exercises">
-        <h3>Exercício</h3>
-
-        <details class="exercise">
-          <summary>
-            <span class="ex-num">04</span>
-            <span class="ex-title">Do repositório vazio ao primeiro slide publicado</span>
+            <span class="ex-title">Do repositório vazio ao primeiro slide commitado</span>
             <span class="ex-time">35 min</span>
           </summary>
           <div class="ex-body">
             <p class="ex-intro"><strong>O cenário:</strong> você foi chamado pra prototipar uma nova campanha da
-            ArenaCash — "Indique um amigo e ganhe R$ 50". Sua missão hoje é criar o repositório do protótipo e ter
-            o slide de capa funcionando e versionado.</p>
+            ArenaCash — "Indique um amigo e ganhe R$ 50". Sua missão hoje é criar o repositório do protótipo e
+            ter o slide de capa versionado.</p>
 
             <p class="ex-entrega"><strong>Entregável:</strong> um repositório novo e público no GitHub, com um
-            <code>index.html</code> de capa gerado pelo Claude, commitado e enviado — visível tanto na sua pasta
-            local quanto em github.com.</p>
+            <code>index.html</code> de capa gerado pelo Claude e commitado, visível na aba
+            <strong>Commits</strong>.</p>
 
             <div class="step-block">
               <div class="step-block-head">
                 <span class="step-block-num">Passo 1</span>
-                <span class="step-block-time">5 min</span>
-                <h4 class="step-block-title">Crie o repositório do zero</h4>
+                <span class="step-block-time">6 min</span>
+                <h4 class="step-block-title">Crie o repositório no github.com</h4>
               </div>
               <div class="step-block-body">
                 <ol>
-                  <li>Abra o GitHub Desktop</li>
-                  <li>Vá em <strong>File → New Repository</strong></li>
-                  <li>Nome: <code>meu-prototipo-arenacash</code></li>
-                  <li>Local path: escolha uma pasta fácil de achar</li>
-                  <li>Marque <strong>Initialize this repository with a README</strong></li>
-                  <li>Clique em <strong>Create Repository</strong></li>
+                  <li>Logado no <a href="https://github.com/new" rel="noopener" target="_blank">github.com</a>,
+                  clique no <strong>+</strong> no canto superior direito → <strong>New repository</strong></li>
+                  <li>Repository name: <code>meu-prototipo-arenacash</code></li>
+                  <li>Escolha <strong>Public</strong> — precisa ser público pra publicar de graça no Dia 2</li>
+                  <li>Marque <strong>Add a README file</strong></li>
+                  <li>Clique em <strong>Create repository</strong></li>
                 </ol>
-                <p class="tip">💡 Repare no que acabou de acontecer: o repositório existe <strong>só no seu
-                computador</strong>. Ele ainda não subiu pra nuvem, e isso é de propósito — você vai ver essa
-                diferença virar concreta no Passo 3.</p>
+                <p class="tip">💡 Repare: o repositório já nasceu <strong>com um commit</strong>. Vá na aba
+                <strong>Commits</strong> e veja — "Initial commit". A criação do README já foi uma foto.</p>
               </div>
             </div>
 
             <div class="step-block">
               <div class="step-block-head">
                 <span class="step-block-num">Passo 2</span>
-                <span class="step-block-time">10 min</span>
+                <span class="step-block-time">12 min</span>
                 <h4 class="step-block-title">Peça o primeiro slide ao Claude</h4>
               </div>
               <div class="step-block-body">
@@ -977,60 +794,250 @@
                   um subtítulo e um botão "Saiba mais". Não precisa de JavaScript ainda, só um slide por enquanto.
                   Me devolve o código completo do arquivo.</p>
                 </div>
-                <p>Copie o código que o Claude devolveu. Depois, no Finder/Explorador, vá até a pasta
-                <code>meu-prototipo-arenacash</code> que você criou no Passo 1 e:</p>
-                <ul>
-                  <li>crie um arquivo chamado <code>index.html</code></li>
-                  <li>cole o código do Claude e salve</li>
-                  <li>dê duplo clique no arquivo — ele abre no navegador e mostra o slide</li>
-                </ul>
-                <p class="tip">💡 Esta foi a <strong>fase 1</strong> das quatro: você editou um arquivo na pasta
-                local. O GitHub ainda não sabe de nada.</p>
+                <p>O Claude mostra o slide <strong>renderizado ali mesmo</strong>, ao lado do código. Olhe se ficou
+                bom antes de seguir — se quiser mudar cor, texto ou tamanho, peça agora, no chat. É muito mais
+                rápido do que corrigir depois de commitar.</p>
+                <p>Quando estiver satisfeito, <strong>copie o código completo</strong>.</p>
               </div>
             </div>
 
             <div class="step-block">
               <div class="step-block-head">
                 <span class="step-block-num">Passo 3</span>
-                <span class="step-block-time">15 min</span>
-                <h4 class="step-block-title">Commite e publique</h4>
+                <span class="step-block-time">12 min</span>
+                <h4 class="step-block-title">Crie o arquivo e commite, tudo no navegador</h4>
               </div>
               <div class="step-block-body">
                 <ol>
-                  <li>Volte ao <strong>GitHub Desktop</strong>. Ele já detectou o arquivo novo sozinho e mostra na
-                  aba <strong>Changes</strong>, com o conteúdo em verde — verde quer dizer "isso é novo"</li>
-                  <li>No campo de mensagem de commit (canto inferior esquerdo), escreva:
+                  <li>Volte pro seu repositório no github.com</li>
+                  <li>Clique em <strong>Add file → Create new file</strong></li>
+                  <li>No campo do nome, digite <code>index.html</code></li>
+                  <li>Cole o código do Claude na área grande abaixo</li>
+                  <li>Role até o fim e escreva a mensagem de commit:
                   <code>primeiro slide da capa da campanha indique um amigo</code></li>
-                  <li>Clique em <strong>Commit to main</strong> — é a foto sendo tirada. Ainda só no seu computador</li>
-                  <li>Clique em <strong>Publish repository</strong>, no canto superior. Escolha <strong>público</strong>,
-                  pra você conseguir acessar depois pelo link</li>
-                  <li>Confirme. O botão vira <strong>Fetch origin</strong> — esse é o sinal de que seu repositório
-                  está sincronizado com a nuvem</li>
-                  <li>Abra <code>github.com/&lt;seu-usuario&gt;/meu-prototipo-arenacash</code> no navegador. O
-                  <code>index.html</code> está lá, e a aba <strong>Commits</strong> mostra sua mensagem</li>
+                  <li>Clique em <strong>Commit changes</strong></li>
                 </ol>
+                <p>Pronto: seu <code>index.html</code> está no GitHub. Vá na aba <strong>Commits</strong> e
+                confirme que sua mensagem aparece lá, com seu nome e a hora.</p>
+                <p class="tip">💡 <strong>Por que o GitHub não mostra o slide bonito?</strong> Porque ele exibe o
+                <em>código</em> do arquivo, não o resultado. Pra ver o slide funcionando você precisa de uma cópia
+                local (Bloco 1.5) ou de publicar na internet (Dia 2). Por enquanto, quem te mostrou o resultado
+                foi o Claude.</p>
+              </div>
+            </div>
+
+            <div class="step-block">
+              <div class="step-block-head">
+                <span class="step-block-num">Passo 4</span>
+                <span class="step-block-time">5 min</span>
+                <h4 class="step-block-title">Faça uma segunda mudança e veja o histórico crescer</h4>
+              </div>
+              <div class="step-block-body">
+                <p>Um commit só não mostra pra que serve o histórico. Faça mais um:</p>
+                <ol>
+                  <li>Abra o <code>index.html</code> no github.com e clique no <strong>lápis</strong> (Edit this file)</li>
+                  <li>Mude alguma coisa pequena e visível — o texto do botão, por exemplo</li>
+                  <li>Commite com a mensagem: <code>ajusta o texto do botao</code></li>
+                  <li>Vá na aba <strong>Commits</strong> e clique no commit que você acabou de fazer</li>
+                </ol>
+                <p>O GitHub mostra o <strong>diff</strong>: a linha antiga em vermelho, a nova em verde. É essa
+                tela que vai aparecer de novo no Dia 2, quando você revisar um Pull Request.</p>
               </div>
             </div>
 
             <p class="file-out"><strong>O que você tem agora:</strong> o repositório
-            <code>meu-prototipo-arenacash</code>, público, com <code>index.html</code> e <code>README.md</code>.</p>
+            <code>meu-prototipo-arenacash</code>, público, com <code>index.html</code> e <code>README.md</code>,
+            e três commits no histórico.</p>
 
             <div class="ex-closing">
               <span class="pa-eyebrow">O que fixar</span>
-              <p>Você acabou de fazer <strong>as quatro fases inteiras</strong> — editou (pediu ao Claude e salvou),
-              selecionou (a aba Changes fez isso por você), commitou (a foto) e publicou (o push, que na primeira
-              vez fica escondido dentro do botão "Publish repository").</p>
-              <p>Da próxima vez vai ser mais curto: toda mudança nova usa <strong>Commit</strong> +
-              <strong>Push origin</strong>. Publicar é só uma vez, no começo da vida do repositório.</p>
+              <p>Você versionou um projeto sem instalar nada. Isso já é útil por si só: dá pra manter
+              apresentação, protótipo e documento com histórico completo <strong>usando só o navegador</strong>.</p>
+              <p>O que falta é o outro lado do mapa — a cópia na sua máquina. É ela que destrava trabalhar
+              offline, ver o resultado renderizado e, principalmente, deixar o <strong>Claude Code</strong> agir
+              no projeto. É o próximo bloco.</p>
             </div>
           </div>
         </details>
       </div>
     </section>
 
-    <!-- ============================================================
-         BLOCO 1.6
-         ============================================================ -->
+    <!-- ============================================================ 1.5 -->
+    <section class="block" id="bloco-1-5">
+      <div class="block-head">
+        <span class="block-pill">Bloco 1.5 · ~25 min</span>
+        <span class="block-mode block-mode--claude">A virada · entra o Claude Code</span>
+        <h2>Conectando o Claude Code</h2>
+        <p class="block-obj">Até agora, quem clicava era você, no navegador. A partir daqui quem executa também
+        pode ser o <strong>Claude Code</strong> — e é ele que vai trazer o projeto pra sua máquina.</p>
+      </div>
+
+      <div class="concept">
+        <p>Claude Code é o Claude rodando no terminal. Ele entende pedidos em português e executa ações reais
+        nos seus arquivos e no Git, sem você digitar comando nenhum. Mas ele só consegue agir na sua conta do
+        GitHub depois de uma autorização — feita <strong>uma vez só</strong>.</p>
+
+        <div class="concept-card">
+          <h4>O que observar na demo</h4>
+          <p>Seu facilitador vai fazer a conexão na tela primeiro. Ele roda <code>claude</code>, pede
+          <em>"conecta essa sessão à minha conta do GitHub"</em>, o Claude Code dispara um
+          <code>gh auth login</code>, o navegador abre e ele autoriza.</p>
+          <p class="analogy">É como logar no Notion ou no Spotify num computador novo: você autoriza uma vez, e
+          ele lembra.</p>
+        </div>
+      </div>
+
+      <div class="exercises">
+        <h3>Exercício</h3>
+
+        <details class="exercise">
+          <summary>
+            <span class="ex-num">04</span>
+            <span class="ex-title">Conecte o Claude Code e traga o projeto pra sua máquina</span>
+            <span class="ex-time">20 min</span>
+          </summary>
+          <div class="ex-body">
+            <p class="ex-intro">No fim deste exercício o seu projeto existe em <strong>dois lugares</strong> — e
+            você vai ver, com os próprios olhos, o slide que até agora só existia como código.</p>
+
+            <p class="ex-entrega"><strong>Entregável:</strong> Claude Code autenticado na sua conta e o
+            repositório clonado numa pasta do seu computador.</p>
+
+            <div class="step-block">
+              <div class="step-block-head">
+                <span class="step-block-num">Passo 1</span>
+                <span class="step-block-time">7 min</span>
+                <h4 class="step-block-title">Abra o Claude Code e conecte à sua conta</h4>
+              </div>
+              <div class="step-block-body">
+                <ol>
+                  <li>Abra o Terminal (Mac) ou o PowerShell (Windows)</li>
+                  <li>Vá pra uma pasta fácil de achar — <code>cd Documentos</code>, por exemplo</li>
+                  <li>Rode <code>claude</code> pra abrir o Claude Code</li>
+                  <li>Peça:</li>
+                </ol>
+                <div class="prompt-box">
+                  <div class="prompt-box-head">Prompt 1</div>
+                  <p>Conecta essa sessão à minha conta do GitHub.</p>
+                </div>
+                <p>Siga o fluxo que abre no navegador: <strong>GitHub.com → HTTPS → Login with a web
+                browser</strong>, e autorize.</p>
+              </div>
+            </div>
+
+            <div class="step-block">
+              <div class="step-block-head">
+                <span class="step-block-num">Passo 2</span>
+                <span class="step-block-time">6 min</span>
+                <h4 class="step-block-title">Peça pra ele clonar o seu repositório</h4>
+              </div>
+              <div class="step-block-body">
+                <div class="prompt-box">
+                  <div class="prompt-box-head">Prompt 2</div>
+                  <p>Clona o meu repositório <code>meu-prototipo-arenacash</code> aqui nesta pasta e me diz o que
+                  tem dentro dele.</p>
+                </div>
+                <p>Ele deve clonar e listar: <code>index.html</code> e <code>README.md</code>. Se conseguiu fazer
+                isso, a conexão do Passo 1 funcionou.</p>
+                <p>Agora abra essa pasta no Finder (Mac) ou no Explorador (Windows) e dê <strong>duplo clique no
+                <code>index.html</code></strong>.</p>
+                <p class="tip">💡 <strong>Este é o momento do dia.</strong> O slide abre no navegador,
+                renderizado — e continua funcionando se você desligar o wi-fi. Não é um site: é um arquivo no seu
+                computador. O mesmo arquivo que também está no GitHub.</p>
+              </div>
+            </div>
+
+            <div class="step-block">
+              <div class="step-block-head">
+                <span class="step-block-num">Passo 3</span>
+                <span class="step-block-time">7 min</span>
+                <h4 class="step-block-title">Os três lugares onde um projeto vive</h4>
+              </div>
+              <div class="step-block-body">
+                <p>Agora que existe uma cópia local, dá pra ver o mapa inteiro. Um projeto publicado vive em até
+                três instâncias — e elas <strong>não são cópias automáticas uma da outra</strong>:</p>
+
+                <figure class="instancias-figura">
+                  <div class="instancias">
+                    <div class="instancia">
+                      <span class="instancia-tag">1 · Local</span>
+                      <strong>Sua máquina</strong>
+                      <p>A pasta que o Claude Code acabou de clonar. Funciona sem internet e é onde o trabalho
+                      acontece.</p>
+                      <span class="instancia-quem">só você vê</span>
+                    </div>
+
+                    <div class="instancia-seta">
+                      <span class="seta-linha"><span class="seta-kw">push</span> →</span>
+                      <span class="seta-linha">← <span class="seta-kw">pull</span></span>
+                    </div>
+
+                    <div class="instancia">
+                      <span class="instancia-tag">2 · Remoto</span>
+                      <strong>github.com</strong>
+                      <p>O repositório na nuvem, com todo o histórico, as branches e os Pull Requests.</p>
+                      <span class="instancia-quem">qualquer pessoa lê o código</span>
+                    </div>
+
+                    <div class="instancia-seta">
+                      <span class="seta-linha"><span class="seta-kw">deploy</span> →</span>
+                      <span class="seta-linha seta-linha--fraca">não volta</span>
+                    </div>
+
+                    <div class="instancia instancia--ar">
+                      <span class="instancia-tag">3 · No ar</span>
+                      <strong>GitHub Pages</strong>
+                      <p>O site publicado, gerado a partir da <code>main</code> do remoto. É o que o usuário final
+                      abre.</p>
+                      <span class="instancia-quem">qualquer pessoa acessa, sem ver código</span>
+                    </div>
+                  </div>
+                  <figcaption>
+                    <strong>Hoje você tem as duas primeiras.</strong> A terceira nasce amanhã, no Dia 2, quando
+                    você ligar o GitHub Pages. Repare na direção das setas: entre local e remoto o trânsito é nos
+                    dois sentidos; do remoto pro ar é só de ida — <strong>ninguém edita o site publicado, edita-se
+                    o repositório</strong>.
+                  </figcaption>
+                </figure>
+
+                <p>Pra fechar, compare os três na ArenaCash, que já tem os três prontos:</p>
+                <div class="table-scroll">
+                  <table class="dict-table">
+                    <thead>
+                      <tr><th>Instância</th><th>Endereço</th><th>Some se cair a internet?</th></tr>
+                    </thead>
+                    <tbody>
+                      <tr><td>Local</td><td>a pasta clonada na sua máquina</td><td>Não — continua funcionando</td></tr>
+                      <tr>
+                        <td>Remoto</td>
+                        <td><a href="https://github.com/CaueCM/ArenaCash" rel="noopener" target="_blank">github.com/CaueCM/ArenaCash</a></td>
+                        <td>Sim</td>
+                      </tr>
+                      <tr>
+                        <td>No ar</td>
+                        <td><a href="https://cauecm.github.io/ArenaCash/" rel="noopener" target="_blank">cauecm.github.io/ArenaCash</a></td>
+                        <td>Sim</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <div class="ex-closing">
+              <span class="pa-eyebrow">O que fixar</span>
+              <p>Essa autorização é feita <strong>uma vez só</strong>. Nas próximas conversas com o Claude Code
+              neste computador, ele já lembra que está conectado à sua conta.</p>
+              <p>E agora você tem as duas pontas do mapa do Bloco 1.3: a pasta local e o repositório remoto.
+              <strong>É com essas duas que o Dia 2 inteiro acontece</strong> — branches, conflitos e Pull
+              Requests, todos pedidos ao Claude Code.</p>
+            </div>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- ============================================================ 1.6 -->
     <section class="block" id="bloco-1-6">
       <div class="block-head">
         <span class="block-pill">Bloco 1.6 · ~10 min</span>
@@ -1041,10 +1048,10 @@
         <h3 class="concept-sub">O que você fez hoje</h3>
         <ul class="recap-list">
           <li>Explorou um repositório de verdade antes mesmo de saber o nome das coisas</li>
-          <li>Entendeu por que o GitHub importa pra quem não é técnico</li>
+          <li>Leu um algoritmo de produto e opinou sobre as regras dele, sem saber programar</li>
           <li>Montou o modelo mental do Git — repo, commit, local/remoto, branch, PR — e tem um dicionário pra consultar</li>
-          <li>Configurou o GitHub Desktop, clonou um repositório e viu local e nuvem lado a lado</li>
-          <li>Criou um repositório do zero, gerou conteúdo com o Claude, commitou e publicou</li>
+          <li>Criou um repositório do zero e commitou duas vezes, <strong>usando só o navegador</strong></li>
+          <li>Conectou o Claude Code à sua conta e trouxe o projeto pra sua máquina</li>
         </ul>
       </div>
 
@@ -1058,11 +1065,11 @@
 
         <div class="next-day">
           <span class="pa-eyebrow">O que vem amanhã</span>
-          <h3>Branches, Claude Code, revisão e deploy</h3>
-          <p>Hoje você só usou a branch <code>main</code> — uma linha do tempo só, reta.</p>
-          <p>Amanhã você vai criar variações paralelas do protótipo, ver elas se cruzando (inclusive um conflito de
-          verdade, que você vai resolver na mão), revisar mudanças antes de aprovar, e publicar a versão final numa
-          URL pública que qualquer pessoa acessa.</p>
+          <h3>Branches, conflitos e Pull Requests</h3>
+          <p>Hoje você só usou a branch <code>main</code> — uma linha do tempo só, reta. E fez tudo clicando.</p>
+          <p>Amanhã o Claude Code assume a execução: você vai criar variações paralelas do protótipo, ver elas se
+          cruzando (inclusive um conflito de verdade, que <strong>você</strong> decide como resolver), revisar
+          mudanças antes de aprovar e publicar a versão final numa URL pública.</p>
           <a class="btn btn--primary" href="dia-2.html">Ir pro Dia 2 →</a>
         </div>
       </div>
