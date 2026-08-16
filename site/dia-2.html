@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Dia 2 — Branches, conflitos e Pull Requests | GitHub para Prototipação</title>
-<meta name="description" content="Dia 2 do curso GitHub para Prototipação: branches, merge, conflito, Pull Request e deploy — tudo pedido ao Claude Code."/>
+<title>Dia 2 — Branches, conflitos e Pull Requests | GitHub para não desenvolvedores</title>
+<meta name="description" content="Dia 2 do curso GitHub para não desenvolvedores: branches, merge, conflito, Pull Request e deploy, tudo pedido ao Claude Code."/>
 <link href="colors_and_type.css" rel="stylesheet"/>
 <link href="styles.css" rel="stylesheet"/>
 </head>
@@ -31,12 +31,12 @@
 <!-- HERO DO DIA -->
 <section class="day-hero">
   <div class="container">
-    <span class="pa-eyebrow pa-eyebrow--red">D I A &nbsp; 2 &nbsp; · &nbsp; ~ 2 h 2 0</span>
+    <span class="pa-eyebrow pa-eyebrow--red">D I A &nbsp; 2 &nbsp; · &nbsp; 2 h</span>
     <h1>Branches, conflitos e <span class="accent">o protótipo no ar.</span></h1>
     <p class="day-hero-sub">
       Ontem você usou uma linha do tempo só, e fez tudo clicando. Hoje quem executa é o Claude Code: você
-      abre linhas paralelas, vê elas se cruzarem — inclusive dando conflito, que <strong>você</strong> decide
-      como resolver — revisa antes de aprovar e termina com uma URL pública no ar.
+      abre linhas paralelas, vê elas se cruzarem, inclusive dando conflito, que <strong>você</strong> decide
+      como resolver, revisa antes de aprovar e termina com uma URL pública no ar.
     </p>
     <div class="day-nav-links">
       <a class="btn btn--primary" href="#bloco-2-1">Ir pro Bloco 2.1 →</a>
@@ -45,7 +45,7 @@
     <div class="day-hero-meta">
       <div><span class="num">8</span><span class="label">blocos + bônus</span></div>
       <div><span class="num">6</span><span class="label">exercícios</span></div>
-      <div><span class="num">~2h20</span><span class="label">duração</span></div>
+      <div><span class="num">2h</span><span class="label">duração</span></div>
       <div><span class="num">1</span><span class="label">URL pública</span></div>
     </div>
   </div>
@@ -59,7 +59,7 @@
     <ul class="side-list">
       <li><a href="#bloco-2-1"><span class="num">2.1</span> Recap do Dia 1</a></li>
       <li><a href="#bloco-2-2"><span class="num">2.2</span> Criar branch e trocar</a></li>
-      <li><a href="#bonus"><span class="num">🎁</span> Bônus: terminal</a></li>
+      <li><a href="#bonus"><span class="num">B</span> Bônus: terminal</a></li>
       <li><a href="#bloco-2-3"><span class="num">2.3</span> Merge e conflito</a></li>
       <li><a href="#bloco-2-4"><span class="num">2.4</span> Pull Request</a></li>
       <li><a href="#bloco-2-5"><span class="num">2.5</span> Deploy</a></li>
@@ -83,7 +83,7 @@
     <!-- ============================================================ 2.1 -->
     <section class="block" id="bloco-2-1">
       <div class="block-head">
-        <span class="block-pill">Bloco 2.1 · ~5 min</span>
+        <span class="block-pill">Bloco 2.1</span>
         <span class="block-mode block-mode--claude">Via Claude Code</span>
         <h2>Recap do Dia 1</h2>
       </div>
@@ -96,7 +96,7 @@
           <p>Me mostra o histórico deste repositório: quantos commits tem, o que cada mensagem diz, em qual
           branch eu estou e se tem alguma mudança pendente.</p>
         </div>
-        <p>Ele responde com o mesmo que você viu na aba <strong>Commits</strong> do github.com ontem — e é
+        <p>Ele responde com o mesmo que você viu na aba <strong>Commits</strong> do github.com ontem, e é
         esse histórico que tudo de hoje vai usar como ponto de partida.</p>
         <p>Antes de seguir, releia as duas listas do Dia 1: as <strong>4 fases</strong> e os
         <strong>5 conceitos</strong>. Hoje as duas voltam o tempo todo.</p>
@@ -110,25 +110,24 @@
             <p>repo · commit · local/remoto · branch · Pull Request</p>
           </div>
         </div>
-        <p class="tip">💡 Repare numa coisa: você está pedindo em português, mas o que ele faz por trás são os
-        mesmos comandos que existiriam de qualquer jeito. O bônus deste dia mostra exatamente quais.</p>
+        <p class="tip">💡 Você pede em português, mas o que ele faz por trás são os mesmos comandos que existiriam de qualquer jeito. O bônus deste dia mostra exatamente quais.</p>
       </div>
     </section>
 
     <!-- ============================================================ 2.2 -->
     <section class="block" id="bloco-2-2">
       <div class="block-head">
-        <span class="block-pill">Bloco 2.2 · ~25 min</span>
+        <span class="block-pill">Bloco 2.2</span>
         <span class="block-mode block-mode--claude">Via Claude Code</span>
         <h2>Branches: criar e trocar</h2>
       </div>
 
       <div class="concept">
         <h3 class="concept-sub">Por que não trabalhar direto na main</h3>
-        <p>Tudo que você fez ontem foi direto na <code>main</code> — a linha principal. Isso é arriscado: se
+        <p>Tudo que você fez ontem foi direto na <code>main</code>, a linha principal. Isso é arriscado: se
         você testa uma ideia ruim ali, ela já está "oficial".</p>
         <p>Branch resolve isso. É como duplicar um documento do Google Docs pra rascunhar uma versão nova sem
-        tocar no original — só que, no Git, você pode ter dezenas de rascunhos ao mesmo tempo, cada um
+        tocar no original, só que, no Git, você pode ter dezenas de rascunhos ao mesmo tempo, cada um
         isolado, e decidir depois quais voltam pro documento principal.</p>
       </div>
 
@@ -136,7 +135,7 @@
         <h3 class="concept-sub">O que é fazer <em>switch</em></h3>
         <p>É trocar qual rascunho está aberto na sua pasta local.</p>
         <p class="tip">💡 E aqui vem a parte que costuma surpreender: <strong>quando você troca de branch, os
-        arquivos na sua pasta mudam de conteúdo na hora</strong> — como se alguém trocasse os papéis da sua
+        arquivos na sua pasta mudam de conteúdo na hora</strong>, como se alguém trocasse os papéis da sua
         mesa enquanto você não olhava. Ontem isso seria impossível de ver, porque você não tinha pasta local.
         Hoje tem.</p>
       </div>
@@ -147,20 +146,18 @@
           <summary>
             <span class="ex-num">05</span>
             <span class="ex-title">Criando uma branch e vendo a pasta local mudar</span>
-            <span class="ex-time">20 min</span>
           </summary>
           <div class="ex-body">
             <p class="ex-intro"><strong>O cenário:</strong> o time de marketing quer testar uma paleta de cores
             diferente pro slide de capa, sem arriscar a versão que já está no ar.</p>
 
             <p class="ex-entrega"><strong>Entregável:</strong> uma branch <code>variacao-cores</code> com uma
-            versão diferente do slide de capa, commitada e publicada — e a experiência de ver a pasta local
+            versão diferente do slide de capa, commitada e publicada, e a experiência de ver a pasta local
             mudar de conteúdo ao trocar de branch.</p>
 
             <div class="step-block">
               <div class="step-block-head">
                 <span class="step-block-num">Passo 1</span>
-                <span class="step-block-time">3 min</span>
                 <h4 class="step-block-title">Crie a branch</h4>
               </div>
               <div class="step-block-body">
@@ -175,7 +172,6 @@
             <div class="step-block">
               <div class="step-block-head">
                 <span class="step-block-num">Passo 2</span>
-                <span class="step-block-time">7 min</span>
                 <h4 class="step-block-title">Peça a mudança de cor, na branch nova</h4>
               </div>
               <div class="step-block-body">
@@ -185,14 +181,13 @@
                   de verde e roxo, mantendo a estrutura e os textos iguais.</p>
                 </div>
                 <p>Abra o <code>index.html</code> da pasta no navegador e confirme que a cor mudou. Se não
-                gostou, peça um ajuste antes de commitar — está tudo isolado nesta branch.</p>
+                gostou, peça um ajuste antes de commitar, está tudo isolado nesta branch.</p>
               </div>
             </div>
 
             <div class="step-block">
               <div class="step-block-head">
                 <span class="step-block-num">Passo 3</span>
-                <span class="step-block-time">4 min</span>
                 <h4 class="step-block-title">Commite e publique a branch</h4>
               </div>
               <div class="step-block-body">
@@ -208,7 +203,6 @@
             <div class="step-block">
               <div class="step-block-head">
                 <span class="step-block-num">Passo 4</span>
-                <span class="step-block-time">6 min</span>
                 <h4 class="step-block-title">O momento "aha"</h4>
               </div>
               <div class="step-block-body">
@@ -222,13 +216,13 @@
                 <p>Você não editou nada, e o Claude Code não reescreveu o arquivo. O arquivo na sua pasta mudou
                 de conteúdo <em>sozinho</em>, só porque a branch ativa mudou.</p>
                 <p class="tip">💡 Peça <em>"volta pra variacao-cores"</em> e recarregue de novo. Vai e volta
-                quantas vezes quiser — é o mesmo arquivo, no mesmo caminho, com dois conteúdos possíveis.</p>
+                quantas vezes quiser: é o mesmo arquivo, no mesmo caminho, com dois conteúdos possíveis.</p>
               </div>
             </div>
 
             <div class="ex-closing">
               <span class="pa-eyebrow">O que fixar</span>
-              <p>A branch não é uma pasta separada — é a <strong>mesma pasta mudando de estado</strong> conforme
+              <p>A branch não é uma pasta separada: é a <strong>mesma pasta mudando de estado</strong> conforme
               a linha do tempo ativa. É isso que permite ter dezenas de variações sem duplicar pasta nenhuma.</p>
             </div>
           </div>
@@ -239,14 +233,14 @@
     <!-- ============================================================ BÔNUS -->
     <section class="block block--bonus" id="bonus">
       <div class="block-head">
-        <span class="block-pill gray">🎁 Bônus · ~12 min · opcional</span>
+        <span class="block-pill gray">Bônus · opcional</span>
         <h2>O que o Claude Code roda por trás</h2>
         <p class="block-obj">Nada depois disso depende deste bônus. O objetivo é <strong>reconhecimento</strong>,
-        não decoreba — mas é o que transforma "ele fez alguma coisa" em "eu sei o que ele fez".</p>
+        não decoreba, mas é o que transforma "ele fez alguma coisa" em "eu sei o que ele fez".</p>
       </div>
 
       <div class="concept">
-        <p>Cada pedido que você faz em português vira um comando de Git. Você não precisa digitá-los — mas
+        <p>Cada pedido que você faz em português vira um comando de Git. Você não precisa digitá-los, mas
         reconhecer ajuda muito, porque é a língua que qualquer tutorial, post de blog e mensagem de erro
         falam.</p>
 
@@ -271,9 +265,8 @@
         <h3>Exercício</h3>
         <details class="exercise exercise-bonus">
           <summary>
-            <span class="ex-num">🎁</span>
+            <span class="ex-num">B</span>
             <span class="ex-title">Confira na unha o que ele fez</span>
-            <span class="ex-time">8 min</span>
           </summary>
           <div class="ex-body">
             <p class="ex-intro">A ideia é ver, em texto e por conta própria, o mesmo estado que o Claude Code
@@ -284,22 +277,21 @@
             <div class="step-block">
               <div class="step-block-head">
                 <span class="step-block-num">Passo único</span>
-                <span class="step-block-time">8 min</span>
                 <h4 class="step-block-title">Saia do Claude Code e rode você mesmo</h4>
               </div>
               <div class="step-block-body">
                 <ol>
-                  <li>Saia do Claude Code (<code>Ctrl + C</code> ou digitando <code>/exit</code>) — você volta
+                  <li>Saia do Claude Code (<code>Ctrl + C</code> ou digitando <code>/exit</code>), você volta
                   pro terminal comum, na mesma pasta</li>
                   <li>Rode <code>git log --oneline</code> e compare com o histórico que ele te descreveu</li>
                   <li>Rode <code>git branch</code>. As duas branches aparecem, e a que tem <code>*</code> na
-                  frente é a ativa — a mesma que ele disse que estava</li>
+                  frente é a ativa, a mesma que ele disse que estava</li>
                   <li>Rode <code>git status</code>. Sem mudanças pendentes, ele responde
                   <code>nothing to commit, working tree clean</code></li>
                   <li>Rode <code>claude</code> de novo pra voltar</li>
                 </ol>
                 <p class="tip">💡 Você acabou de <strong>auditar</strong> o trabalho dele. É exatamente isso que
-                dá pra fazer quando alguém — pessoa ou máquina — mexe num repositório seu: o Git registra tudo,
+                dá pra fazer quando alguém, pessoa ou máquina, mexe num repositório seu: o Git registra tudo,
                 e o registro é público pra quem tem acesso.</p>
               </div>
             </div>
@@ -307,7 +299,7 @@
             <div class="ex-closing">
               <span class="pa-eyebrow">O que fixar</span>
               <p>O Claude Code não faz nada de mágico nem de invisível. Ele roda os mesmos comandos que
-              estariam ali de qualquer jeito — e <strong>deixa rastro</strong>, do mesmo jeito que você deixaria.</p>
+              estariam ali de qualquer jeito, e <strong>deixa rastro</strong>, do mesmo jeito que você deixaria.</p>
             </div>
           </div>
         </details>
@@ -317,18 +309,16 @@
     <!-- ============================================================ 2.3 -->
     <section class="block" id="bloco-2-3">
       <div class="block-head">
-        <span class="block-pill">Bloco 2.3 · ~35 min</span>
+        <span class="block-pill">Bloco 2.3</span>
         <span class="block-mode block-mode--claude">Via Claude Code · decisão sua</span>
         <h2>Branches se cruzando: merge e conflito</h2>
-        <p class="block-obj">É o bloco mais importante do dia. Se algo tiver que sair do roteiro por falta de
-        tempo, <strong>não é este</strong> — todo mundo precisa sair com um conflito resolvido por decisão
-        própria.</p>
+        <p class="block-obj">Se algo tiver que sair do roteiro por falta de tempo, <strong>não é este</strong>: todo mundo precisa sair com um conflito resolvido por decisão própria.</p>
       </div>
 
       <div class="concept">
         <h3 class="concept-sub">Merge é o cruzamento</h3>
         <p>Uma branch só tem valor se, em algum momento, ela volta pra se juntar com a principal. Isso se
-        chama <strong>merge</strong> — o momento em que duas linhas do tempo se cruzam.</p>
+        chama <strong>merge</strong>, o momento em que duas linhas do tempo se cruzam.</p>
 
         <div class="two-col">
           <div class="pill-card green">
@@ -339,12 +329,11 @@
           <div class="pill-card red">
             <h4>Quando dá conflito</h4>
             <p>Duas branches mudaram <strong>a mesma linha</strong> de formas diferentes. O Git não tem como
-            adivinhar — então ele para e pergunta.</p>
+            adivinhar, então ele para e pergunta.</p>
           </div>
         </div>
 
-        <p class="tip" style="margin-top: var(--s-4);">💡 Conflito não é erro, não é bug, não é sinal de que
-        você fez algo errado. É o Git sendo honesto: <strong>"duas pessoas mudaram a mesma coisa, escolhe
+        <p class="tip" style="margin-top: var(--s-4);">💡 Conflito é o Git sendo honesto: <strong>"duas pessoas mudaram a mesma coisa, escolhe
         você"</strong>. E note: <strong>quem escolhe é você, não o Claude Code.</strong></p>
       </div>
 
@@ -372,7 +361,6 @@
           <summary>
             <span class="ex-num">06</span>
             <span class="ex-title">Merge tranquilo e depois um conflito de verdade</span>
-            <span class="ex-time">28 min</span>
           </summary>
           <div class="ex-body">
             <p class="ex-intro"><strong>O cenário:</strong> enquanto o marketing testava as cores, o time de
@@ -386,7 +374,6 @@
             <div class="step-block">
               <div class="step-block-head">
                 <span class="step-block-num">Passo 1</span>
-                <span class="step-block-time">6 min</span>
                 <h4 class="step-block-title">Merge tranquilo: variacao-cores → main</h4>
               </div>
               <div class="step-block-body">
@@ -395,7 +382,7 @@
                   <p>Vai pra main e mescla a branch <code>variacao-cores</code> nela. Depois faz push e me diz
                   se teve algum conflito.</p>
                 </div>
-                <p>Ele deve responder que correu tudo bem. <strong>Sem erro, sem pergunta</strong> — o Git juntou
+                <p>Ele deve responder que correu tudo bem. <strong>Sem erro, sem pergunta</strong>, o Git juntou
                 sozinho porque ninguém mais tinha mexido naquelas linhas.</p>
                 <p>Recarregue o <code>index.html</code> no navegador: agora a <code>main</code> está verde e
                 roxa. Esse foi o caminho feliz. Agora você vai forçar o caminho difícil de propósito.</p>
@@ -405,7 +392,6 @@
             <div class="step-block">
               <div class="step-block-head">
                 <span class="step-block-num">Passo 2</span>
-                <span class="step-block-time">6 min</span>
                 <h4 class="step-block-title">Crie a branch que vai gerar o conflito</h4>
               </div>
               <div class="step-block-body">
@@ -421,7 +407,6 @@
             <div class="step-block">
               <div class="step-block-head">
                 <span class="step-block-num">Passo 3</span>
-                <span class="step-block-time">6 min</span>
                 <h4 class="step-block-title">Volte na main e mude a MESMA linha de outro jeito</h4>
               </div>
               <div class="step-block-body">
@@ -432,14 +417,13 @@
                   "ajuste de copy focado no valor do bônus" e faz push.</p>
                 </div>
                 <p class="tip">⚠️ Agora <code>main</code> e <code>variacao-copy</code> mudaram a mesma linha de
-                formas diferentes. É exatamente isso que provoca o conflito — e é de propósito.</p>
+                formas diferentes. É exatamente isso que provoca o conflito, e é de propósito.</p>
               </div>
             </div>
 
             <div class="step-block">
               <div class="step-block-head">
                 <span class="step-block-num">Passo 4</span>
-                <span class="step-block-time">10 min</span>
                 <h4 class="step-block-title">Provoque o merge e decida você</h4>
               </div>
               <div class="step-block-body">
@@ -460,7 +444,7 @@
                 <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt; variacao-copy</code> está a versão da outra branch.</p>
 
                 <p><strong>A decisão é sua.</strong> Escolha uma das duas, ou invente uma terceira que combine
-                as duas ideias. Se quiser ajuda pra pensar — não pra decidir:</p>
+                as duas ideias. Se quiser ajuda pra pensar, não pra decidir:</p>
                 <div class="prompt-box">
                   <div class="prompt-box-head">Prompt 5 · opcional</div>
                   <p>Sem aplicar nada ainda: qual das duas versões funciona melhor pro botão de uma campanha de
@@ -480,10 +464,9 @@
 
             <div class="ex-closing">
               <span class="pa-eyebrow">O que fixar</span>
-              <p>Resolver conflito não tem mistério — é olhar as duas versões, decidir qual fica e seguir.
+              <p>Resolver conflito é olhar as duas versões, decidir qual fica e seguir.
               <strong>O Git só precisa que uma pessoa decida.</strong></p>
-              <p>Repare no que você fez neste exercício: usou o Claude Code pra <em>executar</em>, mas segurou a
-              <em>decisão</em>. É esse o desenho de quem trabalha bem com ele.</p>
+              <p>Neste exercício você usou o Claude Code pra <em>executar</em> e segurou a <em>decisão</em>.</p>
             </div>
           </div>
         </details>
@@ -493,15 +476,14 @@
     <!-- ============================================================ 2.4 -->
     <section class="block" id="bloco-2-4">
       <div class="block-head">
-        <span class="block-pill">Bloco 2.4 · ~20 min</span>
+        <span class="block-pill">Bloco 2.4</span>
         <span class="block-mode block-mode--mao">Claude Code abre · você revisa no navegador</span>
         <h2>Pull Request: comentar antes de ir pro ar</h2>
       </div>
 
       <div class="concept">
         <p>No exercício anterior você mesclou direto, sem revisão. Isso funciona quando você trabalha sozinho.
-        Quando tem mais gente envolvida — ou quando você quer uma segunda opinião antes de algo ir pro ar —
-        existe o <strong>Pull Request</strong>.</p>
+        Quando tem mais gente envolvida, ou quando você quer uma segunda opinião antes de algo ir pro ar, existe o <strong>Pull Request</strong>.</p>
         <p>Um PR é um pedido formal de "quero juntar minha branch na main, alguém pode olhar antes?". Ele vive
         no <strong>github.com</strong> e permite três coisas:</p>
         <div class="grid-3" style="margin-top: var(--s-4);">
@@ -518,8 +500,7 @@
             <p>Ou pedir mudanças antes de aceitar.</p>
           </div>
         </div>
-        <p class="tip" style="margin-top: var(--s-4);">💡 É como mandar um Loom de aprovação, só que pra código
-        — ou, no nosso caso, pra HTML.</p>
+        <p class="tip" style="margin-top: var(--s-4);">💡 É como mandar um Loom de aprovação, só que pra código, ou, no nosso caso, pra HTML.</p>
       </div>
 
       <div class="exercises">
@@ -528,11 +509,10 @@
           <summary>
             <span class="ex-num">07</span>
             <span class="ex-title">Abrindo e revisando um Pull Request</span>
-            <span class="ex-time">15 min</span>
           </summary>
           <div class="ex-body">
             <p class="ex-intro"><strong>O cenário:</strong> você quer testar mais uma variação, mas dessa vez
-            quer que alguém revise antes de aprovar — igual aconteceria numa empresa de verdade.</p>
+            quer que alguém revise antes de aprovar, igual aconteceria numa empresa de verdade.</p>
 
             <p class="ex-entrega"><strong>Entregável:</strong> um Pull Request aberto, com pelo menos 1
             comentário e uma aprovação, mesclado em <code>main</code>.</p>
@@ -540,7 +520,6 @@
             <div class="step-block">
               <div class="step-block-head">
                 <span class="step-block-num">Passo 1</span>
-                <span class="step-block-time">6 min</span>
                 <h4 class="step-block-title">Crie a branch, o slide novo e o PR</h4>
               </div>
               <div class="step-block-body">
@@ -563,11 +542,10 @@
             <div class="step-block">
               <div class="step-block-head">
                 <span class="step-block-num">Passo 2</span>
-                <span class="step-block-time">5 min</span>
                 <h4 class="step-block-title">Revisem em dupla, no navegador</h4>
               </div>
               <div class="step-block-body">
-                <p>Formem duplas e troquem os links. <strong>Esta parte é no github.com mesmo</strong> — revisão
+                <p>Formem duplas e troquem os links. <strong>Esta parte é no github.com mesmo</strong>, revisão
                 é conversa entre pessoas, não tarefa pra automatizar.</p>
                 <ol>
                   <li>Abra o PR do colega e clique na aba <strong>Files changed</strong></li>
@@ -582,7 +560,6 @@
             <div class="step-block">
               <div class="step-block-head">
                 <span class="step-block-num">Passo 3</span>
-                <span class="step-block-time">4 min</span>
                 <h4 class="step-block-title">Responda e mescle</h4>
               </div>
               <div class="step-block-body">
@@ -590,7 +567,7 @@
                 <div class="prompt-box">
                   <div class="prompt-box-head">Prompt 3 · se for ajustar</div>
                   <p>Na branch <code>slide-beneficios</code>, [descreva o ajuste pedido no comentário]. Commita e
-                  faz push — o PR deve atualizar sozinho.</p>
+                  faz push, o PR deve atualizar sozinho.</p>
                 </div>
                 <p>Volte no PR e confirme: o commit novo aparece lá, e o diff já reflete o ajuste. Depois clique
                 em <strong>Merge pull request → Confirm merge</strong>.</p>
@@ -599,7 +576,7 @@
 
             <div class="ex-closing">
               <span class="pa-eyebrow">O que fixar</span>
-              <p>O PR não é etapa técnica chata — é o momento onde a conversa acontece <strong>antes</strong> de a
+              <p>O PR é o momento onde a conversa acontece <strong>antes</strong> de a
               mudança virar oficial. Em produto real, quem revisa costuma ser o tech lead ou o par de design. O
               mecanismo é exatamente esse.</p>
             </div>
@@ -611,7 +588,7 @@
     <!-- ============================================================ 2.5 -->
     <section class="block" id="bloco-2-5">
       <div class="block-head">
-        <span class="block-pill">Bloco 2.5 · ~18 min</span>
+        <span class="block-pill">Bloco 2.5</span>
         <span class="block-mode block-mode--mao">No navegador · github.com</span>
         <h2>Deploy: a terceira instância</h2>
       </div>
@@ -641,10 +618,9 @@
           <summary>
             <span class="ex-num">08</span>
             <span class="ex-title">Publicando o protótipo</span>
-            <span class="ex-time">12 min</span>
           </summary>
           <div class="ex-body">
-            <p class="ex-intro">No fim deste exercício você tem um link pra mandar pra qualquer pessoa — que abre
+            <p class="ex-intro">No fim deste exercício você tem um link pra mandar pra qualquer pessoa, que abre
             no celular dela, sem instalar nada.</p>
 
             <p class="ex-entrega"><strong>Entregável:</strong> URL pública ativa, no formato
@@ -653,7 +629,6 @@
             <div class="step-block">
               <div class="step-block-head">
                 <span class="step-block-num">Passo 1</span>
-                <span class="step-block-time">8 min</span>
                 <h4 class="step-block-title">Ative o GitHub Pages</h4>
               </div>
               <div class="step-block-body">
@@ -665,7 +640,7 @@
                   <li>Em <strong>Source</strong>, selecione a branch <strong>main</strong> e a pasta
                   <strong>/ (root)</strong></li>
                   <li>Clique em <strong>Save</strong></li>
-                  <li>Espere cerca de 1 minuto e atualize a página — a URL pública aparece no topo</li>
+                  <li>Espere cerca de 1 minuto e atualize a página, a URL pública aparece no topo</li>
                 </ol>
               </div>
             </div>
@@ -673,7 +648,6 @@
             <div class="step-block">
               <div class="step-block-head">
                 <span class="step-block-num">Passo 2</span>
-                <span class="step-block-time">4 min</span>
                 <h4 class="step-block-title">Valide as três instâncias, agora completas</h4>
               </div>
               <div class="step-block-body">
@@ -683,7 +657,7 @@
                   <li>Copie o link, mande pra alguém do grupo e peça pra abrir no celular</li>
                 </ol>
                 <p class="tip">💡 <strong>Agora você tem as três.</strong> A pasta na sua máquina, o repositório
-                no github.com e o site no ar — exatamente o desenho do Bloco 1.5 do Dia 1, agora com o seu nome
+                no github.com e o site no ar, exatamente o desenho do Bloco 1.5 do Dia 1, agora com o seu nome
                 nos três endereços.</p>
               </div>
             </div>
@@ -701,11 +675,11 @@
     <!-- ============================================================ 2.6 -->
     <section class="block" id="bloco-2-6">
       <div class="block-head">
-        <span class="block-pill">Bloco 2.6 · ~15 min</span>
+        <span class="block-pill">Bloco 2.6</span>
         <span class="block-mode block-mode--claude">Via Claude Code</span>
         <h2>Claude Code lendo código: documentar o algoritmo</h2>
         <p class="block-obj">Até aqui você usou o Claude Code pra <strong>criar</strong> e <strong>mexer</strong>.
-        Ele também <strong>lê e explica</strong> — e é isso que fecha o gancho que ficou aberto no Dia 1.</p>
+        Ele também <strong>lê e explica</strong>, e é isso que fecha o gancho que ficou aberto no Dia 1.</p>
       </div>
 
       <div class="exercises">
@@ -714,12 +688,11 @@
           <summary>
             <span class="ex-num">09</span>
             <span class="ex-title">Documente o algoritmo da ArenaCash pelo Claude Code</span>
-            <span class="ex-time">15 min</span>
           </summary>
           <div class="ex-body">
             <p class="ex-intro">Lembra do <strong>Exercício 2 do Dia 1</strong>? Você garimpou o
             <code>simulador.js</code> na mão pra descobrir por que um jovem arrojado recebia o produto mais
-            conservador. Agora você refaz aquilo em três pedidos — e sai com um documento pronto pra mandar pra
+            conservador. Agora você refaz aquilo em três pedidos, e sai com um documento pronto pra mandar pra
             alguém.</p>
 
             <p class="ex-entrega"><strong>Entregável:</strong> um arquivo <code>analise-simulador.md</code>
@@ -728,11 +701,10 @@
             <div class="step-block">
               <div class="step-block-head">
                 <span class="step-block-num">Passo 1</span>
-                <span class="step-block-time">4 min</span>
                 <h4 class="step-block-title">Peça a explicação e compare com a de ontem</h4>
               </div>
               <div class="step-block-body">
-                <p>Na sua pasta mesmo — ele consegue ler repositório público sem você clonar nada:</p>
+                <p>Na sua pasta mesmo, ele consegue ler repositório público sem você clonar nada:</p>
                 <div class="prompt-box">
                   <div class="prompt-box-head">Prompt 1</div>
                   <p>Lê o arquivo <code>simulador.js</code> do repositório público
@@ -748,11 +720,10 @@
             <div class="step-block">
               <div class="step-block-head">
                 <span class="step-block-num">Passo 2</span>
-                <span class="step-block-time">4 min</span>
                 <h4 class="step-block-title">Peça o que é difícil achar sozinho</h4>
               </div>
               <div class="step-block-body">
-                <p>Esta é a pergunta que dá trabalho de responder na mão — testar combinação por combinação até
+                <p>Esta é a pergunta que dá trabalho de responder na mão, testar combinação por combinação até
                 achar as que se comportam de forma estranha:</p>
                 <div class="prompt-box">
                   <div class="prompt-box-head">Prompt 2</div>
@@ -771,7 +742,6 @@
             <div class="step-block">
               <div class="step-block-head">
                 <span class="step-block-num">Passo 3</span>
-                <span class="step-block-time">7 min</span>
                 <h4 class="step-block-title">Peça o material detalhado e commite</h4>
               </div>
               <div class="step-block-body">
@@ -787,7 +757,7 @@
                   6. Perguntas que eu levaria pro time de produto sobre essas regras</p>
                   <p>Escreve pra alguém que não sabe programar. Sem jargão.</p>
                 </div>
-                <p>Abra o arquivo e leia antes de aceitar. É <em>seu</em> documento — se alguma seção ficou rasa,
+                <p>Abra o arquivo e leia antes de aceitar. É <em>seu</em> documento, se alguma seção ficou rasa,
                 peça pra refazer só aquela. Quando estiver bom:</p>
                 <div class="prompt-box">
                   <div class="prompt-box-head">Prompt 4</div>
@@ -800,7 +770,7 @@
             <div class="ex-closing">
               <span class="pa-eyebrow">O que fixar</span>
               <p>Ontem você levou 12 minutos garimpando um arquivo pra entender duas regras. Hoje você levou três
-              pedidos — e saiu com um <strong>documento</strong>, não só com o entendimento.</p>
+              pedidos, e saiu com um <strong>documento</strong>, não só com o entendimento.</p>
               <p>Mas repare no que tornou isso possível: você só consegue julgar se a resposta está certa
               <strong>porque já tinha feito na mão</strong>. Quem pula a etapa de ontem recebe o mesmo documento e
               não tem como saber se pode confiar nele.</p>
@@ -813,11 +783,10 @@
     <!-- ============================================================ 2.7 -->
     <section class="block" id="bloco-2-7">
       <div class="block-head">
-        <span class="block-pill">Bloco 2.7 · ~15 min</span>
+        <span class="block-pill">Bloco 2.7</span>
         <span class="block-mode block-mode--claude">Via Claude Code</span>
         <h2>Desafio final: crie algo seu</h2>
-        <p class="block-obj">Chegou a vez de você escolher. Nada de repetir o que já foi feito nos exercícios —
-        pense em algo que <strong>ainda não existe</strong> no seu protótipo.</p>
+        <p class="block-obj">Chegou a vez de você escolher. Nada de repetir o que já foi feito nos exercícios, pense em algo que <strong>ainda não existe</strong> no seu protótipo.</p>
       </div>
 
       <div class="concept">
@@ -837,11 +806,10 @@
           <summary>
             <span class="ex-num">10</span>
             <span class="ex-title">Uma ideia sua, publicada de ponta a ponta</span>
-            <span class="ex-time">15 min</span>
           </summary>
           <div class="ex-body">
             <p class="ex-intro">Ciclo completo, sozinho: branch, mudança, PR, merge e publicação. Você já fez cada
-            uma dessas peças hoje — agora é juntar todas sem roteiro.</p>
+            uma dessas peças hoje, agora é juntar todas sem roteiro.</p>
 
             <p class="ex-entrega"><strong>Entregável:</strong> uma funcionalidade nova, escolhida por você,
             criada, commitada, revisada via PR e no ar.</p>
@@ -849,7 +817,6 @@
             <div class="step-block">
               <div class="step-block-head">
                 <span class="step-block-num">Passo 1</span>
-                <span class="step-block-time">6 min</span>
                 <h4 class="step-block-title">Branch, ideia e conferência</h4>
               </div>
               <div class="step-block-body">
@@ -864,13 +831,12 @@
             <div class="step-block">
               <div class="step-block-head">
                 <span class="step-block-num">Passo 2</span>
-                <span class="step-block-time">5 min</span>
                 <h4 class="step-block-title">Commit, push e Pull Request</h4>
               </div>
               <div class="step-block-body">
                 <ol>
                   <li>Peça commit, push e abertura de um Pull Request</li>
-                  <li>Revise o diff no github.com — é a mesma tela do Exercício 7</li>
+                  <li>Revise o diff no github.com: é a mesma tela do Exercício 7</li>
                   <li>Peça pro Claude Code mesclar</li>
                 </ol>
               </div>
@@ -879,7 +845,6 @@
             <div class="step-block">
               <div class="step-block-head">
                 <span class="step-block-num">Passo 3</span>
-                <span class="step-block-time">4 min</span>
                 <h4 class="step-block-title">Confirme no ar e compartilhe</h4>
               </div>
               <div class="step-block-body">
@@ -893,7 +858,7 @@
 
             <div class="ex-closing">
               <span class="pa-eyebrow">O que fixar</span>
-              <p>O valor de entender o mecanismo não é nunca mais usar o Claude Code sozinho — é <strong>confiar
+              <p>O valor de entender o mecanismo não é nunca mais usar o Claude Code sozinho: é <strong>confiar
               no resultado</strong>, porque você sabe exatamente o que está acontecendo por trás de cada pedido.</p>
             </div>
           </div>
@@ -904,7 +869,7 @@
     <!-- ============================================================ 2.8 -->
     <section class="block" id="bloco-2-8">
       <div class="block-head">
-        <span class="block-pill">Bloco 2.8 · ~8 min</span>
+        <span class="block-pill">Bloco 2.8</span>
         <h2>Fechando os dois dias</h2>
       </div>
 
@@ -914,7 +879,7 @@
         <div class="grid-2" style="margin-top: var(--s-4);">
           <div class="concept-card">
             <h4><span class="n">01</span> Vibe coding no código da empresa</h4>
-            <p>O Dia 2 inteiro — cada mudança no protótipo saiu de um pedido em português.</p>
+            <p>O Dia 2 inteiro, cada mudança no protótipo saiu de um pedido em português.</p>
           </div>
           <div class="concept-card">
             <h4><span class="n">02</span> Repositório de apresentações</h4>
@@ -950,14 +915,14 @@
         <h3 class="concept-sub">Duas perguntas pra fechar</h3>
         <p class="ex-intro">Branch e merge ainda te assustam?</p>
         <p>E a segunda, que é a que importa: em que momento de hoje você <strong>discordou</strong> do Claude
-        Code — ou conferiu algo que ele disse?</p>
+        Code, ou conferiu algo que ele disse?</p>
         <p>Se isso aconteceu pelo menos uma vez, o curso funcionou. O objetivo nunca foi aprender a pedir; foi
         conseguir <strong>saber se a resposta está certa</strong>.</p>
 
         <div class="next-day">
           <span class="pa-eyebrow">Onde tudo começou</span>
           <h3>Dois dias, um protótipo no ar</h3>
-          <p>Se quiser revisitar o modelo mental — repo, commit, local/remoto, branch, PR — ele está todo no
+          <p>Se quiser revisitar o modelo mental, repo, commit, local/remoto, branch, PR, ele está todo no
           Dia 1, junto com o dicionário de termos.</p>
           <a class="btn btn--primary" href="dia-1.html#dicionario">Abrir o dicionário →</a>
         </div>
@@ -971,7 +936,7 @@
 
 <footer class="site-footer">
   <div class="container">
-    <span>GitHub para Prototipação · Product Arena</span>
+    <span>GitHub para não desenvolvedores · Product Arena</span>
     <span>Tecla <code>E</code> abre/fecha todos os exercícios</span>
   </div>
 </footer>

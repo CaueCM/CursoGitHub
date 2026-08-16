@@ -1,4 +1,4 @@
-# GitHub para Prototipação
+# GitHub para não desenvolvedores
 
 Curso hands-on de 2 dias da [Product Arena](https://productarena.com.br) que ensina GitHub para gente
 **não-técnica** — PM, designer, marketing — prototipar, versionar e publicar protótipos em HTML.
