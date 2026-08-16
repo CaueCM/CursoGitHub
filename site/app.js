@@ -107,11 +107,11 @@
   const Y_MAIN = 72, Y_CORES = 162, Y_COPY = 248;
 
   const LEGENDAS = [
-    'Como você chegou aqui: a <strong>main</strong> tem o trabalho de ontem, e a <strong>variacao-cores</strong> está aberta — o trabalho existe, mas não chegou na versão oficial.',
-    '<strong>Passo 1 — merge tranquilo.</strong> A variacao-cores voltou pra main. O Git juntou sozinho, sem perguntar nada, porque ninguém mais tinha mexido naquelas linhas.',
-    '<strong>Passo 2.</strong> Nasce a <strong>variacao-copy</strong>, com um texto novo pro botão. Até aqui, nenhum problema: ela está isolada.',
-    '<strong>Passo 3 — a armadilha, de propósito.</strong> A main mudou <em>a mesma linha</em> de outro jeito. Agora existem duas versões do mesmo botão, em linhas do tempo diferentes.',
-    '<strong>Passo 4 — conflito e resolução.</strong> O merge para e pergunta. Você escolhe o texto final, apaga os marcadores e commita. As duas linhas viram uma só.'
+    'O ponto de partida: o repositório da dupla, com o <code>index.html</code> que vocês criaram juntos. Uma linha do tempo só.',
+    '<strong>Passo 1.</strong> Cada um cria a sua branch e muda <em>o mesmo texto</em> do botão, cada um do seu jeito. Nenhum dos dois vê o que o outro fez, porque as branches são isoladas.',
+    '<strong>Passo 2.</strong> A pessoa A mescla primeiro. Entra sem conflito nenhum: quando ela começou, a main ainda era a de antes, e ninguém tinha tocado naquela linha.',
+    '<strong>Passo 3.</strong> A pessoa B tenta mesclar e o Git trava. A main já não é a mesma de quando ela começou, e as duas versões disputam a mesma linha. <strong>Este é o conflito.</strong>',
+    '<strong>Passo 4.</strong> Vocês dois olham as duas versões e escolhem o texto final. As duas linhas do tempo viram uma só, com uma decisão que nenhum dos dois tomou sozinho.'
   ];
 
   // Barra global no topbar — criada antes do loop, porque
@@ -252,69 +252,76 @@
 
   function desenhaMerge(estado) {
     let s = '';
+    const SAIDA = 250;   // onde as duas branches nascem
+    const MERGE_A = 500; // onde a pessoa A mescla
+    const MERGE_B = 640; // onde a pessoa B tenta mesclar
 
     // --- main, sempre presente ---
-    s += `<path d="M 176 ${Y_MAIN} H 700" stroke="${RED}" stroke-width="4.5" fill="none" stroke-linecap="round"/>`;
+    s += `<path d="M 176 ${Y_MAIN} H 720" stroke="${RED}" stroke-width="4.5" fill="none" stroke-linecap="round"/>`;
     s += etiqueta(Y_MAIN, 'MAIN', RED);
-    s += ponto(196, Y_MAIN, RED);
+    s += ponto(200, Y_MAIN, RED);
+    if (estado === 0) s += nota(200, Y_MAIN - 26, 'o index.html da dupla');
 
-    // --- variacao-cores ---
-    s += etiqueta(Y_CORES, 'VARIACAO-CORES', YELLOW);
     if (estado === 0) {
-      // aberta: sai da main, anda e não volta
-      s += `<path d="M 196 ${Y_MAIN} V ${Y_CORES - 24} Q 196 ${Y_CORES} 220 ${Y_CORES} H 330"` +
-           ` stroke="${YELLOW}" stroke-width="4.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>`;
-      s += `<path d="M 342 ${Y_CORES} H 386" stroke="${YELLOW}" stroke-width="4.5" fill="none"` +
-           ` stroke-dasharray="1 12" stroke-linecap="round"/>`;
-      s += ponto(300, Y_CORES, YELLOW);
-      s += nota(364, Y_CORES + 30, 'ainda aberta');
-    } else {
-      // mesclada: sai da main e volta
-      s += `<path d="M 196 ${Y_MAIN} V ${Y_CORES - 24} Q 196 ${Y_CORES} 220 ${Y_CORES} H 336` +
-           ` Q 360 ${Y_CORES} 360 ${Y_CORES - 24} V ${Y_MAIN}"` +
-           ` stroke="${YELLOW}" stroke-width="4.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>`;
-      s += ponto(288, Y_CORES, YELLOW);
-      s += ponto(360, Y_MAIN, RED, 14);
-      s += nota(360, Y_MAIN - 26, 'merge sem conflito');
+      return envolve(s, estado);
     }
 
-    // --- variacao-copy ---
+    // --- as duas branches, criadas ao mesmo tempo ---
+    s += etiqueta(Y_CORES, 'PESSOA A', YELLOW);
+    s += etiqueta(Y_COPY, 'PESSOA B', LIME);
+
+    const fimA = estado >= 2 ? MERGE_A - 24 : 430;
+    s += `<path d="M ${SAIDA} ${Y_MAIN} V ${Y_CORES - 24} Q ${SAIDA} ${Y_CORES} ${SAIDA + 24} ${Y_CORES} H ${fimA}"` +
+         ` stroke="${YELLOW}" stroke-width="4.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>`;
+    s += ponto(370, Y_CORES, YELLOW);
+
+    // a de B desce por uma vertical deslocada, senão cobre a de A
+    const DESCE_B = SAIDA + 34;
+    const fimB = estado >= 4 ? MERGE_B - 24 : 560;
+    s += `<path d="M ${SAIDA} ${Y_MAIN} L ${DESCE_B} ${Y_MAIN + 34} V ${Y_COPY - 24}` +
+         ` Q ${DESCE_B} ${Y_COPY} ${DESCE_B + 24} ${Y_COPY} H ${fimB}"` +
+         ` stroke="${LIME}" stroke-width="4.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>`;
+    s += ponto(370, Y_COPY, LIME);
+
+    if (estado === 1) {
+      s += nota(370, Y_CORES - 26, 'muda o texto do botão');
+      s += nota(370, Y_COPY + 32, 'muda O MESMO texto');
+    }
+
+    // --- pessoa A mescla: sem conflito ---
     if (estado >= 2) {
-      s += etiqueta(Y_COPY, 'VARIACAO-COPY', LIME);
-      const fim = estado >= 4 ? 596 : 660;
-      s += `<path d="M 440 ${Y_MAIN} V ${Y_COPY - 24} Q 440 ${Y_COPY} 464 ${Y_COPY} H ${fim}"` +
-           ` stroke="${LIME}" stroke-width="4.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>`;
-      s += ponto(440, Y_MAIN, RED);
-      s += ponto(540, Y_COPY, LIME);
-      s += nota(540, Y_COPY + 32, 'muda o texto do botão');
-
-      if (estado >= 4) {
-        s += `<path d="M 596 ${Y_COPY} Q 620 ${Y_COPY} 620 ${Y_COPY - 24} V ${Y_MAIN}"` +
-             ` stroke="${LIME}" stroke-width="4.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>`;
-      }
+      s += `<path d="M ${MERGE_A - 24} ${Y_CORES} Q ${MERGE_A} ${Y_CORES} ${MERGE_A} ${Y_CORES - 24} V ${Y_MAIN}"` +
+           ` stroke="${YELLOW}" stroke-width="4.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>`;
+      s += ponto(MERGE_A, Y_MAIN, RED, 14);
+      if (estado === 2) s += nota(MERGE_A, Y_MAIN - 26, 'entrou sem conflito');
     }
 
-    // --- commit na main que provoca o conflito ---
-    if (estado >= 3) {
-      s += ponto(540, Y_MAIN, RED);
-      s += nota(540, Y_MAIN - 26, 'muda A MESMA linha');
-      if (estado === 3) {
-        // marca de atenção entre os dois commits rivais
-        s += `<path d="M 540 ${Y_MAIN + 16} V ${Y_COPY - 16}" stroke="${RED}" stroke-width="2"` +
-             ` stroke-dasharray="4 5" fill="none" opacity="0.7"/>`;
-        s += `<text x="556" y="${(Y_MAIN + Y_COPY) / 2 + 4}" fill="${RED}" font-size="11.5"` +
-             ` font-family="var(--font-mono, monospace)">conflito a caminho</text>`;
-      }
+    // --- pessoa B tenta mesclar: conflito ---
+    if (estado === 3) {
+      s += `<path d="M ${fimB} ${Y_COPY} Q ${MERGE_B} ${Y_COPY} ${MERGE_B} ${Y_COPY - 24} V ${Y_MAIN + 20}"` +
+           ` stroke="${RED}" stroke-width="3" stroke-dasharray="6 6" fill="none" opacity="0.85"/>`;
+      s += `<g stroke="${RED}" stroke-width="4" stroke-linecap="round">` +
+           `<path d="M ${MERGE_B - 11} ${Y_MAIN - 11} L ${MERGE_B + 11} ${Y_MAIN + 11}"/>` +
+           `<path d="M ${MERGE_B + 11} ${Y_MAIN - 11} L ${MERGE_B - 11} ${Y_MAIN + 11}"/></g>`;
+      s += `<text x="${MERGE_B}" y="${Y_MAIN - 30}" fill="${RED}" font-size="12" text-anchor="middle"` +
+           ` font-weight="700" font-family="var(--font-mono, monospace)">CONFLITO</text>`;
+      s += nota(MERGE_B, Y_COPY + 32, 'mesma linha, texto diferente');
     }
 
-    // --- merge final ---
+    // --- resolvido ---
     if (estado >= 4) {
-      s += ponto(620, Y_MAIN, RED, 15);
-      // numa linha acima da nota do passo 3, senão as duas se sobrepõem
-      s += nota(700, Y_MAIN - 48, 'conflito resolvido', 'end');
+      s += `<path d="M ${MERGE_B - 24} ${Y_COPY} Q ${MERGE_B} ${Y_COPY} ${MERGE_B} ${Y_COPY - 24} V ${Y_MAIN}"` +
+           ` stroke="${LIME}" stroke-width="4.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>`;
+      s += ponto(MERGE_B, Y_MAIN, RED, 15);
+      s += nota(MERGE_B, Y_MAIN - 30, 'vocês dois decidiram');
     }
 
-    return `<svg class="branch-diagram" viewBox="0 0 760 300" role="img" aria-label="Estado ${estado} do exercício de merge">${s}</svg>`;
+    return envolve(s, estado);
+  }
+
+  function envolve(s, estado) {
+    return `<svg class="branch-diagram" viewBox="0 0 760 300" role="img" ` +
+           `aria-label="Estado ${estado} do exercício de conflito em dupla">${s}</svg>`;
   }
 
   function sincronizaDiagramaMerge(passosFeitos) {

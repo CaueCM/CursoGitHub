@@ -11,6 +11,9 @@
 
 .section { padding: var(--s-20) 0; border-top: 1px solid var(--border); }
 .section--dark { background: var(--pa-black); color: var(--pa-white); border-top: 0; }
+/* h1–h4 trazem `color: var(--fg)` do design system, que é preto: sem isto o
+   título some no fundo escuro */
+.section--dark h1, .section--dark h2, .section--dark h3, .section--dark h4 { color: var(--pa-white); }
 .section--muted { background: var(--bg-muted); }
 .section--tight { padding: var(--s-12) 0; }
 
@@ -695,6 +698,7 @@ p, li, td, th, a, h1, h2, h3, h4 { overflow-wrap: break-word; }
 }
 .block-mode--mao { color: var(--fg-muted); background: var(--bg-muted); border-color: var(--border); }
 .block-mode--claude { color: var(--pa-black); background: var(--pa-lime); border-color: var(--pa-lime); }
+.block-mode--dupla { color: var(--pa-white); background: var(--pa-red); border-color: var(--pa-red); }
 @media (max-width: 560px) { .block-mode { margin-left: 0; display: block; width: fit-content; } }
 
 .block--bonus { border-style: dashed; border-color: var(--border-strong); background: var(--bg-muted); }

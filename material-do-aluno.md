@@ -576,140 +576,12 @@ porque é a língua que qualquer tutorial e mensagem de erro falam.
 
 ---
 
-### Bloco 2.3 — Branches se cruzando: merge e conflito
+### Bloco 2.3 — Deploy: a terceira instância
 
-Se algo tiver que sair do roteiro por falta de tempo, **não é este**.
+**Individual.** Antes de vocês se juntarem em dupla, cada um fecha o próprio ciclo: publica o seu
+repositório e sai com uma URL no seu nome.
 
-#### Merge é o cruzamento
-
-Uma branch só tem valor se, em algum momento, ela volta pra se juntar com a principal. Isso se chama
-**merge**.
-
-**Quando dá certo:** as mudanças estão em partes diferentes do arquivo. O Git junta sozinho.
-
-**Quando dá conflito:** duas branches mudaram **a mesma linha** de formas diferentes. O Git não tem como
-adivinhar, então para e pergunta.
-
-> Conflito é o Git sendo honesto: "duas
-> pessoas mudaram a mesma coisa, escolhe você". E note: **quem escolhe é você, não o Claude Code.**
-
-#### Exercício 6 — Merge tranquilo e depois um conflito de verdade
-
-**O cenário:** enquanto o marketing testava as cores, o time de copy também testava um texto novo pro
-mesmo botão.
-
-**Entregável:** a branch `variacao-cores` mesclada em `main` sem problema, e uma segunda branch
-`variacao-copy` que gera um conflito real, resolvido por decisão sua.
-
-**Passo 1 — Merge tranquilo**
-
-> Vai pra main e mescla a branch `variacao-cores` nela. Depois faz push e me diz se teve algum conflito.
-
-Ele deve responder que correu tudo bem. Recarregue o `index.html`: a `main` está verde e roxa. Esse foi o
-caminho feliz.
-
-**Passo 2 — Crie a branch que vai gerar o conflito**
-
-> Cria a branch `variacao-copy` a partir da main. Nela, troca o texto do botão de "Saiba mais" para "Quero
-> indicar agora" e deixa o subtítulo mais urgente, falando do prazo da promoção. Commita com a mensagem
-> "testando copy mais urgente no botão" e faz push.
-
-**Passo 3 — Volte na main e mude a MESMA linha de outro jeito**
-
-> Agora volta pra main e, direto nela, troca o texto do **mesmo botão** pra "Ganhar R$ 50 agora" e ajusta o
-> subtítulo pra reforçar o valor do bônus. Commita com a mensagem "ajuste de copy focado no valor do bônus"
-> e faz push.
-
-Agora `main` e `variacao-copy` mudaram a mesma linha de formas diferentes. É de propósito.
-
-**Passo 4 — Provoque o merge e decida você**
-
-> Tenta mesclar a `variacao-copy` na main. Se der conflito, **não resolve sozinho**: me mostra exatamente o
-> trecho em conflito, com os marcadores, e me explica o que cada lado quer.
-
-Ele vai mostrar algo assim:
-
-```html
-<<<<<<< HEAD
-<button>Ganhar R$ 50 agora</button>
-=======
-<button>Quero indicar agora</button>
->>>>>>> variacao-copy
-```
-
-Entre `<<<<<<< HEAD` e `=======` está a versão da `main`; entre `=======` e `>>>>>>> variacao-copy` está a
-da outra branch.
-
-**A decisão é sua.** Escolha uma das duas, ou invente uma terceira. Se quiser ajuda pra pensar, não pra
-decidir:
-
-> Sem aplicar nada ainda: qual das duas versões funciona melhor pro botão de uma campanha de indicação, e
-> por quê? Me sugere também uma terceira opção que junte as duas.
-
-Com a decisão tomada:
-
-> Resolve o conflito deixando o texto do botão como *[o texto que você escolheu]*, apaga os marcadores,
-> finaliza o merge e faz push.
-
-> **O que fixar:** resolver conflito não tem mistério: é olhar as duas versões, decidir qual fica e
-> seguir. **O Git só precisa que uma pessoa decida.** E repare no desenho: o Claude Code *executou*, você
-> segurou a *decisão*.
-
----
-
-### Bloco 2.4 — Pull Request: comentar antes de ir pro ar
-
-No exercício anterior você mesclou direto, sem revisão. Isso funciona quando você trabalha sozinho. Quando
-tem mais gente, ou quando você quer uma segunda opinião, existe o **Pull Request**.
-
-Um PR é um pedido formal de "quero juntar minha branch na main, alguém pode olhar antes?". Ele vive no
-github.com e permite ver o **diff**, deixar **comentários** em linhas específicas e **aprovar** ou pedir
-mudanças.
-
-#### Exercício 7 — Abrindo e revisando um Pull Request
-
-**Entregável:** um PR aberto, com pelo menos 1 comentário e uma aprovação, mesclado em `main`.
-
-**Passo 1 — Crie a branch, o slide novo e o PR**
-
-> Cria a branch `slide-beneficios` a partir da main. Nela, adiciona ao `index.html` mais um slide listando
-> 3 benefícios da campanha de indicação: R$ 50 pro indicado, R$ 50 pra quem indicou, sem limite de
-> indicações. A apresentação deve funcionar como slides navegáveis, com um botão "próximo". Mantém o visual
-> consistente com os outros slides.
-
-Confira no navegador. Quando estiver bom:
-
-> Commita com "adiciona slide de beneficios", faz push e abre um Pull Request pra main com um título claro
-> e uma descrição curta. Me devolve o link do PR.
-
-**Passo 2 — Revisem em dupla, no navegador**
-
-Formem duplas e troquem os links. **Esta parte é no github.com mesmo**, revisão é conversa entre pessoas,
-não tarefa pra automatizar.
-
-1. Abra o PR do colega e clique na aba **Files changed**
-2. Veja o diff, com o que foi adicionado em verde
-3. Passe o mouse numa linha e clique no **+**. Deixe um comentário
-4. **Revisor:** Review changes → Approve
-
-**Passo 3 — Responda e mescle**
-
-Leia o comentário que você recebeu. Se fizer sentido, ajuste:
-
-> Na branch `slide-beneficios`, [descreva o ajuste pedido]. Commita e faz push, o PR deve atualizar
-> sozinho.
-
-Volte no PR: o commit novo aparece lá. Depois clique em **Merge pull request → Confirm merge**.
-
-> **O que fixar:** o PR é o momento onde a conversa acontece **antes** de a mudança virar
-> oficial.
-
----
-
-### Bloco 2.5 — Deploy: a terceira instância
-
-Ontem, no Bloco 1.5, você viu o mapa das três instâncias e ficou com duas. **A terceira nasce agora.**
-
+Ontem, no Bloco 1.5, você viu o mapa das três instâncias e ficou com duas. A terceira nasce agora.
 **GitHub Pages** é a forma mais simples: gratuito, sem cartão de crédito, publica direto a partir do
 próprio repositório.
 
@@ -720,69 +592,238 @@ Pedir ao Claude Code → Commit → Branch + Pull Request → Merge em main
      → GitHub Pages publica → URL pública atualizada
 ```
 
-A parte boa: você configura **uma vez**. A partir daí, toda vez que algo for mesclado em `main`, o site
-publicado se atualiza sozinho.
+Você configura uma vez. A partir daí, toda vez que algo for mesclado em `main`, o site se atualiza sozinho.
 
-#### Exercício 8 — Publicando o protótipo
+#### Exercício 6 — Publicando o seu protótipo
 
 **Entregável:** URL pública ativa, no formato `https://<seu-usuario>.github.io/meu-prototipo-arenacash/`.
 
 **Passo 1 — Ative o GitHub Pages**
 
-Esta parte é no navegador: é configuração de conta, não mudança no código.
-
 1. Acesse `github.com/<seu-usuario>/meu-prototipo-arenacash`
 2. **Settings** → no menu lateral, **Pages**
 3. Em **Source**, selecione a branch **main** e a pasta **/ (root)**
 4. **Save**
-5. Espere cerca de 1 minuto e atualize, a URL pública aparece no topo
+5. Espere cerca de 1 minuto e atualize: a URL aparece no topo
 
 **Passo 2 — Valide as três instâncias, agora completas**
 
-1. Abra a URL numa **aba anônima/privada**
-2. Confirme que a apresentação abre e os slides navegam
-3. Copie o link, mande pra alguém do grupo e peça pra abrir no celular
+1. Abra a URL numa **aba anônima**
+2. Confirme que a apresentação abre
+3. Copie o link e mande pra alguém do grupo
 
-> **Agora você tem as três.** A pasta na sua máquina, o repositório no github.com e o site no ar —
-> exatamente o desenho do Bloco 1.5, agora com o seu nome nos três endereços.
+Agora você tem as três: a pasta na sua máquina, o repositório no github.com e o site no ar.
+
+> **O que fixar:** você operacionalizou o fluxo completo sozinho. A partir do próximo bloco, tudo acontece
+> **em dupla**. É aí que o Git para de ser histórico pessoal e vira o que ele foi feito pra ser: um jeito de
+> duas pessoas mexerem no mesmo projeto sem se atropelar.
 
 ---
 
-### Bloco 2.6 — Claude Code lendo código: documentar o algoritmo
+### Bloco 2.4 — Formem a dupla
 
-Até aqui você usou o Claude Code pra **criar** e **mexer**. Ele também **lê e explica**, e é isso que
-fecha o gancho que ficou aberto no Dia 1.
+**Em dupla, a partir daqui.**
 
-#### Exercício 9 — Documente o algoritmo da ArenaCash pelo Claude Code
+Escolham quem é a **pessoa A** e quem é a **pessoa B**: os exercícios usam esses nomes pra dizer quem faz
+o quê.
 
-Lembra do **Exercício 2 do Dia 1**? Você garimpou o `simulador.js` na mão. Agora refaz aquilo em três
-pedidos, e sai com um documento pronto pra mandar pra alguém.
+Até agora o repositório era seu e ninguém mais mexia nele. Num projeto de verdade não é assim: várias
+pessoas trabalham no mesmo código, ao mesmo tempo, sem combinar cada linha. É aí que branch, merge e Pull
+Request deixam de ser burocracia.
 
-**Entregável:** um `analise-simulador.md` commitado no **seu** repositório.
+#### Exercício 7 — Um repositório para os dois
 
-**Passo 1 — Peça a explicação e compare com a de ontem**
+**Entregável:** um repositório novo e público, com os dois como colaboradores, clonado nas duas máquinas e
+com o Pages ligado.
+
+**Passo 1 — Pessoa A cria o repositório e o primeiro slide**
+
+> Cria um repositório público novo no GitHub chamado `prototipo-dupla-<nomes de vocês>`, clona ele aqui e
+> coloca dentro um `index.html` com um slide de capa da campanha "Indique um amigo e ganhe R$ 50" da
+> ArenaCash. O slide precisa ter um botão com o texto "Saiba mais". Commita e faz push.
+
+O botão importa: é nele que o conflito do próximo bloco vai acontecer.
+
+**Passo 2 — Pessoa A dá acesso à pessoa B**
+
+1. **Settings** → **Collaborators** → **Add people**
+2. Digite o usuário do GitHub da pessoa B e confirme
+
+**Pessoa B:** aceite o convite (chega por email e em `github.com/notifications`) antes de seguir, senão o
+clone do próximo passo falha.
+
+**Passo 3 — Pessoa B clona, e os dois ligam o Pages**
+
+> Clona o repositório `<usuario-da-pessoa-A>/prototipo-dupla-<nomes>` aqui nesta pasta e me mostra o que
+> tem dentro.
+
+Pessoa B: abra o `index.html` local e confirme que vê o mesmo slide. Agora existem três cópias do projeto:
+a da máquina de A, a da máquina de B e a do GitHub.
+
+Pessoa A liga o GitHub Pages neste repositório novo. Guardem a URL.
+
+> **O que fixar:** adicionar colaborador é o que transforma um repositório pessoal em projeto de time.
+> Tudo que um dos dois manda pro GitHub, o outro consegue puxar. É essa possibilidade que cria o conflito
+> do próximo bloco.
+
+---
+
+### Bloco 2.5 — O conflito de verdade
+
+**Em dupla.** É o bloco mais denso do dia. Vocês dois vão mudar a mesma linha ao mesmo tempo, sem combinar
+o texto, e depois resolver o que o Git não consegue resolver sozinho.
+
+**Quando o merge dá certo:** as mudanças estão em partes diferentes do arquivo. O Git junta sozinho.
+
+**Quando dá conflito:** duas pessoas mudaram **a mesma linha** de formas diferentes. O Git não tem como
+adivinhar quem está certo.
+
+> Conflito é o Git sendo honesto: duas pessoas mudaram a mesma coisa, e ele não vai escolher por vocês.
+> **Quem escolhe são vocês, não o Claude Code.**
+
+#### Exercício 8 — Causem um conflito e resolvam juntos
+
+**A regra do exercício:** não combinem o texto do botão. Cada um escolhe o seu, sem contar pro outro. O
+conflito precisa ser real pra valer a pena.
+
+**Entregável:** um conflito de verdade, causado pelos dois, resolvido com um texto que vocês decidiram
+juntos e mesclado na `main`.
+
+**Passo 1 — Os dois, ao mesmo tempo: cada um na sua branch**
+
+Façam este passo **simultaneamente**, cada um no seu computador. Não olhem a tela do outro.
+
+> **Pessoa A:** cria uma branch chamada `botao-a` a partir da main. Nela, troca o texto do botão do
+> `index.html` por *[escolha um texto e não conte pra sua dupla]*. Commita com a mensagem "novo texto do
+> botao" e faz push.
+
+> **Pessoa B:** cria uma branch chamada `botao-b` a partir da main. Nela, troca o texto do botão do
+> `index.html` por *[escolha um texto e não conte pra sua dupla]*. Commita com a mensagem "novo texto do
+> botao" e faz push.
+
+Abram a aba **Branches** no github.com. As duas estão lá, lado a lado.
+
+**Passo 2 — Pessoa A mescla primeiro**
+
+> **Pessoa A:** vai pra main, mescla a branch `botao-a` nela e faz push.
+
+Entrou liso. Quando a pessoa A começou, a main ainda era a original.
+
+**Pessoa B:** abra a URL pública da dupla agora. O botão já mostra o texto que a pessoa A escolheu, e você
+não fez nada.
+
+**Passo 3 — Pessoa B tenta mesclar e o Git trava**
+
+> **Pessoa B:** puxa a main atualizada do GitHub e tenta mesclar a minha branch `botao-b` nela. Se der
+> conflito, **não resolve sozinho**: me mostra o trecho em conflito, com os marcadores, e me explica o que
+> cada lado quer.
+
+Agora trava:
+
+```html
+<<<<<<< HEAD
+<button>[o texto que a pessoa A escolheu]</button>
+=======
+<button>[o texto que a pessoa B escolheu]</button>
+>>>>>>> botao-b
+```
+
+Repararam por que ele travou agora e não antes? Porque a main mudou **depois** que a pessoa B começou. É
+esse descompasso que produz conflito, e é por isso que ele aparece muito mais em time do que sozinho.
+
+**Passo 4 — Decidam juntos e finalizem**
+
+Vocês têm dois textos na tela e precisam sair com um. Fica o da pessoa A, o da pessoa B, ou um terceiro?
+
+> **Pessoa B:** resolve o conflito deixando o texto do botão como *[o texto que vocês decidiram]*, apaga os
+> marcadores, finaliza o merge e faz push.
+
+**Pessoa A:** peça pra puxar a main atualizada e abra o `index.html`. O texto que aparece é o que vocês
+combinaram, e chegou na sua máquina sem você ter editado nada.
+
+> **O que fixar:** o Git impediu que o trabalho de um sobrescrevesse o do outro em silêncio. Sem ele, quem
+> salvasse por último ganhava, e ninguém ficaria sabendo.
+
+---
+
+### Bloco 2.6 — Pull Request: revisar antes de aprovar
+
+**Em dupla.**
+
+No exercício anterior vocês mesclaram direto. Funciona, mas ninguém olhou o trabalho do outro antes de
+virar oficial. O **Pull Request** é onde essa conversa acontece: dá pra ver o diff linha por linha,
+comentar em linhas específicas e aprovar ou pedir mudanças.
+
+#### Exercício 9 — Um PR de cada, revisado pelo outro
+
+**Entregável:** dois PRs, cada um com pelo menos um comentário do colega, aprovados e mesclados na `main`.
+
+**Passo 1 — Cada um cria o seu slide e abre o PR**
+
+Dividam: pessoa A faz o slide de benefícios, pessoa B faz o de depoimento. Ao mesmo tempo.
+
+> **Pessoa A:** cria a branch `slide-beneficios` a partir da main. Nela, adiciona ao `index.html` um slide
+> listando 3 benefícios da campanha: R$ 50 pro indicado, R$ 50 pra quem indicou, sem limite de indicações.
+> Commita, faz push e abre um Pull Request pra main. Me devolve o link.
+
+> **Pessoa B:** cria a branch `slide-depoimento` a partir da main. Nela, adiciona um slide com um depoimento
+> fictício de um cliente da ArenaCash, com nome e citação curta. Commita, faz push e abre um Pull Request
+> pra main. Me devolve o link.
+
+**Passo 2 — Revisem o PR um do outro**
+
+No github.com mesmo: revisão é conversa entre pessoas.
+
+1. Abra o PR do colega, aba **Files changed**
+2. Veja o diff, com o que foi adicionado em verde
+3. Passe o mouse numa linha, clique no **+** e deixe um comentário de verdade
+4. **Review changes → Approve**
+
+**Passo 3 — Respondam, mesclem e vejam o segundo dar trabalho**
+
+Cada um lê o comentário e ajusta se fizer sentido. Depois mesclem **um de cada vez**: primeiro o da pessoa
+A, depois o da B.
+
+O segundo PR pode acusar que precisa atualizar antes de mesclar, porque a main andou. Se acontecer, peça:
+*"puxa a main atualizada pra dentro da minha branch e resolve o que precisar"*. É o mesmo mecanismo do
+bloco anterior, agora numa situação rotineira.
+
+> **O que fixar:** o PR é o momento onde a conversa acontece **antes** de a mudança virar oficial.
+
+---
+
+### Bloco 2.7 — Claude Code lendo código: documentar o algoritmo
+
+**Em dupla.** Pessoa B conduz o Claude Code; pessoa A lê e questiona.
+
+Até aqui vocês usaram o Claude Code pra criar e mexer. Ele também lê e explica, e é isso que fecha o
+gancho que ficou aberto no Dia 1.
+
+#### Exercício 10 — Documentem o algoritmo da ArenaCash
+
+**Entregável:** um `analise-simulador.md` commitado no repositório da dupla.
+
+**Passo 1 — Peçam a explicação e comparem com a de ontem**
 
 > Lê o arquivo `simulador.js` do repositório público `github.com/CaueCM/ArenaCash` e me explica, em
 > português e sem jargão, como ele decide qual investimento indicar pra cada pessoa.
 
-Compare com o que **você** descobriu ontem. Bateu? Ele achou algo que passou despercebido? Ou disse algo
-que você sabe que está errado?
+Comparem com o que vocês descobriram ontem lendo o arquivo na mão.
 
-**Passo 2 — Peça o que é difícil achar sozinho**
+**Passo 2 — Peçam o que é difícil achar sozinho**
 
 > Quais regras desse arquivo podem gerar um resultado que surpreende o cliente? Pra cada uma, me dá um
 > exemplo concreto de idade, salário e perfil que cai nela, e explica por que o resultado parece
 > contraditório.
 
-Ele deve encontrar pelo menos duas: a do **aporte mínimo**, que passa por cima do perfil e da idade, e a do
-**teto de risco por idade**.
+Ele deve encontrar pelo menos duas: a do **aporte mínimo** e a do **teto de risco por idade**.
 
-Se ele apontar algo que você não consegue confirmar no código, **não aceite**. Peça: *"me mostra a linha
-exata do arquivo onde isso acontece"*.
+**Pessoa A, este passo é seu:** se ele apontar algo que vocês não conseguem confirmar no código, não
+aceitem. Peçam *"me mostra a linha exata do arquivo onde isso acontece"*.
 
-**Passo 3 — Peça o material detalhado e commite**
+**Passo 3 — Peçam o material detalhado e commitem**
 
-> Cria um arquivo `analise-simulador.md` aqui no meu repositório documentando esse algoritmo, com estas
+> Cria um arquivo `analise-simulador.md` aqui no nosso repositório documentando esse algoritmo, com estas
 > seções:
 >
 > 1. O que o simulador faz, em um parágrafo
@@ -794,51 +835,70 @@ exata do arquivo onde isso acontece"*.
 >
 > Escreve pra alguém que não sabe programar. Sem jargão.
 
-Leia antes de aceitar. É *seu* documento. Quando estiver bom:
+Leiam antes de aceitar. Quando estiver bom, commitem e façam push.
 
-> Commita o `analise-simulador.md` com a mensagem "documenta o algoritmo do simulador da ArenaCash" e faz
-> push na main.
-
-> **O que fixar:** ontem você levou 12 minutos garimpando pra entender duas regras. Hoje levou três pedidos
->, e saiu com um **documento**. Mas você só consegue julgar se a resposta está certa **porque já tinha
-> feito na mão**.
+> **O que fixar:** vocês só conseguem julgar se a resposta está certa **porque já tinham feito na mão**.
 
 ---
 
-### Bloco 2.7 — Desafio final: crie algo seu
+### Bloco 2.8 — Desafio final: dois construindo ao mesmo tempo
 
-Chegou a vez de você escolher. Nada de repetir o que já foi feito, pense em algo que **ainda não existe**
-no seu protótipo.
+**Em dupla.**
 
-Se precisar de inspiração: um slide de FAQ, uma seção de números ("10.000 indicações já feitas"), um botão
-de compartilhar no WhatsApp, ou uma animação entre os slides.
+Escolham duas funcionalidades que ainda não existem no protótipo, uma pra cada. Depois trabalhem **ao mesmo
+tempo**, cada um na sua branch, sem combinar como cada um vai fazer.
 
-#### Exercício 10 — Uma ideia sua, publicada de ponta a ponta
+Esperar o outro terminar seria mais fácil, e é exatamente por isso que não vale.
 
-**Entregável:** uma funcionalidade nova, escolhida por você, criada, commitada, revisada via PR e no ar.
+Se precisarem de inspiração: um slide de FAQ, uma seção de números ("10.000 indicações já feitas"), um
+botão de compartilhar no WhatsApp, ou navegação por setas entre slides.
 
-1. Peça pra criar uma branch com um nome que descreva sua ideia
-2. Descreva a funcionalidade que você quer adicionar ao `index.html`
-3. Abra o arquivo local no navegador e confira **antes** de continuar
-4. Peça commit, push e abertura de um Pull Request
-5. Revise o diff no github.com e peça pro Claude Code mesclar
-6. Peça: *"confirma que o GitHub Pages já está servindo a versão nova e me devolve a URL pública"*
+#### Exercício 11 — Duas funcionalidades, dois autores, um site no ar
 
-Quem terminar primeiro compartilha o link e conta pro grupo o que escolheu criar.
+**Entregável:** o site da dupla no ar, com as duas funcionalidades novas, cada uma tendo passado por um
+Pull Request revisado pelo outro.
 
-> **O que fixar:** o valor de entender o mecanismo não é nunca mais usar o Claude Code sozinho: é
-> **confiar no resultado**, porque você sabe o que está acontecendo por trás de cada pedido.
+**Passo 1 — Combinem só o "o quê", nunca o "como"**
+
+1. Escolham as duas funcionalidades e escrevam quem faz qual
+2. Combinem **onde** cada uma entra no `index.html`. Se as duas mexerem no mesmo lugar, o conflito é
+   garantido
+3. Cada um cria a sua branch
+
+Este passo é a única coisa que separa "trabalho em paralelo" de "os dois reescrevendo o mesmo pedaço".
+
+**Passo 2 — Construam ao mesmo tempo**
+
+Cada um pede a sua funcionalidade ao Claude Code, na sua branch, sem esperar o outro. Confira no navegador
+antes de commitar, e abra um Pull Request.
+
+**Passo 3 — Revisem, mesclem os dois e resolvam o que aparecer**
+
+1. Revisem o PR um do outro, com pelo menos um comentário
+2. Mesclem o primeiro
+3. Mesclem o segundo. Se reclamar que a main andou, peça: *"puxa a main atualizada pra dentro da minha
+   branch e resolve o que precisar"*
+
+**Passo 4 — Confiram no ar e mostrem pro grupo**
+
+> Confirma que o GitHub Pages já está servindo a versão nova e me devolve a URL pública.
+
+Abram numa aba anônima. As duas funcionalidades estão lá, construídas em paralelo, por duas pessoas.
+
+> **O que fixar:** isso é um time de produto trabalhando. Duas pessoas, um repositório, mudanças em
+> paralelo, revisão antes de aprovar e uma URL que se atualiza a cada merge. A diferença entre isso e o
+> trabalho de vocês na segunda-feira é o assunto, não o mecanismo.
 
 ---
 
-### Bloco 2.8 — Fechando os dois dias
+### Bloco 2.9 — Fechando os dois dias
 
 #### Os 4 motivos, revisitados
 
-1. **Vibe coding no código da empresa**, o Dia 2 inteiro: cada mudança saiu de um pedido em português
-2. **Repositório de apresentações e HTML**: é o próprio pitch deck que você construiu e publicou
-3. **Análise de dados e algoritmos** — Exercício 2 do Dia 1 e Exercício 9 de hoje
-4. **Controle de versão**, commits, branches, um conflito resolvido, histórico completo
+1. **Vibe coding no código da empresa** — o Dia 2 inteiro: cada mudança saiu de um pedido em português
+2. **Repositório de apresentações e HTML** — são dois: o seu e o da dupla
+3. **Análise de dados e algoritmos** — Exercício 2 do Dia 1 e Exercício 10 de hoje
+4. **Controle de versão** — commits, branches, um conflito entre duas pessoas, histórico completo
 
 #### O que você sai sabendo fazer
 
@@ -846,7 +906,8 @@ Quem terminar primeiro compartilha o link e conta pro grupo o que escolheu criar
 - Ler um algoritmo de produto e opinar sobre as regras dele
 - Conectar o Claude Code à sua conta e trazer um projeto pra sua máquina
 - Criar branches pra testar variações sem arriscar a versão oficial
-- Resolver um conflito de merge decidindo você, com o Claude Code executando
+- Dar acesso a outra pessoa e trabalhar no mesmo repositório que ela
+- Resolver um conflito entre duas pessoas, decidindo junto o que fica
 - Abrir um Pull Request, revisar um diff e comentar antes de aprovar
 - Colocar um protótipo no ar numa URL pública
 - Auditar o que o Claude Code fez, pelos comandos que ele rodou
