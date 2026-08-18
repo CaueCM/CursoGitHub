@@ -20,8 +20,8 @@
 ## Dia 1 — Do zero ao primeiro commit
 
 **2h, tudo pelo navegador.** Você explora um repositório de verdade, entende o mecanismo do Git, cria o seu
-próprio repositório e commita o primeiro slide, sem instalar nada. No último bloco o Claude Code entra,
-conecta na sua conta e traz o projeto pra sua máquina.
+próprio repositório, commita o primeiro slide e publica ele numa URL pública, sem instalar nada. No último
+bloco o Claude Code entra, conecta na sua conta e traz o projeto pra sua máquina.
 
 ---
 
@@ -74,14 +74,6 @@ Enquanto navega, vá anotando (mentalmente ou num papel) duas coisas:
 - o que você **reconheceu** (algo que lembra o Drive, o Notion, qualquer outra ferramenta)
 - o que ficou **estranho** (palavra que você nunca viu, tela que não fez sentido)
 
-**Passo 2 — Compare impressões com a turma**
-
-Agora em grupo. Traga o que você anotou: o que pareceu familiar, o que pareceu esquisito.
-
-É esperado que muita coisa não faça sentido ainda, você está vendo isso pela primeira vez, e ninguém
-te explicou nada de propósito. As dúvidas que aparecerem aqui são exatamente o que os dois próximos
-blocos vão responder.
-
 > **O que fixar:** o repositório que você acabou de espiar é o mesmo tipo de estrutura que **você** vai
 > criar do zero daqui a pouco, no Bloco 1.4.
 
@@ -124,8 +116,8 @@ Errou, testou algo que não funcionou, quer voltar pro que tinha ontem? É quest
 
 #### Exercício 2 — Descubra por que o algoritmo decidiu isso
 
-O motivo **3** é o mais abstrato dos quatro. Este exercício existe pra ele virar concreto: você vai usar
-um sistema da ArenaCash, estranhar o resultado, e ir atrás da regra que causou aquilo, **sem saber programar**.
+Você vai usar um sistema da ArenaCash, estranhar o resultado e ir atrás da regra que causou aquilo,
+**sem saber programar**.
 
 **Entregável:** nenhum arquivo. Você sai daqui conseguindo explicar, em português, por que o simulador
 indicou o que indicou.
@@ -166,6 +158,10 @@ parte **3, "A decisão"**, e leia só os comentários, os blocos que começam co
 2. No **caso C**, uma pessoa de 55 anos e perfil arrojado recebe o mesmo produto que alguém de 35 anos e
    perfil moderado. O que no código faz isso acontecer?
 3. Você **concorda** com essas duas regras? Se o produto fosse seu, mudaria alguma?
+
+**Pode usar a LLM que você quiser** aqui — Claude, ChatGPT, Gemini, tanto faz. Cole o trecho do
+`simulador.js` e peça pra ela explicar em português. Só confira a explicação no arquivo antes de aceitar:
+a resposta que vale é a que você consegue defender.
 
 A pergunta 3 é a mais importante. Ler o código não é o objetivo, o objetivo é conseguir **opinar sobre
 uma decisão de produto** que antes estava trancada num arquivo que só o time técnico abria.
@@ -305,7 +301,7 @@ commitado, visível na aba **Commits**.
 
 1. Logado no github.com, clique no **+** no canto superior direito → **New repository**
 2. Repository name: `meu-prototipo-arenacash`
-3. Escolha **Public**, precisa ser público pra publicar de graça no Dia 2
+3. Escolha **Public**, precisa ser público pra publicar de graça no próximo bloco
 4. Marque **Add a README file**
 5. Clique em **Create repository**
 
@@ -340,8 +336,8 @@ Quando estiver satisfeito, **copie o código completo**.
 Pronto: seu `index.html` está no GitHub. Vá na aba **Commits** e confirme que sua mensagem aparece lá.
 
 > **Por que o GitHub não mostra o slide bonito?** Porque ele exibe o *código* do arquivo, não o resultado.
-> Pra ver o slide funcionando você precisa de uma cópia local (Bloco 1.5) ou de publicar na internet
-> (Dia 2). Por enquanto, quem te mostrou o resultado foi o Claude.
+> Pra ver o slide funcionando você precisa publicar na internet (o próximo bloco) ou ter uma cópia local
+> (Bloco 1.6). Por enquanto, quem te mostrou o resultado foi o Claude.
 
 **Passo 4 — Faça uma segunda mudança e veja o histórico crescer**
 
@@ -356,12 +352,80 @@ novo no Dia 2, quando você revisar um Pull Request.
 > **O que fixar:** você versionou um projeto sem instalar nada. Isso já é útil por si só, dá pra manter
 > apresentação, protótipo e documento com histórico completo **usando só o navegador**.
 >
-> O que falta é o outro lado do mapa: a cópia na sua máquina. É ela que destrava trabalhar offline, ver o
-> resultado renderizado e, principalmente, deixar o **Claude Code** agir no projeto.
+> Só que, por enquanto, o protótipo só existe como *código*: quem quiser ver o slide depende de você
+> mandar o arquivo. No próximo bloco isso vira um link público, com uma chave que você liga uma vez.
 
 ---
 
-### Bloco 1.5 — Conectando o Claude Code
+### Bloco 1.5 — Publicando o seu protótipo
+
+Um protótipo que só abre na sua máquina não circula. Um link circula.
+
+O mesmo repositório que guarda o seu `index.html` consegue servir esse arquivo como site, de graça.
+**GitHub Pages** é o serviço do GitHub que publica um site estático direto de um repositório: gratuito,
+sem cartão de crédito, sem servidor pra configurar. É por isso que o repositório precisava ser **público**
+lá no Bloco 1.4.
+
+O que acontece depois que você liga:
+
+```
+Você commita → a main muda → o Pages republica sozinho → a URL atualiza (≈1 min)
+```
+
+Você configura **uma vez só**. Daí em diante, todo commit que entrar na `main` atualiza o site publicado
+sozinho. E repare no sentido da coisa: **o site é gerado a partir do repositório, nunca o contrário**. Não
+existe editar a página publicada, você edita o repositório e ele republica.
+
+#### Exercício 4 — Coloque o seu protótipo no ar
+
+No fim deste exercício você tem um link pra mandar pra qualquer pessoa, que abre no celular dela, sem
+instalar nada e sem ela ter conta no GitHub.
+
+**Entregável:** uma URL pública no ar, no formato `https://<seu-usuario>.github.io/meu-prototipo-arenacash/`.
+
+**Passo 1 — Ligue o GitHub Pages**
+
+1. Abra `github.com/<seu-usuario>/meu-prototipo-arenacash`
+2. Clique em **Settings**, a aba no topo *do repositório* (não a configuração da sua conta)
+3. No menu lateral, clique em **Pages**
+4. Em **Source**, deixe **Deploy from a branch**
+5. Em **Branch**, selecione **main** e a pasta **/ (root)**
+6. Clique em **Save**
+7. Espere cerca de um minuto e recarregue a página: aparece no topo *"Your site is live at…"* com a sua URL
+
+Se ainda não apareceu, não mexa em nada: recarregue de novo daqui a pouco. A primeira publicação é a mais
+demorada. Na aba **Actions** do repositório dá pra ver a publicação acontecendo.
+
+**Passo 2 — Abra a sua URL e mande pra alguém**
+
+1. Abra a URL numa **aba anônima**, pra garantir que não é cache do seu navegador
+2. Abra também no celular
+3. Mande o link pra alguém da turma
+
+Este é o mesmo `index.html` que o GitHub te mostrava como código no bloco anterior. A diferença é que agora
+tem um endereço que **executa** o arquivo em vez de exibir o texto dele.
+
+**Passo 3 — Mude uma coisa e veja o site se atualizar sozinho**
+
+Deixe as duas abas abertas, o repositório e o site, pra ver o efeito:
+
+1. No repositório, abra o `index.html` e clique no **lápis**
+2. Mude o título da capa
+3. Commite com a mensagem: `ajusta o titulo da capa`
+4. Espere cerca de um minuto e recarregue a aba do site (`Cmd + Shift + R` no Mac, `Ctrl + F5` no Windows)
+
+O texto novo está lá. **Você não enviou arquivo pra lugar nenhum:** commitou no repositório, e a publicação
+foi consequência.
+
+> **O que fixar:** publicar deixou de ser um pedido pra outra pessoa. O caminho do seu protótipo até um
+> link que qualquer um abre tem **um commit e um minuto** de distância, e você controla os dois.
+>
+> Falta a última peça do mapa: a cópia na **sua máquina**. É ela que destrava trabalhar offline e,
+> principalmente, deixar o **Claude Code** agir no projeto.
+
+---
+
+### Bloco 1.6 — Conectando o Claude Code
 
 Até agora, quem clicava era você, no navegador. A partir daqui quem executa também pode ser o **Claude
 Code**, e é ele que vai trazer o projeto pra sua máquina.
@@ -374,7 +438,7 @@ Seu facilitador vai fazer a conexão na tela primeiro. Ele roda `claude`, pede *
 minha conta do GitHub"*, o Claude Code dispara um `gh auth login`, o navegador abre e ele autoriza. É como
 logar no Notion ou no Spotify num computador novo.
 
-#### Exercício 4 — Conecte o Claude Code e traga o projeto pra sua máquina
+#### Exercício 5 — Conecte o Claude Code e traga o projeto pra sua máquina
 
 **Entregável:** Claude Code autenticado na sua conta e o repositório clonado numa pasta do seu computador.
 
@@ -395,9 +459,8 @@ Ele deve clonar e listar: `index.html` e `README.md`. Se conseguiu, a conexão f
 
 Agora abra essa pasta no Finder/Explorador e dê **duplo clique no `index.html`**.
 
-> O slide abre no navegador, renderizado, e continua funcionando se você
-> desligar o wi-fi. É um arquivo no seu computador, não um site. O mesmo arquivo que também está no
-> GitHub.
+> O slide abre no navegador, renderizado, e continua funcionando se você desligar o wi-fi. É um arquivo no
+> seu computador, não o site que você publicou no bloco anterior. Mesmo conteúdo, endereço diferente.
 
 **Passo 3 — Os três lugares onde um projeto vive**
 
@@ -414,10 +477,12 @@ instâncias, e elas **não são cópias automáticas uma da outra**:
 > instâncias empilhadas e os conectores entre elas: `push`/`pull` entre local e remoto, `deploy` do remoto
 > pro ar, este último **só de ida**.
 
-**Hoje você tem as duas primeiras.** A terceira nasce amanhã, no Dia 2. Entre local e remoto o trânsito é nos dois sentidos; do remoto pro ar é só de ida — **ninguém edita o site
-publicado, edita-se o repositório**.
+**Agora você tem as três.** O remoto nasceu no Bloco 1.4, o site no ar no 1.5, e a cópia local acabou de
+chegar com o clone. Entre local e remoto o trânsito é nos dois sentidos; do remoto pro ar é só de ida —
+**ninguém edita o site publicado, edita-se o repositório**.
 
-Pra fechar, compare os três na ArenaCash, que já tem os três prontos:
+Pra fechar, compare os três endereços na ArenaCash, que tem exatamente o mesmo desenho que o seu projeto
+agora tem:
 
 | Instância | Endereço | Some se cair a internet? |
 |---|---|---|
@@ -425,12 +490,116 @@ Pra fechar, compare os três na ArenaCash, que já tem os três prontos:
 | Remoto | <https://github.com/CaueCM/ArenaCash> | Sim |
 | No ar | <https://cauecm.github.io/ArenaCash/> | Sim |
 
-> **O que fixar:** essa autorização é feita **uma vez só**. E agora você tem as duas pontas do mapa do
-> Bloco 1.3 — a pasta local e o repositório remoto. É com essas duas que o Dia 2 inteiro acontece.
+> **O que fixar:** essa autorização é feita **uma vez só**. E agora você tem o mapa inteiro: a pasta
+> local, o repositório remoto e o site no ar. É com a pasta local e o repositório remoto que o Dia 2
+> inteiro acontece.
 
 ---
 
-### Bloco 1.6 — Fechando o Dia 1
+### Bônus — O mesmo protótipo na Vercel
+
+**Opcional.** Nada do Dia 2 depende deste bônus. Ele existe por dois motivos: mostrar que o GitHub Pages não
+é a única porta de saída do seu repositório, e te dar o primeiro **deploy pedido em português**, com o
+Claude Code fazendo o trabalho.
+
+**Vercel** é uma empresa de hospedagem de sites. O plano gratuito, o *Hobby*, atende projeto pessoal sem
+cartão de crédito.
+
+O modelo mental é **exatamente o mesmo** do Bloco 1.5: o site é gerado a partir do repositório. Você não
+sobe arquivo, você commita, e a Vercel republica. O que muda é onde a chave é ligada — no Pages, dentro do
+`Settings` do repositório; na Vercel, numa conta separada que você conecta ao seu GitHub.
+
+| | GitHub Pages | Vercel |
+|---|---|---|
+| Onde você liga | Settings do próprio repositório | Conta na Vercel, conectada ao GitHub |
+| Publica a partir de | a branch `main` | a `main`, e também qualquer outra branch |
+| Link por branch | não tem | **tem**, cada branch ganha uma URL própria |
+| Conta nova | não precisa | precisa, mas dá pra entrar com o GitHub |
+| Domínio próprio | dá | dá |
+
+A linha que importa é a do meio. "Link por branch" quer dizer que, amanhã, cada variação do protótipo pode
+ter o *seu* endereço, e dá pra mandar duas versões pra alguém comparar antes de decidir qual entra.
+
+Ter os dois no ar ao mesmo tempo não quebra nada, e ainda prova o ponto do Bloco 1.5: **o repositório é a
+fonte**. Duas hospedagens lendo o mesmo `index.html` mostram o mesmo resultado, porque nenhuma das duas é
+onde o conteúdo mora.
+
+#### Exercício Bônus — Suba o seu protótipo na Vercel, sem sair do Claude Code
+
+Você vai fazer um deploy inteiro **conversando**: quem instala, autentica e publica é o Claude Code. Seu
+papel é autorizar, conferir o que ele responde e abrir a URL no fim.
+
+**Entregável:** uma segunda URL pública, no formato `https://meu-prototipo-arenacash.vercel.app`, servindo
+o mesmo `index.html` que já está no GitHub Pages.
+
+**Passo 1 — Crie a conta na Vercel, no navegador**
+
+Esta parte é só sua: **o Claude Code não cria conta em nenhum serviço por você**, e é bom que seja assim.
+
+1. Abra <https://vercel.com/signup>
+2. Escolha **Continue with GitHub** e autorize
+3. Quando perguntar o tipo de conta, escolha **Hobby**, o gratuito
+4. Se ela pedir pra importar um projeto agora, **pule**: quem importa é o Claude Code, no próximo passo
+
+É a mesma lógica de "entrar com o Google" num app novo: a Vercel passa a enxergar os seus repositórios, mas
+eles continuam sendo seus, no GitHub.
+
+**Passo 2 — Peça o deploy ao Claude Code**
+
+No terminal, **dentro da pasta clonada** no Bloco 1.6, rode `claude` e mande:
+
+> Publica esta pasta na Vercel usando o Vercel CLI. Faz o login na minha conta, cria um projeto novo chamado
+> `meu-prototipo-arenacash` e sobe em produção. É um site estático de HTML puro, sem build. Me explica cada
+> comando antes de rodar e me devolve a URL final.
+
+O que vai acontecer, na ordem:
+
+1. Ele pede **sua autorização** pra rodar cada comando. Leia e aprove: é você quem decide o que roda na sua
+   máquina
+2. O login (`vercel login`) abre o navegador. Escolha **Continue with GitHub**, a mesma conta do Passo 1, e
+   volte pro terminal
+3. Na publicação (`vercel --prod`) aparecem algumas perguntas, e os padrões servem: *escopo* = sua conta
+   pessoal; *link to existing project* = não; *diretório do código* = `./`; *modificar as configurações de
+   build* = não
+4. No fim ele imprime a URL. Abra ela no navegador
+
+**Se travar:** erro de permissão ao instalar o CLI? Peça *"usa `npx vercel` em vez de instalar global"*.
+Perguntou qual framework? A resposta é **nenhum / Other**, o projeto é HTML puro e não tem etapa de build. E
+se ele parecer parado, é porque a aba do navegador está aberta esperando o seu login.
+
+**Passo 3 — Ligue o repositório, pra publicar sozinho**
+
+O deploy anterior mandou os arquivos *uma vez*, da sua pasta. Agora a fonte volta a ser o repositório:
+
+> Conecta esse projeto da Vercel ao meu repositório `meu-prototipo-arenacash` no GitHub, pra que todo push
+> na `main` publique sozinho.
+
+Dá pra conferir no navegador: em <https://vercel.com/dashboard>, abra o projeto → **Settings** → **Git**. O
+nome do seu repositório precisa aparecer ali como conectado.
+
+**Passo 4 — Um commit, duas URLs atualizadas**
+
+Deixe as duas abas abertas, a do `github.io` e a do `vercel.app`, e peça:
+
+> Muda o subtítulo da capa do `index.html` pra "Campanha de indicação · versão de teste", commita com uma
+> mensagem descritiva e faz push pra `main`.
+
+Espere cerca de um minuto e recarregue as duas abas (`Cmd + Shift + R` no Mac, `Ctrl + F5` no Windows). O
+texto novo aparece **nas duas**. Você fez um commit; dois serviços diferentes reagiram a ele sozinhos.
+
+Repare no que você *não* fez: não abriu painel de servidor, não mandou arquivo por FTP, não pediu pra
+ninguém publicar. O trabalho foi descrever a mudança em português.
+
+> **O que fixar:** trocar de hospedagem não é migrar o projeto. O projeto é o repositório, e hospedagem é só
+> quem lê ele — foi por isso que deu pra ter as duas ao mesmo tempo sem escolher nenhuma.
+>
+> E guarde a linha "link por branch" da tabela. **Amanhã você vai criar branches**, e com a Vercel conectada
+> cada uma delas ganha uma URL própria, de graça: a variação vira algo que você *manda pra alguém abrir*, não
+> algo que você descreve.
+
+---
+
+### Bloco 1.7 — Fechando o Dia 1
 
 #### O que você fez hoje
 
@@ -438,6 +607,7 @@ Pra fechar, compare os três na ArenaCash, que já tem os três prontos:
 - Leu um algoritmo de produto e opinou sobre as regras dele, sem saber programar
 - Montou o modelo mental do Git e tem um dicionário pra consultar
 - Criou um repositório do zero e commitou duas vezes, **usando só o navegador**
+- Publicou o protótipo numa URL pública, e viu ela se atualizar sozinha depois de um commit
 - Conectou o Claude Code à sua conta e trouxe o projeto pra sua máquina
 
 #### Uma pergunta pra levar
@@ -453,14 +623,15 @@ Hoje você só usou a branch `main`, uma linha do tempo só, reta. E fez tudo cl
 
 Amanhã o Claude Code assume a execução: você vai criar variações paralelas do protótipo, ver elas se
 cruzando (inclusive um conflito de verdade, que **você** decide como resolver), revisar mudanças antes de
-aprovar e publicar a versão final numa URL pública.
+aprovar e fechar o dia com um segundo site no ar, construído a quatro mãos com outra pessoa.
 
 ---
 
 ## Dia 2 — Branches, conflitos e Pull Requests
 
 **2h.** Ontem você usou uma linha do tempo só, e fez tudo clicando. Hoje quem executa é o **Claude Code**: você
-abre linhas paralelas, vê elas se cruzarem, inclusive dando conflito, que **você** decide como resolver, revisa antes de aprovar e termina com uma URL pública no ar.
+abre linhas paralelas, vê elas se cruzarem, inclusive dando conflito, que **você** decide como resolver, revisa
+antes de aprovar e termina com um segundo site no ar, feito em dupla.
 
 ---
 
@@ -500,7 +671,7 @@ no original, só que, no Git, você pode ter dezenas de rascunhos ao mesmo tempo
 E aqui vem a parte que costuma surpreender: **quando você troca de branch, os arquivos na sua pasta mudam
 de conteúdo na hora**. Ontem isso seria impossível de ver, porque você não tinha pasta local. Hoje tem.
 
-#### Exercício 5 — Criando uma branch e vendo a pasta local mudar
+#### Exercício 6 — Criando uma branch e vendo a pasta local mudar
 
 **O cenário:** o time de marketing quer testar uma paleta de cores diferente pro slide de capa, sem
 arriscar a versão que já está no ar.
@@ -527,7 +698,7 @@ de commitar, está tudo isolado nesta branch.
 
 Vá no github.com, na aba **Branches** do seu repositório: agora existem duas.
 
-**Passo 4 — O momento "aha"**
+**Passo 4 — Volte pra main e veja o arquivo mudar sozinho**
 
 **Antes de pedir**, deixe o `index.html` aberto no navegador, numa aba visível. Depois:
 
@@ -576,51 +747,7 @@ porque é a língua que qualquer tutorial e mensagem de erro falam.
 
 ---
 
-### Bloco 2.3 — Deploy: a terceira instância
-
-**Individual.** Antes de vocês se juntarem em dupla, cada um fecha o próprio ciclo: publica o seu
-repositório e sai com uma URL no seu nome.
-
-Ontem, no Bloco 1.5, você viu o mapa das três instâncias e ficou com duas. A terceira nasce agora.
-**GitHub Pages** é a forma mais simples: gratuito, sem cartão de crédito, publica direto a partir do
-próprio repositório.
-
-O fluxo completo:
-
-```
-Pedir ao Claude Code → Commit → Branch + Pull Request → Merge em main
-     → GitHub Pages publica → URL pública atualizada
-```
-
-Você configura uma vez. A partir daí, toda vez que algo for mesclado em `main`, o site se atualiza sozinho.
-
-#### Exercício 6 — Publicando o seu protótipo
-
-**Entregável:** URL pública ativa, no formato `https://<seu-usuario>.github.io/meu-prototipo-arenacash/`.
-
-**Passo 1 — Ative o GitHub Pages**
-
-1. Acesse `github.com/<seu-usuario>/meu-prototipo-arenacash`
-2. **Settings** → no menu lateral, **Pages**
-3. Em **Source**, selecione a branch **main** e a pasta **/ (root)**
-4. **Save**
-5. Espere cerca de 1 minuto e atualize: a URL aparece no topo
-
-**Passo 2 — Valide as três instâncias, agora completas**
-
-1. Abra a URL numa **aba anônima**
-2. Confirme que a apresentação abre
-3. Copie o link e mande pra alguém do grupo
-
-Agora você tem as três: a pasta na sua máquina, o repositório no github.com e o site no ar.
-
-> **O que fixar:** você operacionalizou o fluxo completo sozinho. A partir do próximo bloco, tudo acontece
-> **em dupla**. É aí que o Git para de ser histórico pessoal e vira o que ele foi feito pra ser: um jeito de
-> duas pessoas mexerem no mesmo projeto sem se atropelar.
-
----
-
-### Bloco 2.4 — Formem a dupla
+### Bloco 2.3 — Formem a dupla
 
 **Em dupla, a partir daqui.**
 
@@ -660,7 +787,8 @@ clone do próximo passo falha.
 Pessoa B: abra o `index.html` local e confirme que vê o mesmo slide. Agora existem três cópias do projeto:
 a da máquina de A, a da máquina de B e a do GitHub.
 
-Pessoa A liga o GitHub Pages neste repositório novo. Guardem a URL.
+Pessoa A liga o GitHub Pages neste repositório novo, do mesmo jeito que vocês fizeram no repositório de
+cada um ontem, no Bloco 1.5 do Dia 1: **Settings → Pages → Branch main → / (root) → Save**. Guardem a URL.
 
 > **O que fixar:** adicionar colaborador é o que transforma um repositório pessoal em projeto de time.
 > Tudo que um dos dois manda pro GitHub, o outro consegue puxar. É essa possibilidade que cria o conflito
@@ -668,7 +796,7 @@ Pessoa A liga o GitHub Pages neste repositório novo. Guardem a URL.
 
 ---
 
-### Bloco 2.5 — O conflito de verdade
+### Bloco 2.4 — O conflito de verdade
 
 **Em dupla.** É o bloco mais denso do dia. Vocês dois vão mudar a mesma linha ao mesmo tempo, sem combinar
 o texto, e depois resolver o que o Git não consegue resolver sozinho.
@@ -746,7 +874,7 @@ combinaram, e chegou na sua máquina sem você ter editado nada.
 
 ---
 
-### Bloco 2.6 — Pull Request: revisar antes de aprovar
+### Bloco 2.5 — Pull Request: revisar antes de aprovar
 
 **Em dupla.**
 
@@ -792,12 +920,13 @@ bloco anterior, agora numa situação rotineira.
 
 ---
 
-### Bloco 2.7 — Claude Code lendo código: documentar o algoritmo
+### Bloco 2.6 — Claude Code lendo código: documentar o algoritmo
 
 **Em dupla.** Pessoa B conduz o Claude Code; pessoa A lê e questiona.
 
-Até aqui vocês usaram o Claude Code pra criar e mexer. Ele também lê e explica, e é isso que fecha o
-gancho que ficou aberto no Dia 1.
+Até aqui vocês usaram o Claude Code pra criar e mexer. Ele também lê e explica, e é isso que responde a
+pergunta que ficou em aberto no Dia 1: quanto tempo você levaria pra entender aquele algoritmo com ele do
+lado.
 
 #### Exercício 10 — Documentem o algoritmo da ArenaCash
 
@@ -841,7 +970,7 @@ Leiam antes de aceitar. Quando estiver bom, commitem e façam push.
 
 ---
 
-### Bloco 2.8 — Desafio final: dois construindo ao mesmo tempo
+### Bloco 2.7 — Desafio final: dois construindo ao mesmo tempo
 
 **Em dupla.**
 
@@ -891,7 +1020,7 @@ Abram numa aba anônima. As duas funcionalidades estão lá, construídas em par
 
 ---
 
-### Bloco 2.9 — Fechando os dois dias
+### Bloco 2.8 — Fechando os dois dias
 
 #### Os 4 motivos, revisitados
 

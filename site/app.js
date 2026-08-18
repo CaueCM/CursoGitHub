@@ -229,8 +229,8 @@
   updateDayProgress();
 
   // =========================================================
-  // Diagrama de merge do Bloco 2.5 — se redesenha conforme o aluno
-  // avança nos passos do Exercício 7 (ou clica nas abas à mão).
+  // Diagrama de merge do Bloco 2.4 — se redesenha conforme o aluno
+  // avança nos passos do Exercício 8 (ou clica nas abas à mão).
   // =========================================================
 
   function ponto(cx, cy, cor, r) {
@@ -344,7 +344,7 @@
     figuraMerge.querySelectorAll('.merge-step').forEach(b => {
       b.addEventListener('click', () => renderizaMerge(Number(b.dataset.estado)));
     });
-    // estado inicial: reflete os passos já marcados do Exercício 7
+    // estado inicial: reflete os passos já marcados do Exercício 8
     const exMerge = document.getElementById('ex-merge');
     const jaFeitos = exMerge
       ? exMerge.querySelectorAll('.step-check input:checked').length

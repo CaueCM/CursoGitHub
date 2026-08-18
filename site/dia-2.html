@@ -34,19 +34,19 @@
     <span class="pa-eyebrow pa-eyebrow--red">D I A &nbsp; 2 &nbsp; · &nbsp; 2 h</span>
     <h1>Branches, conflitos e <span class="accent">o protótipo no ar.</span></h1>
     <p class="day-hero-sub">
-      Hoje quem executa é o Claude Code. Você começa sozinho, publica o seu protótipo e, da metade em diante,
-      trabalha <strong>em dupla</strong>: os dois no mesmo repositório, causando um conflito de verdade e
-      construindo duas funcionalidades ao mesmo tempo.
+      Hoje quem executa é o Claude Code. Você começa sozinho, criando branches no seu próprio repositório, e
+      logo em seguida passa a trabalhar <strong>em dupla</strong>: os dois no mesmo projeto, causando um conflito
+      de verdade e construindo duas funcionalidades ao mesmo tempo.
     </p>
     <div class="day-nav-links">
       <a class="btn btn--primary" href="#bloco-2-1">Ir pro Bloco 2.1 →</a>
       <a class="btn btn--ghost" href="dia-1.html#dicionario">Abrir o dicionário</a>
     </div>
     <div class="day-hero-meta">
-      <div><span class="num">9</span><span class="label">blocos + bônus</span></div>
-      <div><span class="num">7</span><span class="label">exercícios</span></div>
+      <div><span class="num">8</span><span class="label">blocos + bônus</span></div>
+      <div><span class="num">6</span><span class="label">exercícios</span></div>
       <div><span class="num">2h</span><span class="label">duração</span></div>
-      <div><span class="num">2</span><span class="label">URLs no ar</span></div>
+      <div><span class="num">1</span><span class="label">URL nova no ar</span></div>
     </div>
   </div>
 </section>
@@ -60,13 +60,12 @@
       <li><a href="#bloco-2-1"><span class="num">2.1</span> Recap do Dia 1</a></li>
       <li><a href="#bloco-2-2"><span class="num">2.2</span> Criar branch e trocar</a></li>
       <li><a href="#bonus"><span class="num">B</span> Bônus: terminal</a></li>
-      <li><a href="#bloco-2-3"><span class="num">2.3</span> Deploy do seu repo</a></li>
-      <li><a href="#bloco-2-4"><span class="num">2.4</span> Formem a dupla</a></li>
-      <li><a href="#bloco-2-5"><span class="num">2.5</span> O conflito de verdade</a></li>
-      <li><a href="#bloco-2-6"><span class="num">2.6</span> Pull Request</a></li>
-      <li><a href="#bloco-2-7"><span class="num">2.7</span> Documentar código</a></li>
-      <li><a href="#bloco-2-8"><span class="num">2.8</span> Desafio final</a></li>
-      <li><a href="#bloco-2-9"><span class="num">2.9</span> Fechando</a></li>
+      <li><a href="#bloco-2-3"><span class="num">2.3</span> Formem a dupla</a></li>
+      <li><a href="#bloco-2-4"><span class="num">2.4</span> O conflito de verdade</a></li>
+      <li><a href="#bloco-2-5"><span class="num">2.5</span> Pull Request</a></li>
+      <li><a href="#bloco-2-6"><span class="num">2.6</span> Documentar código</a></li>
+      <li><a href="#bloco-2-7"><span class="num">2.7</span> Desafio final</a></li>
+      <li><a href="#bloco-2-8"><span class="num">2.8</span> Fechando</a></li>
     </ul>
 
     <a class="side-pinned" href="dia-1.html#dicionario">
@@ -145,7 +144,7 @@
         <h3>Exercício</h3>
         <details class="exercise">
           <summary>
-            <span class="ex-num">05</span>
+            <span class="ex-num">06</span>
             <span class="ex-title">Criando uma branch e vendo a pasta local mudar</span>
           </summary>
           <div class="ex-body">
@@ -204,7 +203,7 @@
             <div class="step-block">
               <div class="step-block-head">
                 <span class="step-block-num">Passo 4</span>
-                <h4 class="step-block-title">O momento "aha"</h4>
+                <h4 class="step-block-title">Volte pra main e veja o arquivo mudar sozinho</h4>
               </div>
               <div class="step-block-body">
                 <p><strong>Antes de pedir</strong>, deixe o <code>index.html</code> aberto no navegador, numa
@@ -307,100 +306,10 @@
       </div>
     </section>
 
-        <!-- ============================================================ 2.3 -->
+    <!-- ============================================================ 2.3 -->
     <section class="block" id="bloco-2-3">
       <div class="block-head">
         <span class="block-pill">Bloco 2.3</span>
-        <span class="block-mode block-mode--mao">No navegador · seu repositório</span>
-        <h2>Deploy: a terceira instância</h2>
-        <p class="block-obj">Antes de vocês se juntarem em dupla, cada um fecha o próprio ciclo: publica o seu
-        repositório e sai com uma URL no seu nome.</p>
-      </div>
-
-      <div class="concept">
-        <p>Ontem, no Bloco 1.5, você viu o mapa das três instâncias e ficou com duas. A terceira nasce agora.</p>
-        <p><strong>GitHub Pages</strong> é a forma mais simples: gratuito, sem cartão de crédito, publica direto
-        a partir do próprio repositório.</p>
-
-        <h3 class="concept-sub">O fluxo completo, de ponta a ponta</h3>
-        <ol class="fluxo">
-          <li><strong>Pedir ao Claude Code</strong><span>em português, na sua pasta local</span></li>
-          <li><strong>Commit</strong><span>a foto é tirada</span></li>
-          <li><strong>Branch + Pull Request</strong><span>a revisão acontece aqui</span></li>
-          <li><strong>Merge em main</strong><span>a mudança vira oficial</span></li>
-          <li><strong>GitHub Pages publica</strong><span>automaticamente, a partir da main</span></li>
-          <li><strong>URL pública atualizada</strong><span>sem você tocar em nada</span></li>
-        </ol>
-        <p class="tip">💡 Você configura <strong>uma vez</strong>. A partir daí, toda vez que algo for mesclado
-        em <code>main</code>, o site publicado se atualiza sozinho.</p>
-      </div>
-
-      <div class="exercises">
-        <h3>Exercício</h3>
-        <details class="exercise">
-          <summary>
-            <span class="ex-num">06</span>
-            <span class="ex-title">Publicando o seu protótipo</span>
-          </summary>
-          <div class="ex-body">
-            <p class="ex-intro">No fim deste exercício você tem um link pra mandar pra qualquer pessoa, que abre
-            no celular dela, sem instalar nada.</p>
-
-            <p class="ex-entrega"><strong>Entregável:</strong> URL pública ativa, no formato
-            <code>https://&lt;seu-usuario&gt;.github.io/meu-prototipo-arenacash/</code>.</p>
-
-            <div class="step-block">
-              <div class="step-block-head">
-                <span class="step-block-num">Passo 1</span>
-                <h4 class="step-block-title">Ative o GitHub Pages</h4>
-              </div>
-              <div class="step-block-body">
-                <p>Esta parte é no navegador: é configuração de conta, não mudança no código.</p>
-                <ol>
-                  <li>Acesse <code>github.com/&lt;seu-usuario&gt;/meu-prototipo-arenacash</code></li>
-                  <li>Clique em <strong>Settings</strong></li>
-                  <li>No menu lateral, clique em <strong>Pages</strong></li>
-                  <li>Em <strong>Source</strong>, selecione a branch <strong>main</strong> e a pasta
-                  <strong>/ (root)</strong></li>
-                  <li>Clique em <strong>Save</strong></li>
-                  <li>Espere cerca de 1 minuto e atualize a página: a URL pública aparece no topo</li>
-                </ol>
-              </div>
-            </div>
-
-            <div class="step-block">
-              <div class="step-block-head">
-                <span class="step-block-num">Passo 2</span>
-                <h4 class="step-block-title">Valide as três instâncias, agora completas</h4>
-              </div>
-              <div class="step-block-body">
-                <ol>
-                  <li>Abra a URL numa <strong>aba anônima</strong>, pra garantir que não é cache local</li>
-                  <li>Confirme que a apresentação abre</li>
-                  <li>Copie o link e mande pra alguém do grupo</li>
-                </ol>
-                <p class="tip">💡 Agora você tem as três: a pasta na sua máquina, o repositório no github.com e
-                o site no ar. É o desenho do Bloco 1.5 do Dia 1, com o seu nome nos três endereços.</p>
-              </div>
-            </div>
-
-            <div class="ex-closing">
-              <span class="pa-eyebrow">O que fixar</span>
-              <p>Você operacionalizou o fluxo completo sozinho. É o <strong>mesmo fluxo usado em produtos
-              reais</strong>, só que sem depender de ninguém do time técnico.</p>
-              <p>A partir do próximo bloco, tudo acontece <strong>em dupla</strong>. É aí que o Git para de ser
-              histórico pessoal e vira o que ele foi feito pra ser: um jeito de duas pessoas mexerem no mesmo
-              projeto sem se atropelar.</p>
-            </div>
-          </div>
-        </details>
-      </div>
-    </section>
-
-    <!-- ============================================================ 2.4 -->
-    <section class="block" id="bloco-2-4">
-      <div class="block-head">
-        <span class="block-pill">Bloco 2.4</span>
         <span class="block-mode block-mode--dupla">Em dupla · a partir daqui</span>
         <h2>Formem a dupla</h2>
         <p class="block-obj">Todo o resto do dia é em dupla, num repositório que vocês dois vão criar juntos.
@@ -481,8 +390,9 @@
                 que a pessoa A vê. <strong>Agora existem três cópias do projeto:</strong> a da máquina de A, a da
                 máquina de B e a do GitHub.</p>
                 <p>Pra fechar, <strong>pessoa A</strong> liga o GitHub Pages neste repositório novo, do mesmo
-                jeito que você fez no seu no bloco anterior. Guardem a URL: é ela que vai mostrar o resultado do
-                trabalho de vocês dois.</p>
+                jeito que vocês fizeram no repositório de cada um ontem, no Bloco 1.5 do Dia 1:
+                <strong>Settings → Pages → Branch main → / (root) → Save</strong>. Guardem a URL: é ela que vai
+                mostrar o resultado do trabalho de vocês dois.</p>
               </div>
             </div>
 
@@ -497,10 +407,10 @@
       </div>
     </section>
 
-    <!-- ============================================================ 2.5 -->
-    <section class="block" id="bloco-2-5">
+    <!-- ============================================================ 2.4 -->
+    <section class="block" id="bloco-2-4">
       <div class="block-head">
-        <span class="block-pill">Bloco 2.5</span>
+        <span class="block-pill">Bloco 2.4</span>
         <span class="block-mode block-mode--dupla">Em dupla · decisão de vocês</span>
         <h2>O conflito de verdade</h2>
         <p class="block-obj">É o bloco mais denso do dia. Vocês dois vão mudar a mesma linha ao mesmo tempo, sem
@@ -667,10 +577,10 @@
       </div>
     </section>
 
-    <!-- ============================================================ 2.6 -->
-    <section class="block" id="bloco-2-6">
+    <!-- ============================================================ 2.5 -->
+    <section class="block" id="bloco-2-5">
       <div class="block-head">
-        <span class="block-pill">Bloco 2.6</span>
+        <span class="block-pill">Bloco 2.5</span>
         <span class="block-mode block-mode--dupla">Em dupla</span>
         <h2>Pull Request: revisar antes de aprovar</h2>
       </div>
@@ -786,14 +696,15 @@
       </div>
     </section>
 
-    <!-- ============================================================ 2.7 -->
-    <section class="block" id="bloco-2-7">
+    <!-- ============================================================ 2.6 -->
+    <section class="block" id="bloco-2-6">
       <div class="block-head">
-        <span class="block-pill">Bloco 2.7</span>
+        <span class="block-pill">Bloco 2.6</span>
         <span class="block-mode block-mode--dupla">Em dupla</span>
         <h2>Claude Code lendo código: documentar o algoritmo</h2>
         <p class="block-obj">Até aqui vocês usaram o Claude Code pra criar e mexer. Ele também lê e explica, e é
-        isso que fecha o gancho que ficou aberto no Dia 1.</p>
+        isso que responde a pergunta que ficou em aberto no Dia 1: quanto tempo você levaria pra entender aquele
+        algoritmo com ele do lado.</p>
       </div>
 
       <div class="exercises">
@@ -886,10 +797,10 @@
       </div>
     </section>
 
-    <!-- ============================================================ 2.8 -->
-    <section class="block" id="bloco-2-8">
+    <!-- ============================================================ 2.7 -->
+    <section class="block" id="bloco-2-7">
       <div class="block-head">
-        <span class="block-pill">Bloco 2.8</span>
+        <span class="block-pill">Bloco 2.7</span>
         <span class="block-mode block-mode--dupla">Em dupla · o desafio</span>
         <h2>Desafio final: dois construindo ao mesmo tempo</h2>
         <p class="block-obj">O exercício que junta tudo. Vocês vão construir <strong>duas funcionalidades novas
@@ -1003,10 +914,10 @@
       </div>
     </section>
 
-    <!-- ============================================================ 2.9 -->
-    <section class="block" id="bloco-2-9">
+    <!-- ============================================================ 2.8 -->
+    <section class="block" id="bloco-2-8">
       <div class="block-head">
-        <span class="block-pill">Bloco 2.9</span>
+        <span class="block-pill">Bloco 2.8</span>
         <h2>Fechando os dois dias</h2>
       </div>
 
@@ -1020,7 +931,7 @@
           </div>
           <div class="concept-card">
             <h4><span class="n">02</span> Repositório de apresentações</h4>
-            <p>São dois: o seu, publicado no Bloco 2.3, e o da dupla, construído a quatro mãos.</p>
+            <p>São dois: o seu, publicado ontem no Dia 1, e o da dupla, construído hoje a quatro mãos.</p>
           </div>
           <div class="concept-card">
             <h4><span class="n">03</span> Análise de dados e algoritmos</h4>

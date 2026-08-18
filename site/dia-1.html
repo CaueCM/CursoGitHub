@@ -36,16 +36,16 @@
     <h1>Do zero ao <span class="accent">primeiro commit.</span></h1>
     <p class="day-hero-sub">
       Hoje é tudo pelo navegador. Você explora um repositório de verdade, entende o mecanismo do Git, cria
-      o seu próprio repositório e commita o primeiro slide, sem instalar nada. No último bloco o Claude
-      Code entra, conecta na sua conta e traz o projeto pra sua máquina.
+      o seu próprio repositório, commita o primeiro slide e publica ele numa URL pública, sem instalar nada.
+      No último bloco o Claude Code entra, conecta na sua conta e traz o projeto pra sua máquina.
     </p>
     <div class="day-nav-links">
       <a class="btn btn--primary" href="#bloco-1-1">Ir pro Bloco 1.1 →</a>
       <a class="btn btn--ghost" href="#pre-requisitos">Ver pré-requisitos</a>
     </div>
     <div class="day-hero-meta">
-      <div><span class="num">6</span><span class="label">blocos</span></div>
-      <div><span class="num">4</span><span class="label">exercícios</span></div>
+      <div><span class="num">7</span><span class="label">blocos + bônus</span></div>
+      <div><span class="num">5</span><span class="label">exercícios</span></div>
       <div><span class="num">2h</span><span class="label">duração</span></div>
       <div><span class="num">0</span><span class="label">apps pra abrir hoje</span></div>
     </div>
@@ -63,8 +63,10 @@
       <li><a href="#bloco-1-2"><span class="num">1.2</span> Por que usar</a></li>
       <li><a href="#bloco-1-3"><span class="num">1.3</span> Como funciona o Git</a></li>
       <li><a href="#bloco-1-4"><span class="num">1.4</span> Seu primeiro commit</a></li>
-      <li><a href="#bloco-1-5"><span class="num">1.5</span> Conectando o Claude Code</a></li>
-      <li><a href="#bloco-1-6"><span class="num">1.6</span> Fechando o dia</a></li>
+      <li><a href="#bloco-1-5"><span class="num">1.5</span> Publicando o protótipo</a></li>
+      <li><a href="#bloco-1-6"><span class="num">1.6</span> Conectando o Claude Code</a></li>
+      <li><a href="#bonus"><span class="num">B</span> Bônus: Vercel</a></li>
+      <li><a href="#bloco-1-7"><span class="num">1.7</span> Fechando o dia</a></li>
     </ul>
 
     <a class="side-pinned" href="#dicionario">
@@ -118,7 +120,7 @@
           </summary>
           <div class="step-body">
             <p>Chrome, Edge, Safari ou Firefox, qualquer um recente serve. Tudo que você faz hoje até o
-            Bloco 1.5 acontece dentro dele: explorar repositório, ler código, criar arquivo e commitar.</p>
+            Bloco 1.6 acontece dentro dele: explorar repositório, ler código, criar arquivo e commitar.</p>
           </div>
         </details>
 
@@ -164,7 +166,7 @@
             <span class="step-num">5</span>
             <div class="step-title">
               <strong>Claude Code instalado</strong>
-              <span>usado no Bloco 1.5, no fim do dia</span>
+              <span>usado no Bloco 1.6, no fim do dia</span>
             </div>
             <span class="step-status required">Obrigatório</span>
           </summary>
@@ -192,7 +194,7 @@
               (Mac: <code>brew install gh</code>; Windows: instalador do site)</li>
               <li>Confirme com <code>gh --version</code></li>
             </ol>
-            <p class="tip">⚠️ <strong>Não rode <code>gh auth login</code> ainda.</strong> A autenticação acontece ao vivo, no Bloco 1.5, guiada pelo facilitador.</p>
+            <p class="tip">⚠️ <strong>Não rode <code>gh auth login</code> ainda.</strong> A autenticação acontece ao vivo, no Bloco 1.6, guiada pelo facilitador.</p>
           </div>
         </details>
 
@@ -295,19 +297,6 @@
               </div>
             </div>
 
-            <div class="step-block">
-              <div class="step-block-head">
-                <span class="step-block-num">Passo 2</span>
-                <h4 class="step-block-title">Compare impressões com a turma</h4>
-              </div>
-              <div class="step-block-body">
-                <p>Agora em grupo. Traga o que você anotou: o que pareceu familiar, o que pareceu esquisito.</p>
-                <p>É esperado que muita coisa ainda não faça sentido: você está vendo isso pela primeira vez, e
-                ninguém te explicou nada de propósito. <strong>As dúvidas que aparecerem aqui são exatamente o que
-                os dois próximos blocos vão responder.</strong></p>
-              </div>
-            </div>
-
             <div class="ex-closing">
               <span class="pa-eyebrow">O que fixar</span>
               <p>O repositório que você acabou de espiar é o mesmo tipo de estrutura que <strong>você</strong> vai
@@ -367,9 +356,8 @@
             <span class="ex-title">Descubra por que o algoritmo decidiu isso</span>
           </summary>
           <div class="ex-body">
-            <p class="ex-intro">O motivo <strong>03</strong> ali em cima é o mais abstrato dos quatro. Este
-            exercício existe pra ele virar concreto: você vai usar um sistema da ArenaCash, estranhar o
-            resultado, e ir atrás da regra que causou aquilo, <strong>sem saber programar</strong>.</p>
+            <p class="ex-intro">Você vai usar um sistema da ArenaCash, estranhar o resultado e ir atrás da
+            regra que causou aquilo, <strong>sem saber programar</strong>.</p>
 
             <p class="ex-entrega"><strong>Entregável:</strong> nenhum arquivo. Você sai daqui conseguindo
             explicar, em português, por que o simulador indicou o que indicou.</p>
@@ -455,6 +443,10 @@
                   <li>Você <strong>concorda</strong> com essas duas regras? Se o produto fosse seu, mudaria
                   alguma?</li>
                 </ol>
+                <p class="tip">💡 <strong>Pode usar a LLM que você quiser</strong> aqui — Claude, ChatGPT,
+                Gemini, tanto faz. Cole o trecho do <code>simulador.js</code> e peça pra ela explicar em
+                português. Só confira a explicação no arquivo antes de aceitar: a resposta que vale é a que
+                você consegue defender.</p>
                 <p class="tip">💡 A pergunta 3 é a mais importante. Ler o código não é o objetivo, o
                 objetivo é <strong>conseguir opinar sobre uma decisão de produto</strong> que antes estava
                 trancada num arquivo que só o time técnico abria.</p>
@@ -534,7 +526,7 @@
         <p>Alguém editou um arquivo na máquina? O GitHub não sabe de nada até esse alguém mandar
         (<code>push</code>). Mudou algo no GitHub? A pasta local não muda até alguém buscar (<code>pull</code>).</p>
         <p class="tip">💡 Hoje você começa <strong>só pelo lado direito</strong>: cria e edita tudo direto no
-        github.com, sem cópia local nenhuma. O lado esquerdo nasce no Bloco 1.5, quando o Claude Code clonar o
+        github.com, sem cópia local nenhuma. O lado esquerdo nasce no Bloco 1.6, quando o Claude Code clonar o
         projeto pra sua máquina.</p>
       </div>
 
@@ -670,7 +662,7 @@
         <p class="tip">💡 <strong>Um atalho que você vai usar hoje:</strong> quando você edita direto no
         github.com, as quatro fases acontecem de uma vez só, no clique de "Commit changes", porque você já
         está trabalhando dentro do remoto. A separação entre as fases só fica visível quando existe uma cópia
-        local, e é isso que você vai ver a partir do Bloco 1.5.</p>
+        local, e é isso que você vai ver a partir do Bloco 1.6.</p>
       </div>
 
       <div class="concept" id="dicionario">
@@ -740,7 +732,7 @@
                   <li>Logado no <a href="https://github.com/new" rel="noopener" target="_blank">github.com</a>,
                   clique no <strong>+</strong> no canto superior direito → <strong>New repository</strong></li>
                   <li>Repository name: <code>meu-prototipo-arenacash</code></li>
-                  <li>Escolha <strong>Public</strong>, precisa ser público pra publicar de graça no Dia 2</li>
+                  <li>Escolha <strong>Public</strong>, precisa ser público pra publicar de graça no próximo bloco</li>
                   <li>Marque <strong>Add a README file</strong></li>
                   <li>Clique em <strong>Create repository</strong></li>
                 </ol>
@@ -790,9 +782,9 @@
                 <p>Pronto: seu <code>index.html</code> está no GitHub. Vá na aba <strong>Commits</strong> e
                 confirme que sua mensagem aparece lá, com seu nome e a hora.</p>
                 <p class="tip">💡 <strong>Por que o GitHub não mostra o slide bonito?</strong> Porque ele exibe o
-                <em>código</em> do arquivo, não o resultado. Pra ver o slide funcionando você precisa de uma cópia
-                local (Bloco 1.5) ou de publicar na internet (Dia 2). Por enquanto, quem te mostrou o resultado
-                foi o Claude.</p>
+                <em>código</em> do arquivo, não o resultado. Pra ver o slide funcionando você precisa publicar na
+                internet (o próximo bloco) ou ter uma cópia local (Bloco 1.6). Por enquanto, quem te mostrou o
+                resultado foi o Claude.</p>
               </div>
             </div>
 
@@ -822,9 +814,9 @@
               <span class="pa-eyebrow">O que fixar</span>
               <p>Você versionou um projeto sem instalar nada. Isso já é útil por si só: dá pra manter
               apresentação, protótipo e documento com histórico completo <strong>usando só o navegador</strong>.</p>
-              <p>O que falta é o outro lado do mapa, a cópia na sua máquina. É ela que destrava trabalhar
-              offline, ver o resultado renderizado e, principalmente, deixar o <strong>Claude Code</strong> agir
-              no projeto. É o próximo bloco.</p>
+              <p>Só que, por enquanto, o protótipo só existe como <em>código</em>: quem quiser ver o slide
+              depende de você mandar o arquivo. No próximo bloco isso vira um link público, com uma chave que
+              você liga uma vez.</p>
             </div>
           </div>
         </details>
@@ -835,6 +827,131 @@
     <section class="block" id="bloco-1-5">
       <div class="block-head">
         <span class="block-pill">Bloco 1.5</span>
+        <span class="block-mode block-mode--mao">No navegador · github.com</span>
+        <h2>Publicando o seu protótipo</h2>
+        <p class="block-quote">"Um protótipo que só abre na sua máquina não circula. Um link circula."</p>
+        <p class="block-obj">O mesmo repositório que guarda o seu <code>index.html</code> consegue servir esse
+        arquivo como site, de graça. Você liga uma chave em <strong>Settings</strong> e sai daqui com um
+        endereço público, no seu nome, pra mandar pra quem quiser.</p>
+      </div>
+
+      <div class="concept">
+        <p><strong>GitHub Pages</strong> é o serviço do GitHub que publica um site estático direto de um
+        repositório: gratuito, sem cartão de crédito, sem servidor pra configurar.</p>
+        <p>É por isso que o repositório precisava ser <strong>público</strong> lá no Bloco 1.4: é o que
+        libera a publicação gratuita.</p>
+
+        <h3 class="concept-sub">O que acontece depois que você liga</h3>
+        <ol class="fluxo">
+          <li><strong>Você commita</strong><span>no github.com, como fez no bloco anterior</span></li>
+          <li><strong>A <code>main</code> muda</strong><span>o commit entra na linha do tempo principal</span></li>
+          <li><strong>O Pages republica</strong><span>sozinho, sem você pedir</span></li>
+          <li><strong>A URL atualiza</strong><span>em cerca de um minuto</span></li>
+        </ol>
+        <p class="tip">💡 Você configura <strong>uma vez só</strong>. Daí em diante, todo commit que entrar na
+        <code>main</code> atualiza o site publicado sozinho. É o mesmo mecanismo que empresas usam pra colocar
+        mudança no ar.</p>
+        <p class="analogy">Repare no sentido da coisa: <strong>o site é gerado a partir do repositório, nunca o
+        contrário</strong>. Não existe editar a página publicada — você edita o repositório, e ele republica.</p>
+      </div>
+
+      <div class="exercises">
+        <h3>Exercício</h3>
+
+        <details class="exercise">
+          <summary>
+            <span class="ex-num">04</span>
+            <span class="ex-title">Coloque o seu protótipo no ar</span>
+          </summary>
+          <div class="ex-body">
+            <p class="ex-intro">No fim deste exercício você tem um link pra mandar pra qualquer pessoa, que abre
+            no celular dela, sem instalar nada e sem ela ter conta no GitHub.</p>
+
+            <p class="ex-entrega"><strong>Entregável:</strong> uma URL pública no ar, no formato
+            <code>https://&lt;seu-usuario&gt;.github.io/meu-prototipo-arenacash/</code>.</p>
+
+            <div class="step-block">
+              <div class="step-block-head">
+                <span class="step-block-num">Passo 1</span>
+                <h4 class="step-block-title">Ligue o GitHub Pages</h4>
+              </div>
+              <div class="step-block-body">
+                <ol>
+                  <li>Abra <code>github.com/&lt;seu-usuario&gt;/meu-prototipo-arenacash</code></li>
+                  <li>Clique em <strong>Settings</strong>, a aba no topo <em>do repositório</em> (não a
+                  configuração da sua conta)</li>
+                  <li>No menu lateral, clique em <strong>Pages</strong></li>
+                  <li>Em <strong>Source</strong>, deixe <strong>Deploy from a branch</strong></li>
+                  <li>Em <strong>Branch</strong>, selecione <strong>main</strong> e a pasta
+                  <strong>/ (root)</strong></li>
+                  <li>Clique em <strong>Save</strong></li>
+                  <li>Espere cerca de um minuto e recarregue a página: aparece no topo
+                  <em>"Your site is live at…"</em> com a sua URL</li>
+                </ol>
+                <p class="tip">💡 Se ainda não apareceu, não mexa em nada: recarregue de novo daqui a pouco. A
+                primeira publicação é a mais demorada. Na aba <strong>Actions</strong> do repositório dá pra ver
+                a publicação acontecendo.</p>
+              </div>
+            </div>
+
+            <div class="step-block">
+              <div class="step-block-head">
+                <span class="step-block-num">Passo 2</span>
+                <h4 class="step-block-title">Abra a sua URL e mande pra alguém</h4>
+              </div>
+              <div class="step-block-body">
+                <ol>
+                  <li>Abra a URL numa <strong>aba anônima</strong>, pra garantir que não é cache do seu
+                  navegador</li>
+                  <li>Abra também no celular</li>
+                  <li>Mande o link pra alguém da turma</li>
+                </ol>
+                <p class="tip">💡 Este é o mesmo <code>index.html</code> que o GitHub te mostrava como código no
+                bloco anterior. A diferença é que agora tem um endereço que <strong>executa</strong> o arquivo em
+                vez de exibir o texto dele.</p>
+              </div>
+            </div>
+
+            <div class="step-block">
+              <div class="step-block-head">
+                <span class="step-block-num">Passo 3</span>
+                <h4 class="step-block-title">Mude uma coisa e veja o site se atualizar sozinho</h4>
+              </div>
+              <div class="step-block-body">
+                <p>Deixe as duas abas abertas, o repositório e o site, pra ver o efeito:</p>
+                <ol>
+                  <li>No repositório, abra o <code>index.html</code> e clique no <strong>lápis</strong></li>
+                  <li>Mude o título da capa</li>
+                  <li>Commite com a mensagem: <code>ajusta o titulo da capa</code></li>
+                  <li>Espere cerca de um minuto e recarregue a aba do site
+                  (<code>Cmd + Shift + R</code> no Mac, <code>Ctrl + F5</code> no Windows)</li>
+                </ol>
+                <p>O texto novo está lá. <strong>Você não enviou arquivo pra lugar nenhum</strong>: commitou no
+                repositório, e a publicação foi consequência.</p>
+              </div>
+            </div>
+
+            <p class="file-out"><strong>O que você tem agora:</strong> o repositório
+            <code>meu-prototipo-arenacash</code> no github.com e o mesmo protótipo no ar, numa URL pública com o
+            seu usuário no endereço.</p>
+
+            <div class="ex-closing">
+              <span class="pa-eyebrow">O que fixar</span>
+              <p>Publicar deixou de ser um pedido pra outra pessoa. O caminho do seu protótipo até um link que
+              qualquer um abre tem <strong>um commit e um minuto</strong> de distância, e você controla os dois.</p>
+              <p>Falta a última peça do mapa: a cópia na <strong>sua máquina</strong>. É ela que destrava
+              trabalhar offline e, principalmente, deixar o <strong>Claude Code</strong> agir no projeto. É o
+              próximo bloco.</p>
+            </div>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- ============================================================ 1.6 -->
+    <section class="block" id="bloco-1-6">
+      <div class="block-head">
+        <span class="block-pill">Bloco 1.6</span>
         <span class="block-mode block-mode--claude">A virada · entra o Claude Code</span>
         <h2>Conectando o Claude Code</h2>
         <p class="block-obj">Até agora, quem clicava era você, no navegador. A partir daqui quem executa também
@@ -861,12 +978,12 @@
 
         <details class="exercise">
           <summary>
-            <span class="ex-num">04</span>
+            <span class="ex-num">05</span>
             <span class="ex-title">Conecte o Claude Code e traga o projeto pra sua máquina</span>
           </summary>
           <div class="ex-body">
-            <p class="ex-intro">No fim deste exercício o seu projeto existe em <strong>dois lugares</strong>, e
-            você vai ver, com os próprios olhos, o slide que até agora só existia como código.</p>
+            <p class="ex-intro">No fim deste exercício o seu projeto também existe na <strong>sua
+            máquina</strong>, e o mapa das três instâncias fecha: local, remoto e no ar.</p>
 
             <p class="ex-entrega"><strong>Entregável:</strong> Claude Code autenticado na sua conta e o
             repositório clonado numa pasta do seu computador.</p>
@@ -907,8 +1024,9 @@
                 isso, a conexão do Passo 1 funcionou.</p>
                 <p>Agora abra essa pasta no Finder (Mac) ou no Explorador (Windows) e dê <strong>duplo clique no
                 <code>index.html</code></strong>.</p>
-                <p class="tip">💡 O slide abre no navegador,
-                renderizado, e continua funcionando se você desligar o wi-fi. É um arquivo no seu computador, não um site. O mesmo arquivo que também está no GitHub.</p>
+                <p class="tip">💡 O slide abre no navegador, renderizado, e continua funcionando se você
+                desligar o wi-fi. É um arquivo no seu computador, não o site que você publicou no bloco anterior.
+                Mesmo conteúdo, endereço diferente.</p>
               </div>
             </div>
 
@@ -957,13 +1075,15 @@
                     </div>
                   </div>
                   <figcaption>
-                    <strong>Hoje você tem as duas primeiras.</strong> A terceira nasce amanhã, no Dia 2, quando
-                    você ligar o GitHub Pages. Entre local e remoto o trânsito é nos dois sentidos; do remoto pro ar é só de ida — <strong>ninguém edita o site publicado, edita-se
-                    o repositório</strong>.
+                    <strong>Agora você tem as três.</strong> O remoto nasceu no Bloco 1.4, o site no ar no
+                    1.5, e a cópia local acabou de chegar com o clone. Entre local e remoto o trânsito é nos dois
+                    sentidos; do remoto pro ar é só de ida — <strong>ninguém edita o site publicado, edita-se o
+                    repositório</strong>.
                   </figcaption>
                 </figure>
 
-                <p>Pra fechar, compare os três na ArenaCash, que já tem os três prontos:</p>
+                <p>Pra fechar, compare os três endereços na ArenaCash, que tem exatamente o mesmo desenho que
+                o seu projeto agora tem:</p>
                 <div class="table-scroll">
                   <table class="dict-table">
                     <thead>
@@ -991,19 +1111,201 @@
               <span class="pa-eyebrow">O que fixar</span>
               <p>Essa autorização é feita <strong>uma vez só</strong>. Nas próximas conversas com o Claude Code
               neste computador, ele já lembra que está conectado à sua conta.</p>
-              <p>E agora você tem as duas pontas do mapa do Bloco 1.3: a pasta local e o repositório remoto.
-              <strong>É com essas duas que o Dia 2 inteiro acontece</strong>, branches, conflitos e Pull
-              Requests, todos pedidos ao Claude Code.</p>
+              <p>E agora você tem o mapa inteiro: a pasta local, o repositório remoto e o site no ar.
+              <strong>É com a pasta local e o repositório remoto que o Dia 2 inteiro acontece</strong>, branches,
+              conflitos e Pull Requests, todos pedidos ao Claude Code.</p>
             </div>
           </div>
         </details>
       </div>
     </section>
 
-    <!-- ============================================================ 1.6 -->
-    <section class="block" id="bloco-1-6">
+    <!-- ============================================================ BÔNUS -->
+    <section class="block block--bonus" id="bonus">
       <div class="block-head">
-        <span class="block-pill">Bloco 1.6</span>
+        <span class="block-pill gray">Bônus · opcional</span>
+        <span class="block-mode block-mode--claude">Via Claude Code</span>
+        <h2>O mesmo protótipo na Vercel</h2>
+        <p class="block-obj">Nada do Dia 2 depende deste bônus. Ele existe por dois motivos: mostrar que o
+        GitHub Pages não é a única porta de saída do seu repositório, e te dar o primeiro
+        <strong>deploy pedido em português</strong>, com o Claude Code fazendo o trabalho.</p>
+      </div>
+
+      <div class="concept">
+        <p><strong>Vercel</strong> é uma empresa de hospedagem de sites. O plano gratuito, chamado
+        <em>Hobby</em>, atende projeto pessoal sem cartão de crédito, e é o que a gente usa aqui.</p>
+        <p>O modelo mental é <strong>exatamente o mesmo</strong> do Bloco 1.5: o site é gerado a partir do
+        repositório. Você não sobe arquivo, você commita, e a Vercel republica. O que muda é onde a chave é
+        ligada: no Pages, dentro do <code>Settings</code> do repositório; na Vercel, numa conta separada que
+        você conecta ao seu GitHub.</p>
+
+        <h3 class="concept-sub">Por que conhecer as duas</h3>
+        <div class="table-scroll">
+          <table class="dict-table">
+            <thead>
+              <tr><th></th><th>GitHub Pages</th><th>Vercel</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Onde você liga</td><td>Settings do próprio repositório</td><td>Conta na Vercel, conectada ao GitHub</td></tr>
+              <tr><td>Publica a partir de</td><td>a branch <code>main</code></td><td>a <code>main</code>, e também qualquer outra branch</td></tr>
+              <tr><td>Link por branch</td><td>não tem</td><td><strong>tem</strong>, cada branch ganha uma URL própria</td></tr>
+              <tr><td>Conta nova</td><td>não precisa</td><td>precisa, mas dá pra entrar com o GitHub</td></tr>
+              <tr><td>Domínio próprio</td><td>dá</td><td>dá</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p class="tip">💡 <strong>A linha que importa é a do meio.</strong> "Link por branch" quer dizer que,
+        amanhã, cada variação do protótipo pode ter o <em>seu</em> endereço — dá pra mandar duas versões pra
+        alguém comparar antes de decidir qual entra. É o tipo de coisa que muda como você pede opinião sobre
+        um protótipo.</p>
+
+        <p class="analogy">Ter os dois no ar ao mesmo tempo não quebra nada, e ainda prova o ponto do Bloco 1.5:
+        <strong>o repositório é a fonte</strong>. Duas hospedagens lendo o mesmo <code>index.html</code> mostram
+        o mesmo resultado, porque nenhuma das duas é onde o conteúdo mora.</p>
+      </div>
+
+      <div class="exercises">
+        <h3>Exercício</h3>
+
+        <details class="exercise exercise-bonus">
+          <summary>
+            <span class="ex-num">B</span>
+            <span class="ex-title">Suba o seu protótipo na Vercel, sem sair do Claude Code</span>
+          </summary>
+          <div class="ex-body">
+            <p class="ex-intro">Você vai fazer um deploy inteiro <strong>conversando</strong>: quem instala,
+            autentica e publica é o Claude Code. Seu papel é autorizar, conferir o que ele responde e abrir a
+            URL no fim.</p>
+
+            <p class="ex-entrega"><strong>Entregável:</strong> uma segunda URL pública, no formato
+            <code>https://meu-prototipo-arenacash.vercel.app</code>, servindo o mesmo <code>index.html</code>
+            que já está no GitHub Pages.</p>
+
+            <div class="step-block">
+              <div class="step-block-head">
+                <span class="step-block-num">Passo 1</span>
+                <h4 class="step-block-title">Crie a conta na Vercel, no navegador</h4>
+              </div>
+              <div class="step-block-body">
+                <p>Esta parte é só sua: <strong>o Claude Code não cria conta em nenhum serviço por você</strong>,
+                e é bom que seja assim.</p>
+                <ol>
+                  <li>Abra <a href="https://vercel.com/signup" rel="noopener" target="_blank">vercel.com/signup</a></li>
+                  <li>Escolha <strong>Continue with GitHub</strong> e autorize</li>
+                  <li>Quando perguntar o tipo de conta, escolha <strong>Hobby</strong>, o gratuito</li>
+                  <li>Se ela pedir pra importar um projeto agora, <strong>pule</strong>. Quem vai importar é o
+                  Claude Code, no próximo passo</li>
+                </ol>
+                <p class="tip">💡 É a mesma lógica de "entrar com o Google" num app novo: a Vercel passa a
+                enxergar os seus repositórios, mas eles continuam sendo seus, no GitHub. Se um dia você
+                desconectar a Vercel, o repositório não vai junto.</p>
+              </div>
+            </div>
+
+            <div class="step-block">
+              <div class="step-block-head">
+                <span class="step-block-num">Passo 2</span>
+                <h4 class="step-block-title">Peça o deploy ao Claude Code</h4>
+              </div>
+              <div class="step-block-body">
+                <p>No terminal, <strong>dentro da pasta clonada</strong> no Bloco 1.6 (aquela com o
+                <code>index.html</code>), rode <code>claude</code> e mande:</p>
+                <div class="prompt-box">
+                  <div class="prompt-box-head">Prompt · copie e cole</div>
+                  <p>Publica esta pasta na Vercel usando o Vercel CLI. Faz o login na minha conta, cria um
+                  projeto novo chamado <code>meu-prototipo-arenacash</code> e sobe em produção. É um site
+                  estático de HTML puro, sem build. Me explica cada comando antes de rodar e me devolve a URL
+                  final.</p>
+                </div>
+
+                <p>O que vai acontecer, na ordem:</p>
+                <ol>
+                  <li>Ele pede <strong>sua autorização</strong> pra rodar cada comando no terminal. Leia e
+                  aprove — é você quem decide o que roda na sua máquina</li>
+                  <li>O login (<code>vercel login</code>) abre o navegador. Escolha <strong>Continue with
+                  GitHub</strong>, a mesma conta do Passo 1, e volte pro terminal</li>
+                  <li>Na publicação (<code>vercel --prod</code>), aparecem algumas perguntas. Os padrões
+                  servem: <em>escopo</em> = sua conta pessoal; <em>link to existing project</em> = não;
+                  <em>diretório do código</em> = <code>./</code>; <em>modificar as configurações de build</em> =
+                  não</li>
+                  <li>No fim ele imprime a URL. Abra ela no navegador</li>
+                </ol>
+
+                <p class="tip">💡 <strong>Se travar:</strong> se der erro de permissão ao instalar o CLI, peça
+                <em>"usa <code>npx vercel</code> em vez de instalar global"</em>. Se ele perguntar qual framework
+                usar, a resposta é <strong>nenhum / Other</strong>: o seu projeto é HTML puro e não tem etapa de
+                build. E se ele ficar esperando o login, é porque a aba do navegador está aberta aguardando
+                você.</p>
+              </div>
+            </div>
+
+            <div class="step-block">
+              <div class="step-block-head">
+                <span class="step-block-num">Passo 3</span>
+                <h4 class="step-block-title">Ligue o repositório, pra publicar sozinho</h4>
+              </div>
+              <div class="step-block-body">
+                <p>O deploy do passo anterior mandou os arquivos <em>uma vez</em>, da sua pasta. Agora a gente
+                fecha o ciclo, pra que a fonte volte a ser o repositório:</p>
+                <div class="prompt-box">
+                  <div class="prompt-box-head">Prompt</div>
+                  <p>Conecta esse projeto da Vercel ao meu repositório <code>meu-prototipo-arenacash</code> no
+                  GitHub, pra que todo push na <code>main</code> publique sozinho.</p>
+                </div>
+                <p>Dá pra conferir no navegador: em <a href="https://vercel.com/dashboard" rel="noopener" target="_blank">vercel.com/dashboard</a>,
+                abra o projeto → <strong>Settings</strong> → <strong>Git</strong>. O nome do seu repositório
+                precisa aparecer ali como conectado.</p>
+              </div>
+            </div>
+
+            <div class="step-block">
+              <div class="step-block-head">
+                <span class="step-block-num">Passo 4</span>
+                <h4 class="step-block-title">Um commit, duas URLs atualizadas</h4>
+              </div>
+              <div class="step-block-body">
+                <p>Deixe as duas abas abertas, a do <code>github.io</code> e a do <code>vercel.app</code>, e
+                peça:</p>
+                <div class="prompt-box">
+                  <div class="prompt-box-head">Prompt</div>
+                  <p>Muda o subtítulo da capa do <code>index.html</code> pra "Campanha de indicação · versão de
+                  teste", commita com uma mensagem descritiva e faz push pra <code>main</code>.</p>
+                </div>
+                <ol>
+                  <li>Espere cerca de um minuto</li>
+                  <li>Recarregue as duas abas (<code>Cmd + Shift + R</code> no Mac,
+                  <code>Ctrl + F5</code> no Windows)</li>
+                </ol>
+                <p>O texto novo aparece <strong>nas duas</strong>. Você fez um commit; dois serviços diferentes
+                reagiram a ele sozinhos.</p>
+                <p class="tip">💡 Repare no que você <em>não</em> fez: não abriu painel de servidor, não mandou
+                arquivo por FTP, não pediu pra ninguém publicar. O trabalho foi descrever a mudança em
+                português.</p>
+              </div>
+            </div>
+
+            <p class="file-out"><strong>O que você tem agora:</strong> um repositório e <strong>duas</strong>
+            URLs públicas servindo o mesmo protótipo, uma no GitHub Pages e uma na Vercel, as duas se
+            atualizando sozinhas a cada commit na <code>main</code>.</p>
+
+            <div class="ex-closing">
+              <span class="pa-eyebrow">O que fixar</span>
+              <p>Trocar de hospedagem não é migrar o projeto: o projeto é o repositório, e hospedagem é só quem
+              lê ele. Foi por isso que dá pra ter as duas ao mesmo tempo sem escolher nenhuma.</p>
+              <p>E guarde a linha "link por branch" da tabela lá em cima. <strong>Amanhã você vai criar
+              branches</strong>, e com a Vercel conectada cada uma delas ganha uma URL própria, de graça: a
+              variação vira algo que você <em>manda pra alguém abrir</em>, não algo que você descreve.</p>
+            </div>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- ============================================================ 1.7 -->
+    <section class="block" id="bloco-1-7">
+      <div class="block-head">
+        <span class="block-pill">Bloco 1.7</span>
         <h2>Fechando o Dia 1</h2>
       </div>
 
@@ -1014,6 +1316,7 @@
           <li>Leu um algoritmo de produto e opinou sobre as regras dele, sem saber programar</li>
           <li>Montou o modelo mental do Git, repo, commit, local/remoto, branch, PR, e tem um dicionário pra consultar</li>
           <li>Criou um repositório do zero e commitou duas vezes, <strong>usando só o navegador</strong></li>
+          <li>Publicou o protótipo numa URL pública, e viu ela se atualizar sozinha depois de um commit</li>
           <li>Conectou o Claude Code à sua conta e trouxe o projeto pra sua máquina</li>
         </ul>
       </div>
@@ -1032,7 +1335,8 @@
           <p>Hoje você só usou a branch <code>main</code>, uma linha do tempo só, reta. E fez tudo clicando.</p>
           <p>Amanhã o Claude Code assume a execução: você vai criar variações paralelas do protótipo, ver elas se
           cruzando (inclusive um conflito de verdade, que <strong>você</strong> decide como resolver), revisar
-          mudanças antes de aprovar e publicar a versão final numa URL pública.</p>
+          mudanças antes de aprovar e fechar o dia com um segundo site no ar, construído a quatro mãos com outra
+          pessoa.</p>
           <a class="btn btn--primary" href="dia-2.html">Ir pro Dia 2 →</a>
         </div>
       </div>
