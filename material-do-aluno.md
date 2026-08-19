@@ -83,7 +83,7 @@ Enquanto navega, vá anotando (mentalmente ou num papel) duas coisas:
 
 Ninguém aqui vai virar engenheiro. Então a pergunta é **o que isso destrava pra você, hoje, no seu trabalho**.
 
-São quatro respostas.
+São cinco respostas.
 
 #### 1. Vibe coding direto no código da empresa
 
@@ -113,6 +113,27 @@ Com o Claude ajudando a ler, você consegue entender essa lógica sem aprender a
 Nada se perde. Toda mudança tem autor, data e motivo registrados.
 
 Errou, testou algo que não funcionou, quer voltar pro que tinha ontem? É questão de segundos, não de reconstruir do zero.
+
+#### 5. Repositórios públicos como base de conhecimento
+
+Os quatro motivos acima são sobre *o seu* código. Este é sobre o dos outros: o GitHub é também a maior
+biblioteca aberta de conhecimento técnico que existe, e ela não é só código. Tem listas curadas, produtos
+inteiros com o código à mostra e coleções organizadas por assunto.
+
+Pra quem não programa, o uso prático é direto: **abrir, ler e perguntar**. Cole um trecho no Claude e peça
+a explicação, ou peça ao Claude Code pra ler o repositório inteiro e resumir o que dá pra aproveitar.
+Quatro pra começar:
+
+| Onde | O que é |
+|---|---|
+| <https://github.com/public-apis/public-apis> | Um catálogo enorme de APIs públicas e gratuitas, separadas por assunto. Ótimo pra descobrir com o que o seu protótipo poderia conversar |
+| <https://github.com/sindresorhus/awesome> | O índice das "awesome lists": coletâneas sobre praticamente qualquer tema, de design a economia. Comece por aqui quando não souber por onde começar |
+| <https://github.com/OpenCut-app/OpenCut> | Um editor de vídeo open source, alternativa ao CapCut. Dá pra ver as decisões de produto de um app real: issues, roadmap e discussões, tudo à vista |
+| <https://github.com/topics/claude-skills-hub> | Não é um repositório: é uma etiqueta que agrupa vários. Este junta coleções de skills do Claude, e o mesmo truque vale pra qualquer outro tema |
+
+**Público não quer dizer sem dono.** Ler, estudar e aprender com qualquer repositório público é sempre
+livre. Já reaproveitar pedaços num projeto da sua empresa depende da **licença**, aquele arquivo `LICENSE`
+na raiz. Na dúvida, pergunte ao Claude o que aquela licença permite antes de copiar.
 
 #### Exercício 2 — Descubra por que o algoritmo decidiu isso
 
@@ -612,7 +633,7 @@ ninguém publicar. O trabalho foi descrever a mudança em português.
 
 #### Uma pergunta pra levar
 
-Volte nos quatro motivos do Bloco 1.2. **Já dá pra imaginar usando isso pra alguma dessas quatro coisas no
+Volte nos cinco motivos do Bloco 1.2. **Já dá pra imaginar usando isso pra alguma dessas cinco coisas no
 seu trabalho, essa semana?**
 
 Não precisa responder agora. Mas é a pergunta que faz o Dia 2 valer a pena.
@@ -1022,12 +1043,14 @@ Abram numa aba anônima. As duas funcionalidades estão lá, construídas em par
 
 ### Bloco 2.8 — Fechando os dois dias
 
-#### Os 4 motivos, revisitados
+#### Os 5 motivos, revisitados
 
 1. **Vibe coding no código da empresa** — o Dia 2 inteiro: cada mudança saiu de um pedido em português
 2. **Repositório de apresentações e HTML** — são dois: o seu e o da dupla
 3. **Análise de dados e algoritmos** — Exercício 2 do Dia 1 e Exercício 10 de hoje
 4. **Controle de versão** — commits, branches, um conflito entre duas pessoas, histórico completo
+5. **Repositórios públicos como base de conhecimento** — lição de casa: agora que você sabe ler um
+   repositório, as listas curadas e os produtos abertos do Bloco 1.2 estão disponíveis pra você também
 
 #### O que você sai sabendo fazer
 
