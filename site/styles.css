@@ -179,6 +179,7 @@ p, li, td, th, a, h1, h2, h3, h4 { overflow-wrap: break-word; }
 }
 .approach-card h3 { color: var(--pa-white); font-size: var(--text-lg); margin-bottom: var(--s-2); }
 .approach-card p { color: var(--pa-gray-300); font-size: var(--text-sm); margin: 0; }
+.approach-card p + p { margin-top: var(--s-3); }
 
 .pull-quote {
   font-family: var(--font-display);
@@ -1109,6 +1110,7 @@ p, li, td, th, a, h1, h2, h3, h4 { overflow-wrap: break-word; }
   font-size: var(--text-md) !important;
   line-height: 1.5 !important;
 }
+.ex-closing > * + p { margin-top: var(--s-3); }
 .ex-closing p strong { color: var(--pa-white); font-weight: var(--fw-bold); }
 .ex-closing code { background: var(--pa-gray-800); border-color: var(--pa-gray-700); color: var(--pa-red); }
 
@@ -1198,7 +1200,7 @@ p, li, td, th, a, h1, h2, h3, h4 { overflow-wrap: break-word; }
 }
 .step-block-body ul { padding-left: var(--s-5); margin: 0; }
 .step-block-body ul li { color: var(--fg-muted); line-height: var(--leading-relaxed); margin-bottom: var(--s-2); }
-.step-block-body .tree, .step-block-body .code-block { margin-top: 0; }
+.step-block-body .tree, .step-block-body .code-block { margin-top: var(--s-3); }
 
 /* ---------------------------------------------------------
    LINK CARDS — endereços que o aluno precisa abrir
@@ -1320,6 +1322,7 @@ p, li, td, th, a, h1, h2, h3, h4 { overflow-wrap: break-word; }
 .concept > * + .tip,
 .concept > * + .analogy,
 .concept > * + .file-out { margin-top: var(--s-5); }
+.concept > * + p { margin-top: var(--s-4); }
 
 /* ---------------------------------------------------------
    PROGRESSO — checkbox por passo, barra por exercício, barra do dia
@@ -1504,6 +1507,12 @@ p, li, td, th, a, h1, h2, h3, h4 { overflow-wrap: break-word; }
 .setup-step .step-body > * + * { margin-top: var(--s-4); }
 .setup-step .step-body p { color: var(--fg-muted); margin: 0; }
 .setup-step .step-body ol, .setup-step .step-body ul { padding-left: var(--s-6); margin: 0; }
+/* repõe o respiro que as duas regras acima zeram — ver "RITMO VERTICAL" */
+.setup-step .step-body > * + p,
+.setup-step .step-body > * + ol,
+.setup-step .step-body > * + ul,
+.setup-step .step-body > * + .code-block,
+.setup-step .step-body > * + .tip { margin-top: var(--s-4); }
 .setup-step .step-body li { color: var(--fg-muted); margin-bottom: var(--s-2); line-height: 1.6; }
 .setup-step .step-body li strong { color: var(--fg); }
 

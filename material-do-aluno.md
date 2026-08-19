@@ -627,7 +627,7 @@ ninguém publicar. O trabalho foi descrever a mudança em português.
 - Explorou um repositório de verdade antes mesmo de saber o nome das coisas
 - Leu um algoritmo de produto e opinou sobre as regras dele, sem saber programar
 - Montou o modelo mental do Git e tem um dicionário pra consultar
-- Criou um repositório do zero e commitou duas vezes, **usando só o navegador**
+- Criou um repositório do zero e commitou três vezes, **usando só o navegador**
 - Publicou o protótipo numa URL pública, e viu ela se atualizar sozinha depois de um commit
 - Conectou o Claude Code à sua conta e trouxe o projeto pra sua máquina
 
@@ -736,7 +736,7 @@ volta quantas vezes quiser.
 
 ---
 
-### Bônus —  O que o Claude Code roda por trás
+### Bônus — O que o Claude Code roda por trás
 
 **Opcional**
 
