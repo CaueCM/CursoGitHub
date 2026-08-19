@@ -963,13 +963,18 @@ p, li, td, th, a, h1, h2, h3, h4 { overflow-wrap: break-word; }
 .exercise {
   background: var(--bg);
   border: 1px solid var(--border);
+  border-left: 3px solid var(--pa-red-soft);
   border-radius: var(--radius-md);
   margin-bottom: var(--s-3);
   overflow: hidden;
-  transition: border-color var(--dur-med) var(--ease-standard);
+  transition: border-color var(--dur-med) var(--ease-standard),
+              box-shadow var(--dur-med) var(--ease-standard);
 }
 .exercise:hover, .exercise[open] { border-color: var(--pa-red); }
+.exercise:hover { box-shadow: var(--shadow-md); }
 
+/* O cabeçalho do exercício é uma barra clicável: fundo próprio, rótulo
+   "Exercício" e um botão de abrir/fechar à direita. */
 .exercise summary {
   list-style: none;
   cursor: pointer;
@@ -979,20 +984,41 @@ p, li, td, th, a, h1, h2, h3, h4 { overflow-wrap: break-word; }
   gap: var(--s-4);
   align-items: center;
   user-select: none;
+  background: var(--bg-muted);
   transition: background var(--dur-fast) var(--ease-standard);
 }
 .exercise summary::-webkit-details-marker { display: none; }
-.exercise summary:hover { background: var(--bg-muted); }
+.exercise summary:hover { background: var(--pa-red-tint); }
+.exercise summary:focus-visible { outline: 3px solid var(--pa-red); outline-offset: -3px; }
 .exercise[open] summary { background: var(--bg-muted); border-bottom: 1px solid var(--border); }
+
+/* Botão de abrir/fechar. É pseudo-elemento pra valer em toda página sem
+   mexer no HTML de cada exercício. */
 .exercise summary::after {
-  content: "+";
-  font-size: 22px;
-  color: var(--pa-red);
+  content: "Abrir  ▾";
+  font-family: var(--font-display);
+  font-size: 12px;
   font-weight: var(--fw-bold);
-  margin-left: var(--s-2);
+  letter-spacing: 0.04em;
   line-height: 1;
+  white-space: nowrap;
+  color: var(--pa-white);
+  background: var(--pa-red);
+  border: 1px solid var(--pa-red);
+  border-radius: var(--radius-pill);
+  padding: 9px 16px;
+  margin-left: var(--s-2);
+  transition: background var(--dur-fast) var(--ease-standard),
+              color var(--dur-fast) var(--ease-standard);
 }
-.exercise[open] summary::after { content: "−"; }
+.exercise summary:hover::after { background: var(--pa-black); border-color: var(--pa-black); }
+.exercise[open] summary::after {
+  content: "Fechar  ▴";
+  color: var(--pa-red);
+  background: transparent;
+  border-color: var(--pa-red-soft);
+}
+.exercise[open] summary:hover::after { color: var(--pa-white); background: var(--pa-red); border-color: var(--pa-red); }
 
 .ex-num {
   display: inline-flex;
@@ -1008,12 +1034,24 @@ p, li, td, th, a, h1, h2, h3, h4 { overflow-wrap: break-word; }
   border-radius: 10px;
 }
 .ex-title {
+  display: block;
   font-family: var(--font-display);
   font-weight: var(--fw-bold);
   font-size: var(--text-md);
   color: var(--fg);
   letter-spacing: var(--tracking-tight);
 }
+.ex-title::before {
+  content: "Clique pra abrir";
+  display: block;
+  font-size: 9px;
+  font-weight: var(--fw-black);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--fg-muted);
+  margin-bottom: 3px;
+}
+.exercise[open] .ex-title::before { content: "Exercício aberto"; color: var(--pa-red); }
 .ex-time {
   font-family: var(--font-mono);
   font-size: 11px;
@@ -1525,6 +1563,7 @@ p, li, td, th, a, h1, h2, h3, h4 { overflow-wrap: break-word; }
    título e tempo lado a lado — encolhe o número e o selo de tempo */
 @media (max-width: 420px) {
   .exercise summary { grid-template-columns: 38px 1fr auto; gap: var(--s-2); }
+  .exercise summary::after { padding: 8px 11px; font-size: 11px; letter-spacing: 0.02em; }
   .ex-num { width: 38px; height: 38px; border-radius: 8px; }
   .ex-time { font-size: 10px; padding: 3px 7px; }
   .exercise summary::after { margin-left: 0; }
