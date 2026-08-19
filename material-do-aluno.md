@@ -55,8 +55,8 @@ Você não precisa entender cada uma delas agora. Precisa só saber que existem.
 Este é o repositório da ArenaCash, a fintech fictícia que serve de cenário pros exercícios. É um
 repositório com história de verdade: vários commits, duas branches abertas e Pull Requests.
 
-**O repositório:** <https://github.com/CaueCM/ArenaCash>
-**O site que sai dele, no ar:** <https://cauecm.github.io/ArenaCash/>
+**O repositório:** <https://github.com/Product-Arena/arena-cash>
+**O site que sai dele, no ar:** <https://product-arena.github.io/arena-cash/>
 
 Abra os dois em abas separadas. Um é o código; o outro é o mesmo código publicado, funcionando na
 internet. No fim do Dia 1 você vai ter esse mesmo par, repositório e página no ar, com o seu nome.
@@ -125,7 +125,7 @@ indicou o que indicou.
 **Passo 1 — Use o simulador e estranhe o resultado**
 
 A ArenaCash tem um simulador que pergunta idade, salário e perfil de investidor, e indica um produto:
-<https://cauecm.github.io/ArenaCash/simulador.html>
+<https://product-arena.github.io/arena-cash/simulador.html>
 
 Teste estes três casos e anote o produto de cada um:
 
@@ -146,7 +146,7 @@ máxima, e mesmo assim indica o produto mais conservador de todos. Guarde esse e
 2. Na aba **Code**, procure o arquivo `simulador.js`
 3. Clique nele: o GitHub mostra o conteúdo direto no navegador, sem baixar nada
 
-Atalho, se precisar: <https://github.com/CaueCM/ArenaCash/blob/main/simulador.js>
+Atalho, se precisar: <https://github.com/Product-Arena/arena-cash/blob/main/simulador.js>
 
 **Não tente entender tudo.** O arquivo tem cinco partes numeradas, com títulos em português. Vá direto na
 parte **3, "A decisão"**, e leia só os comentários, os blocos que começam com `//`.
@@ -487,8 +487,8 @@ agora tem:
 | Instância | Endereço | Some se cair a internet? |
 |---|---|---|
 | Local | a pasta clonada na sua máquina | Não, continua funcionando |
-| Remoto | <https://github.com/CaueCM/ArenaCash> | Sim |
-| No ar | <https://cauecm.github.io/ArenaCash/> | Sim |
+| Remoto | <https://github.com/Product-Arena/arena-cash> | Sim |
+| No ar | <https://product-arena.github.io/arena-cash/> | Sim |
 
 > **O que fixar:** essa autorização é feita **uma vez só**. E agora você tem o mapa inteiro: a pasta
 > local, o repositório remoto e o site no ar. É com a pasta local e o repositório remoto que o Dia 2
@@ -934,7 +934,7 @@ lado.
 
 **Passo 1 — Peçam a explicação e comparem com a de ontem**
 
-> Lê o arquivo `simulador.js` do repositório público `github.com/CaueCM/ArenaCash` e me explica, em
+> Lê o arquivo `simulador.js` do repositório público `github.com/Product-Arena/arena-cash` e me explica, em
 > português e sem jargão, como ele decide qual investimento indicar pra cada pessoa.
 
 Comparem com o que vocês descobriram ontem lendo o arquivo na mão.

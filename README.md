@@ -10,17 +10,20 @@ Curso hands-on de 2 dias da [Product Arena](https://productarena.com.br) que ens
 Ninguém aqui vai virar engenheiro. O **Claude** entra como quem cria e edita o HTML; o **GitHub** é
 quem guarda o histórico, organiza as variações em branches e coloca o resultado no ar.
 
-A escolha de design do curso é usar o **GitHub Desktop** (o app visual, sem terminal) para todas as
-ações de Git. O aluno *vê* a pasta local mudando ao trocar de branch, *vê* o conflito acontecendo na
-tela. Primeiro entende o mecanismo, depois automatiza com o Claude Code.
+A escolha de design do curso é **não instalar app de Git nenhum**: nada de GitHub Desktop, nada de VS
+Code. O Dia 1 inteiro acontece no navegador, em github.com e claude.ai, e o aluno *vê* cada peça antes
+de automatizar qualquer coisa. O **Claude Code** entra só no fim do Dia 1, traz a cópia local via clone
+e conduz o Dia 2 inteiro.
 
-- **Dia 1** — do "o que é o GitHub" ao primeiro commit publicado
-- **Dia 2** — branches, merge e conflito, Pull Request, deploy e Claude Code
+- **Dia 1** — do "o que é o GitHub" ao primeiro commit, com o protótipo publicado numa URL pública e o
+  Claude Code conectado à conta do aluno. Tem um bônus opcional de deploy na Vercel
+- **Dia 2** — branches, merge e conflito, Pull Request e desafio em dupla, tudo pedido em português ao
+  Claude Code
 
 ## Repositório de exemplo
 
-Os alunos exploram e clonam a [ArenaCash](https://github.com/CaueCM/ArenaCash) — o site institucional
-de uma fintech **fictícia**, publicado em <https://cauecm.github.io/ArenaCash/>.
+Os alunos exploram e clonam a [ArenaCash](https://github.com/Product-Arena/arena-cash) — o site institucional
+de uma fintech **fictícia**, publicado em <https://product-arena.github.io/arena-cash/>.
 
 ## Estrutura
 
@@ -28,6 +31,7 @@ de uma fintech **fictícia**, publicado em <https://cauecm.github.io/ArenaCash/>
 site/
 ├── index.html            ← landing do curso
 ├── dia-1.html            ← workbook do Dia 1
+├── dia-2.html            ← workbook do Dia 2
 ├── styles.css            ← componentes do site e do workbook
 ├── colors_and_type.css   ← tokens do Design System da Product Arena
 ├── app.js                ← scroll-spy, progresso por passo, atalho "E"
