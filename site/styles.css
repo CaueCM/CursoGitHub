@@ -1287,6 +1287,41 @@ p, li, td, th, a, h1, h2, h3, h4 { overflow-wrap: break-word; }
 .file-out code { background: transparent; padding: 0; color: var(--pa-red); border: 0; }
 
 /* ---------------------------------------------------------
+   RITMO VERTICAL — corpo do exercício e do passo
+
+   `.ex-body p` e `.step-block-body p` zeram a margem dos parágrafos e,
+   por serem mais específicos que o seletor coruja `> * + *`, acabavam
+   colando cada parágrafo no elemento de cima. Estas regras repõem o
+   respiro com alvo explícito, e ficam depois daquelas no arquivo.
+   --------------------------------------------------------- */
+
+.ex-body > * + *,
+.ex-body > * + p,
+.ex-body > * + ol,
+.ex-body > * + ul { margin-top: var(--s-5); }
+
+.ex-body > * + .link-cards,
+.ex-body > * + .ex-entrega,
+.ex-body > * + .file-out,
+.ex-body > * + .step-block,
+.ex-body > * + .ex-closing,
+.ex-body > * + .prompt-box,
+.ex-body > * + .tip { margin-top: var(--s-6); }
+
+.step-block-body > * + *,
+.step-block-body > * + p,
+.step-block-body > * + ol,
+.step-block-body > * + ul { margin-top: var(--s-4); }
+
+.step-block-body > * + .prompt-box,
+.step-block-body > * + .link-cards,
+.step-block-body > * + .tip { margin-top: var(--s-5); }
+
+.concept > * + .tip,
+.concept > * + .analogy,
+.concept > * + .file-out { margin-top: var(--s-5); }
+
+/* ---------------------------------------------------------
    PROGRESSO — checkbox por passo, barra por exercício, barra do dia
    --------------------------------------------------------- */
 
